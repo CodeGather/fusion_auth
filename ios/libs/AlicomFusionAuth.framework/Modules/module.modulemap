@@ -1,0 +1,6 @@
+framework module AlicomFusionAuth {
+  umbrella header "AlicomFusionAuth.h"
+
+  export *
+  module * { export * }
+}

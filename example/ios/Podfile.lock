@@ -1,0 +1,39 @@
+PODS:
+  - Flutter (1.0.0)
+  - fusion_auth (1.0.0):
+    - Flutter
+    - MBProgressHUD
+    - MJExtension
+  - integration_test (0.0.1):
+    - Flutter
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.4.1)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - fusion_auth (from `.symlinks/plugins/fusion_auth/ios`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MBProgressHUD
+    - MJExtension
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  fusion_auth:
+    :path: ".symlinks/plugins/fusion_auth/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  fusion_auth: cfa479c6f608e942f68cf1587b4d3d5707df49e5
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+
+PODFILE CHECKSUM: 49d2ac974feca9bf852eda24e2a022e31303e23a
+
+COCOAPODS: 1.12.1
