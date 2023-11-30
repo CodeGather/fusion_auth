@@ -24,7 +24,7 @@ jobs:
       # - uses: MobileDevOps/flutter-sdk-action@v1.0.0
 
       - name: cd
-        run: cd /fusion_auth/example
+        run: ls /Users/runner/work/_temp
         
       # - name: Install dependencies
       #   run: flutter pub get
