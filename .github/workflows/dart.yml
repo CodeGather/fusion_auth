@@ -1,5 +1,3 @@
-# main.yml
-
 # 工作流程的名字
 name: Test, Build and Release apk
 
