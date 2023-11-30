@@ -24,6 +24,7 @@ jobs:
         env:
           FILE_NAME: /example/lib/main.dart
           FILE_DATA: class NetConfig { static const CLIENT_ID = "${{ secrets.CLIENT_ID }}"; static const CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}";}
+      - run: cd /example
       - run: flutter pub get
       - run: flutter build apk --release
 
