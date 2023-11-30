@@ -1,17 +1,11 @@
-name: CI
+name: Dart Test
 
 on:
   push:
-    branches:
-      - master
-    tags:
-      - '*'
+    branches: [ "main" ]
   pull_request:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
-      - '**/*.png'
-      - '**/*.jpg'
+    branches: [ "main" ]
+    
 jobs:
   build:
     name: Build
