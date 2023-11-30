@@ -21,13 +21,13 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       - uses: dart-lang/setup-dart@v1.6.0
-      - uses: MobileDevOps/flutter-sdk-action@v1.0.0
+      # - uses: MobileDevOps/flutter-sdk-action@v1.0.0
 
       - name: ls
         run: ls
         
-      - name: Install dependencies
-        run: flutter pub get
+      # - name: Install dependencies
+      #   run: flutter pub get
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # - name: Verify formatting
