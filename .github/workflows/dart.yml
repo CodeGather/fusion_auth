@@ -18,12 +18,12 @@ jobs:
       - uses: actions/checkout@v3
       # 建立 java 环境
       - name: Setup Java JDK
-      - uses: actions/setup-java@v2
+        uses: actions/setup-java@v2
         with:
-          java-version: 11
+          java-version: "11"
       # 建立 Flutter 环境
       - name: Flutter action
-      - uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2
         with:
           channel: "stable"
       # 下载项目依赖
@@ -34,10 +34,51 @@ jobs:
       - run: flutter build apk --release
       # 发布到 Release
       - name: Release apk
-      - uses: ncipollo/release-action@v1.5.0
+        uses: ncipollo/release-action@v1.5.0
         with:
           artifacts: "build/app/outputs/apk/release/*.apk"
           token: ${{ secrets.RElEASE_TOKEN }}
+
+# # 工作流程的名字
+# name: Test, Build and Release apk
+
+# # 工作流程触发的时机，这里是当一个版本标签推送到仓库时触发
+# on:
+#   push:
+#     tags:
+#       - v*
+
+# # 这个工作流程需要执行的任务
+# jobs:
+#   process:
+#     name: All Process
+#     runs-on: ubuntu-latest
+#     # 这个任务的步骤
+#     steps:
+#       # 拉取项目代码
+#       - uses: actions/checkout@v3
+#       # 建立 java 环境
+#       - name: Setup Java JDK
+#       - uses: actions/setup-java@v2
+#         with:
+#           java-version: 11
+#       # 建立 Flutter 环境
+#       - name: Flutter action
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           channel: "stable"
+#       # 下载项目依赖
+#       - run: flutter pub get
+#       # 执行测试
+#       - run: flutter test
+#       # 打包 APK
+#       - run: flutter build apk --release
+#       # 发布到 Release
+#       - name: Release apk
+#       - uses: ncipollo/release-action@v1.5.0
+#         with:
+#           artifacts: "build/app/outputs/apk/release/*.apk"
+#           token: ${{ secrets.RElEASE_TOKEN }}
 
 # name: Dart Test
 
