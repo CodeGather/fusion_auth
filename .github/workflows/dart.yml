@@ -24,9 +24,7 @@ jobs:
       # - uses: MobileDevOps/flutter-sdk-action@v1.0.0
 
       - name: cd
-        run: cd /
-      - name: ls
-        run: ls
+        run: cd /example
         
       # - name: Install dependencies
       #   run: flutter pub get
