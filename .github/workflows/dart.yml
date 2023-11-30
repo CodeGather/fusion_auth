@@ -16,9 +16,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 11
-      - uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '2.8.1'
+      - uses: subosito/flutter-action@v3.1.3
       - uses: finnp/create-file-action@master
         env:
           FILE_NAME: lib/common/config/ignoreConfig.dart
