@@ -32,9 +32,8 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-      - run: echo CACHE-PATH=${{ safe.directory }}
       # 下载项目依赖
-      - run: flutter pub get
+      - run: flutter pub get =${{ safe.directory }}
       # 执行测试
       - run: flutter test
       # 打包 APK
