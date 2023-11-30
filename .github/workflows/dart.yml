@@ -22,7 +22,7 @@ jobs:
       - run: flutter --version
       - uses: finnp/create-file-action@master
         env:
-          FILE_NAME: lib/common/config/ignoreConfig.dart
+          FILE_NAME: /example/lib/main.dart
           FILE_DATA: class NetConfig { static const CLIENT_ID = "${{ secrets.CLIENT_ID }}"; static const CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}";}
       - run: flutter pub get
       - run: flutter build apk --release
