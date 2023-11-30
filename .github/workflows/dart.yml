@@ -20,6 +20,7 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v2
         with:
+          distribution: 'sean'
           java-version: "11"
       # 建立 Flutter 环境
       - name: Flutter action
