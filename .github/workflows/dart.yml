@@ -24,7 +24,7 @@ jobs:
       - uses: MobileDevOps/flutter-sdk-action@v1.0.0
 
       - name: ls
-        run: echo ls
+        run: ls
         
       - name: Install dependencies
         run: flutter pub get
