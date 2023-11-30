@@ -22,6 +22,9 @@ jobs:
       # - uses: dart-lang/setup-dart@v1
       - uses: MobileDevOps/flutter-sdk-action@v1.0.0
 
+      - name: ls
+        run: echo ls
+        
       - name: Install dependencies
         run: flutter pub get
 
