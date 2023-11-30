@@ -2,10 +2,15 @@
 name: Test, Build and Release apk
 
 # 工作流程触发的时机，这里是当一个版本标签推送到仓库时触发
+# on:
+#   push:
+#     tags:
+#       - v*
 on:
   push:
-    tags:
-      - v*
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 # 这个工作流程需要执行的任务
 jobs:
