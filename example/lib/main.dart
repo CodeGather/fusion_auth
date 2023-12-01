@@ -32,12 +32,10 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
+      platformVersion = await _fusionAuthPlugin.getPlatformVersion() ??
+          'Unknown platform version';
 
-      platformVersion =
-          await _fusionAuthPlugin.getPlatformVersion() ?? 'Unknown platform version';
-
-
-      FusionAuth.loginListen(onEvent: (onEvent) {
+      FusionAuth.handleEvent(onEvent: (ResponseModel onEvent) async {
         if (kDebugMode) {
           print("----------------> $onEvent <----------------");
         }
@@ -68,12 +66,18 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Text('Running on: $_platformVersion\n'),
-              ElevatedButton(onPressed: () {
-                FusionAuth.init(null);
-              }, child: const Text("开始初始化"),),
-              ElevatedButton(onPressed: () {
-                FusionAuth.login();
-              }, child: const Text("开始登录"),),
+              ElevatedButton(
+                onPressed: () {
+                  FusionAuth.initSdk(null);
+                },
+                child: const Text("开始初始化"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  FusionAuth.login();
+                },
+                child: const Text("开始登录"),
+              ),
             ],
           ),
         ),

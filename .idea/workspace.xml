@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.pubignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/libs/fusionauth-1.0.7-online-release.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/integration_test/plugin_integration_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/integration_test/plugin_integration_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthEnum.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthEnum.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthEnum.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthEnum.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPluginCommon.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPluginCommon.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionAuthTokenManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionAuthTokenManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionAuthTokenManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionAuthTokenManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionToastTool.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionToastTool.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionToastTool.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionToastTool.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionUtil.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Tools/AlicomFusionUtil.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/fusion_auth.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/fusion_auth.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/AlicomFusionAuth" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/AlicomFusionAuth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionAuth.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionAuth.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionAuthCallback.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionAuthCallback.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionAuthHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionAuthHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionAuthToken.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionAuthToken.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionEvent.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionEvent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionLog.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionLog.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionNumberAuthModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionNumberAuthModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionUpGoingView.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionUpGoingView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeAreaView.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeAreaView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeInputView.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeInputView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeView.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Headers/AlicomFusionVerifyCodeView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/AlicomFusionAuth.framework/Modules/module.modulemap" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/AlicomFusionAuth.framework/Modules/module.modulemap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/7.3.9_d234020780_20230202180938" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/7.3.9_d234020780_20230202180938" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Headers/MobClick.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Headers/MobClick.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Headers/UMCommon.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Headers/UMCommon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Headers/UMConfigure.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Headers/UMConfigure.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/UMCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/UMCommon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/A/Headers/MobClick.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/A/Headers/MobClick.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/A/Headers/UMCommon.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/A/Headers/UMCommon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/A/Headers/UMConfigure.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/A/Headers/UMConfigure.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/A/UMCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/A/UMCommon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/Current/Headers/MobClick.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/Current/Headers/MobClick.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/Current/Headers/UMCommon.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/Current/Headers/UMCommon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/Current/Headers/UMConfigure.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/Current/Headers/UMConfigure.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMCommon.framework/Versions/Current/UMCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMCommon.framework/Versions/Current/UMCommon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMDevice.framework/Headers/UMZid.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMDevice.framework/Headers/UMZid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/libs/UMDevice.framework/UMDevice" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Frameworks/UMDevice.framework/UMDevice" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth_enum.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth_method_channel.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth_platform_interface.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/SVID_20220517_120504.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_120625.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_120629.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_120634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_120649.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_120654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Screenshot_20220517_123128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/cmcc_crash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/error01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/error_add.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/error_add2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/play_group_wx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/演示APP后台重启的视频包含断网情况下获取正常.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fusion_auth_method_channel_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_method_channel_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fusion_auth_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2YnJ3kirz6h2SJ2JxiUcZrw3kMi" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ios/Frameworks" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios/Frameworks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/model" />
+      <recent name="$PROJECT_DIR$/android/libs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="" />
+      <created>1701155213209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701155213209</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

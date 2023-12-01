@@ -11,8 +11,10 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = 'https://github.com/CodeGather/fusion_auth'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Your Company' => 'raohong07@163.com' }
   s.source           = { :path => '.' }
+
+  s.platform = :ios, '12.0'
 
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
@@ -21,10 +23,10 @@ Pod::Spec.new do |s|
   s.dependency 'MJExtension'
   s.dependency 'MBProgressHUD'
 
-  s.vendored_frameworks = 'libs/AlicomFusionAuth.framework', 'libs/UMCommon.framework', 'libs/UMDevice.framework'
+  s.vendored_frameworks = 'frameworks/*.framework'
+  s.resource = 'frameworks/ATAuthSDK.framework/ATAuthSDK.bundle'
+  s.framework = 'Network'
   s.static_framework = false
-
-  s.platform = :ios, '11.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }

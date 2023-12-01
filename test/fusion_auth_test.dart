@@ -1,28 +1,17 @@
+import 'package:flutter/src/foundation/basic_types.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fusion_auth/fusion_auth.dart';
-import 'package:fusion_auth/fusion_auth_model.dart';
-import 'package:fusion_auth/fusion_auth_platform_interface.dart';
-import 'package:fusion_auth/fusion_auth_method_channel.dart';
+import 'package:fusion_auth/src/internal/fusion_auth_api.dart';
+import 'package:fusion_auth/src/model/fusion_auth_model.dart';
+import 'package:fusion_auth/src/internal/fusion_auth_platform_interface.dart';
+import 'package:fusion_auth/src/internal/fusion_auth_method_channel.dart';
+import 'package:fusion_auth/src/model/response_model.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockFusionAuthPlatform
     with MockPlatformInterfaceMixin
     implements FusionAuthPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
-
-  @override
-  loginListen({bool type = true, required Function onEvent, Function? onError, isOnlyOne = true}) {
-    // TODO: implement loginListen
-    throw UnimplementedError();
-  }
-
-  @override
-  Stream? onChange({bool type = true}) {
-    // TODO: implement onChange
-    throw UnimplementedError();
-  }
 
   @override
   void init(FusionAuthModel? config) {
@@ -32,6 +21,16 @@ class MockFusionAuthPlatform
   @override
   void login() {
     // TODO: implement login
+  }
+
+  @override
+  void removeHandler() {
+    // TODO: implement removeHandler
+  }
+
+  @override
+  void handleEvent({required AsyncValueSetter<ResponseModel> onEvent}) {
+    // TODO: implement handleEvent
   }
 }
 
