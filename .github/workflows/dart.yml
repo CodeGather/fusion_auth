@@ -26,7 +26,6 @@ jobs:
       # 建立 Flutter 环境
       - name: Flutter action
         uses: subosito/flutter-action@v2
-        working_directory: example
         with:
           channel: "stable"
       # 下载项目依赖
@@ -34,13 +33,14 @@ jobs:
       # 执行测试
       - run: flutter test
       # 打包 APK
-      - run: flutter build apk --release
+#      - run: flutter build apk --release
       # 发布到 Release
       - name: Release apk
-        uses: ncipollo/release-action@v1.5.0
-        with:
-          artifacts: "build/app/outputs/apk/release/*.apk"
-          token: ${{ secrets.RElEASE_TOKEN }}
+        run: flutter build apk --release
+        working_directory: example
+#        with:
+#          artifacts: "build/app/outputs/apk/release/*.apk"
+#          token: ${{ secrets.RElEASE_TOKEN }}
 
 # # 工作流程的名字
 # name: Test, Build and Release apk
