@@ -7,26 +7,19 @@ name: Publish to pub.dev
 #      - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev: 'v'
 
 on:
-  push:
-    branches: [main]
   pull_request:
+    branches: [main]
+  push:
     branches: [main]
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        sdk: [3.1, stable, beta]
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
-        with:
-          sdk: ${{ matrix.sdk }}
 
-      - name: Install dependencies
-        run: dart pub get
-
-      - name: Run tests
-        run: dart test
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: dart analyze
+      - run: dart test
