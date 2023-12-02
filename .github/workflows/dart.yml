@@ -37,8 +37,8 @@ jobs:
       # 发布到 Release
       - name: Release apk
         run: flutter build apk --release
-        working_directory: example
-#        with:
+        with:
+          working_directory: example
 #          artifacts: "build/app/outputs/apk/release/*.apk"
 #          token: ${{ secrets.RElEASE_TOKEN }}
 
