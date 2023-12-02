@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'fusion_auth'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
   是一个集成阿里云号码认证融合服务SDK的flutter插件

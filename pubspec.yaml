@@ -1,6 +1,6 @@
 name: fusion_auth
 description: This is a plug-in for one click login in the alicloud fusion authentication service. Alibaba cloud is also used in the one click login function
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/CodeGather/fusion_auth
 repository: https://github.com/CodeGather/fusion_auth/tree/master/example
 issue_tracker: https://github.com/CodeGather/fusion_auth/issues
