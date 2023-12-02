@@ -1,9 +1,15 @@
-name: Publish to Pub.dev
+name: Publish to pub.dev
+
+#on:
+#  push:
+#    tags:
+#      - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   publishing:
