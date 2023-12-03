@@ -1,13 +1,13 @@
 [![Pub](https://img.shields.io/pub/v/fusion_auth.svg)](https://pub.flutter-io.cn/packages/fusion_auth)
-![GitHub Workflow Status](https://github.com/CodeGather/fusion_auth/actions)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/CodeGather/fusion_auth/publish.yml)
 
 
-[![GitHub license](https://img.shields.io/github/license/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/issues)
-[![GitHub forks](https://img.shields.io/github/forks/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/network)
-[![GitHub stars](https://img.shields.io/github/stars/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/stargazers)
-[![GitHub size](https://img.shields.io/github/repo-size/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth)
-[![GitHub release](https://img.shields.io/github/v/release/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/releases)
+[![GitHub license](https://img.shields.io/github/license/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/issues)
+[![GitHub forks](https://img.shields.io/github/forks/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/network)
+[![GitHub stars](https://img.shields.io/github/stars/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/stargazers)
+[![GitHub size](https://img.shields.io/github/repo-size/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth)
+[![GitHub release](https://img.shields.io/github/v/release/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/releases)
 
 ## 名称 Fusion_auth
 
@@ -41,4 +41,4 @@
  - 创建认证方案 分别添IOS和Android的认证方案，分别获取到方案Code。
  - 添加短信模版、签名
 
- - ## 注意：Ios只需要输入绑定`Bundle name`即可，Android则需要包名和和签名。[如何获取App的签名](https://help.aliyun.com/document_detail/87870.html) ##
+ - ## 注意：iOS只需要输入绑定`Bundle name`即可，Android则需要包名和和签名。[如何获取App的签名](https://help.aliyun.com/document_detail/87870.html) ##
