@@ -15,6 +15,9 @@
 #import "AlicomFusionAuthTokenManager.h"
 #import "AlicomFusionNetAdapter.h"
 
+#define TX_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define TX_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+
 @interface AlicomFusionManager ()
 @property (nonatomic, copy) NSString *currTemplateId;
 @property (nonatomic, weak) UIViewController *currVC;
@@ -127,8 +130,6 @@
                     [self.delegate verifySuccess];
                 }
             });
-            
-      
         } else {
             [AlicomFusionToastTool showToastMsg:@"手机号验证不通过" time:2];
             [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
@@ -434,8 +435,8 @@
                                    UIModel:(AlicomFusionNumberAuthModel *)model {
   NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
   
-  model.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
-  model.presentDirection = AlicomFusionPresentationDirectionBottom;
+  model.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
+  model.presentDirection = AlicomFusionPresentationDirectionLeft;
   model.navTitle = [[NSAttributedString alloc] initWithString:@"一键登录"];
   model.navColor = [UIColor getColor: [dict stringValueForKey: @"navColor" defaultValue: @"#EFF3F2"]];
   model.logoIsHidden = [dict boolValueForKey: @"logoIsHidden" defaultValue: YES];
@@ -452,10 +453,26 @@
     }
   ];
   model.loginBtnText = loginAttr;
-//    UIImage *unSelectImage = [AlicomFusionDemoUtil demoImageWithColor:AlicomColorHex(0x0064C8) size:CGSizeMake(ALICOM_FUSION_DEMO_SCREEN_WIDTH - 32, 44) isRoundedCorner:NO radius:0.0];
-//    UIImage *selectImage = [AlicomFusionDemoUtil demoImageWithColor:AlicomColorHex(0x0064C8) size:CGSizeMake(ALICOM_FUSION_DEMO_SCREEN_WIDTH - 32, 44) isRoundedCorner:NO radius:0.0];
-//    UIImage *heighLightImage = [AlicomFusionDemoUtil demoImageWithColor:AlicomColorHex(0x0064C8) size:CGSizeMake(ALICOM_FUSION_DEMO_SCREEN_WIDTH - 32, 44) isRoundedCorner:NO radius:0.0];
-//    model.loginBtnBgImgs = @[unSelectImage, selectImage, heighLightImage];
+  
+  UIImage *unSelectImage = [AlicomFusionUtil
+      imageWithColor: [UIColor getColor:@"#0064C8"]
+                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+     isRoundedCorner: NO
+              radius: 0.0
+  ];
+  UIImage *selectImage = [AlicomFusionUtil
+      imageWithColor: [UIColor getColor:@"#0064C8"]
+                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+     isRoundedCorner: NO
+              radius: 0.0
+  ];
+  UIImage *heighLightImage = [AlicomFusionUtil
+      imageWithColor: [UIColor getColor:@"#0064C8"]
+                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+     isRoundedCorner: NO
+              radius: 0.0
+  ];
+  model.loginBtnBgImgs = @[unSelectImage, selectImage, heighLightImage];
   
   // slogan 设置
   NSMutableAttributedString *sloganAttr = [
@@ -486,7 +503,10 @@
   model.privacyOperatorPreText = [dict stringValueForKey: @"vendorPrivacyPrefix" defaultValue: @""];
   // 设置运营商协议后缀符号，只能设置一个字符>、)、》、】、』、]、）中的一个
   model.privacyOperatorSufText = [dict stringValueForKey: @"vendorPrivacySuffix" defaultValue: @""];
-  // model.privacyColors = @[AlicomColorHex(0x262626), AlicomColorHex(0x262626)];
+  model.privacyColors = @[
+    [UIColor getColor:@"#262626"],
+    [UIColor getColor:@"#262626"]
+  ];
   // 设置隐私条款文字大小（单位：dp，字体大小不随系统变化）
   model.privacyFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyTextSize" defaultValue: 14]];
   // 运营商协议内容颜色
@@ -501,7 +521,7 @@
   model.checkBoxIsHidden = [dict boolValueForKey: @"checkboxHidden" defaultValue: NO];
   model.checkBoxIsChecked = [dict boolValueForKey: @"checkBoxIsChecked" defaultValue: NO];
   model.checkBoxWH = [dict intValueForKey: @"checkBoxWidth" defaultValue: 21];
-//    model.backgroundColor = AlicomColorHex(0xEFF3F2);
+  model.backgroundColor = [UIColor getColor:@"#EFF3F2"];
   model.moreLoginActionBlock = ^{
       NSLog(@"其他登录方式");
   };
@@ -524,6 +544,27 @@
     model.otherLoginButton = otherLogin;
   }
 
+//  CGFloat ratio = MAX(TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT) / 667.0;
+//  //实现该block，并且返回的frame的x或y大于0，则认为是弹窗谈起授权页
+//  model.contentViewFrameBlock = ^CGRect(CGSize screenSize, CGSize contentSize, CGRect frame) {
+//      CGFloat alertX = 0;
+//      CGFloat alertY = 0;
+//      CGFloat alertWidth = 0;
+//      CGFloat alertHeight = 0;
+////      if ([self isHorizontal:screenSize]) {
+////        alertX = ratio * TX_Alert_Horizontal_Default_Left_Padding;
+////        alertWidth = [viewConfig intValueForKey: @"dialogWidth" defaultValue: screenSize.width - alertX * 2];
+////        alertY = (screenSize.height - alertWidth * 0.5) * 0.5;
+////        alertHeight = [viewConfig intValueForKey: @"dialogHeight" defaultValue: screenSize.height - 2 * alertY];
+////      } else {
+////        alertWidth = [viewConfig intValueForKey: @"dialogWidth" defaultValue: screenSize.width / 2];
+////        alertHeight = [viewConfig intValueForKey: @"dialogHeight" defaultValue: screenSize.height / 2];
+////        alertX = [viewConfig intValueForKey: @"dialogOffsetX" defaultValue: (TX_SCREEN_WIDTH - alertWidth) / 2];
+////        alertY = [viewConfig intValueForKey: @"dialogOffsetY" defaultValue: (TX_SCREEN_HEIGHT - alertHeight) / 2];
+////      }
+//      return CGRectMake(alertX, alertY, screenSize.width, screenSize.height);
+//  };
+  
   
   model.numberFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
       CGFloat x = (screenSize.width - frame.size.width) * 0.5;
@@ -551,12 +592,25 @@
       return frame;
   };
     
-//    model.privacyFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-//        CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - ALICOM_FUSION_DEMO_STATUS_BAR_HEIGHT - frame.size.height - 34, frame.size.width, frame.size.height);
-//        return rect;
-//    };
-//    
-  model.customViewLayoutBlock = ^(CGSize screenSize, CGRect contentViewFrame, CGRect nameLabelFrame, CGRect otherLoginBtnFrame, CGRect navFrame, CGRect titleBarFrame, CGRect logoFrame, CGRect sloganFrame, CGRect numberFrame, CGRect loginFrame, CGRect changeBtnFrame, CGRect privacyFrame) {
+  model.privacyFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+      CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - frame.size.height - 34, frame.size.width, frame.size.height);
+      return rect;
+  };
+    
+  model.customViewLayoutBlock = ^(
+      CGSize screenSize,        /// 全屏参数
+      CGRect contentViewFrame,  /// contentView参数
+      CGRect nameLabelFrame,    /// “登录”文字的布局
+      CGRect otherLoginBtnFrame,
+      CGRect navFrame,          /// 导航参数
+      CGRect titleBarFrame,     /// title参数
+      CGRect logoFrame,         /// logo区域参数
+      CGRect sloganFrame,       /// slogan参数
+      CGRect numberFrame,       /// 号码处参数
+      CGRect loginFrame,        /// 登录按钮处的参数
+      CGRect changeBtnFrame,    /// 切换到其他的参数
+      CGRect privacyFrame       /// 协议区域的参数
+  ) {
       
   };
 
@@ -569,10 +623,26 @@
   model.privacyAlertTitleColor = [UIColor getColor: [dict stringValueForKey: @"privacyAlertTitleColor" defaultValue: @"#262626"]];
   model.privacyAlertContentFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyAlertContentTextSize" defaultValue: 16]];
   model.privacyAlertContentAlignment = NSTextAlignmentCenter;
-//    model.privacyAlertButtonTextColors = @[AlicomColorHex(0x0064C8), AlicomColorHex(0x0064C8)];
-//    UIImage *imageUnselect = [AlicomFusionDemoUtil demoImageWithColor:AlicomColorHex(0xFFFFFF) size:CGSizeMake(ALICOM_FUSION_DEMO_SCREEN_WIDTH, 56) isRoundedCorner:NO radius:0.0];
-//    UIImage *imageSelect = [AlicomFusionDemoUtil demoImageWithColor:AlicomColorHex(0xFFFFFF) size:CGSizeMake(ALICOM_FUSION_DEMO_SCREEN_WIDTH, 56) isRoundedCorner:NO radius:0.0];
-//    model.privacyAlertBtnBackgroundImages = @[imageUnselect, imageSelect];
+  
+  model.privacyAlertButtonTextColors = @[
+    [UIColor getColor:@"#0064C8"],
+    [UIColor getColor:@"#0064C8"]
+  ];
+  
+  UIImage *imageUnselect = [AlicomFusionUtil
+      imageWithColor: [UIColor getColor:@"#FFFFFF"]
+                size:CGSizeMake(TX_SCREEN_WIDTH, 56)
+     isRoundedCorner: NO
+              radius: 0.0
+  ];
+  UIImage *imageSelect = [AlicomFusionUtil
+      imageWithColor: [UIColor getColor:@"#FFFFFF"]
+                size: CGSizeMake(TX_SCREEN_WIDTH, 56)
+     isRoundedCorner: NO
+              radius: 0.0
+  ];
+  model.privacyAlertBtnBackgroundImages = @[imageUnselect, imageSelect];
+  
   model.privacyAlertButtonFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyAlertBtnTextSize" defaultValue: 16]];
   model.tapPrivacyAlertMaskCloseAlert = [dict boolValueForKey: @"tapPrivacyAlertMaskCloseAlert" defaultValue: NO];
   model.privacyAlertMaskColor = [UIColor getColor: [dict stringValueForKey: @"switchAccTextColor" defaultValue: @"#262626"]];
@@ -605,13 +675,18 @@
                                 nodeId:(NSString *)nodeId
                            isAutoInput:(BOOL)isAutoInput
                                   view:(AlicomFusionVerifyCodeView *)view {
-//  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ALICOM_FUSION_DEMO_SCREEN_WIDTH, 100)];
-//  label.text = @"登录";
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+  label.text = @"登录";
 //  label.textColor = AlicomColorHex(0x262626);
 //  label.font = [UIFont systemFontOfSize:24];
 //  [label sizeToFit];
 //  model.nameLabel = label;
 //  view.phoneNumLabel =
+  UIButton *verifyCodeSendBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+  verifyCodeSendBtn.backgroundColor = [UIColor getColor: @"#00ff00"];
+  view.verifyCodeSendBtn = verifyCodeSendBtn;
+//  view.verifyCodeSendView.frame =CGRectMake(0, 0, 200, 56);
+  view.verifyCodeSendView.backgroundColor =[UIColor getColor: @"#00ff00"];
   self.verifyView = view;
 }
 
@@ -634,6 +709,12 @@
                                      nodeId:(NSString *)nodeId
                                  navigation:(UINavigationController *)naviController {
     
+}
+
+
+/// 是否是横屏 YES:横屏 NO:竖屏
+- (BOOL)isHorizontal:(CGSize)size {
+    return size.width > size.height;
 }
 
 @end
