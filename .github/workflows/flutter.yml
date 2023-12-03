@@ -45,6 +45,15 @@ jobs:
           name: app-release.apk
           path: example/build/app/outputs/apk/release/app-release.apk
       # 下载编译
+      - name: Tag the repository
+        id: tag
+        run: |
+          # See https://docs.github.com/en/get-started/using-git/dealing-with-special-characters-in-branch-and-tag-names
+          TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
+          echo "$TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
+          git push origin $TAG
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
@@ -52,6 +61,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.tag.outputs.tag }}
           files: |
             Release.txt
             LICENSE
