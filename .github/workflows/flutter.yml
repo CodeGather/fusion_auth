@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      discussions: write
     # 这个任务的步骤
     steps:
       # 拉取项目代码
@@ -45,9 +46,19 @@ jobs:
           name: app-release.apk
           path: example/build/app/outputs/apk/release/app-release.apk
       # 下载编译
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCOUNT_TOKEN }}
-        with:
-          title: MyReleaseMessage
+      - name: Build
+        run: echo ${{ github.sha }} > Release.txt
+        - name: Test
+          run: cat Release.txt
+        - name: Release
+          uses: softprops/action-gh-release@v1
+          if: startsWith(github.ref, 'refs/tags/')
+          with:
+            tag_name: v1.0.1
+            files: Release.txt
+#      - name: Create a Release
+#        uses: elgohr/Github-Release-Action@v5
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.ACCOUNT_TOKEN }}
+#        with:
+#          title: MyReleaseMessage
