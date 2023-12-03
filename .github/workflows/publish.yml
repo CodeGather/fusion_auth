@@ -33,6 +33,7 @@ jobs:
           allowUpdates: true
           artifactErrorsFailBuild: true
           generateReleaseNotes: true
-          artifacts: example/build/app/outputs/apk/release/app-release.apk
-          body: |
-            **demo**
+          artifacts: "*.apk,*.zip,*.tar.gz"
+          bodyFile: "RELEASE.md"
+#          body: |
+#            **demo**
