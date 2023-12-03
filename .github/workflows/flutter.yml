@@ -21,30 +21,30 @@ jobs:
       # 拉取项目代码
       - uses: actions/checkout@v3
       # 建立 java 环境
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: '11'
-      # 建立 Flutter 环境
-      - name: Flutter action
-        uses: subosito/flutter-action@main
-        with:
-          channel: "stable"
-      # 下载项目依赖
-      - run: flutter pub get
-      # 执行测试
-      - run: flutter test
-      # 打包 APK
-      - name: Release apk
-        run: flutter build apk --release
-        working-directory: example
-      # 发布到 Release
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-release.apk
-          path: example/build/app/outputs/apk/release/app-release.apk
+#      - name: Setup Java JDK
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: 'zulu'
+#          java-version: '11'
+#      # 建立 Flutter 环境
+#      - name: Flutter action
+#        uses: subosito/flutter-action@main
+#        with:
+#          channel: "stable"
+#      # 下载项目依赖
+#      - run: flutter pub get
+#      # 执行测试
+#      - run: flutter test
+#      # 打包 APK
+#      - name: Release apk
+#        run: flutter build apk --release
+#        working-directory: example
+#      # 发布到 Release
+#      - name: Upload APK
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: app-release.apk
+#          path: example/build/app/outputs/apk/release/app-release.apk
       # 下载编译
       - name: Create a Release
         uses: ncipollo/release-action@v1
@@ -56,7 +56,6 @@ jobs:
           body: |
             **demo**
           commit: master
-          tag: ${{ github.ref_name }}
 #      - name: Build
 #        run: echo ${{ github.sha }} > Release.txt
 #        - name: Test
