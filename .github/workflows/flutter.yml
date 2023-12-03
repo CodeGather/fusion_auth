@@ -42,14 +42,14 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: out apk
+          name: app-release.apk
           path: example/build/app/outputs/apk/release/app-release.apk
       # 下载编译
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1.1.4
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCOUNT_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
@@ -57,7 +57,7 @@ jobs:
         id: upload_release_asset
         uses: actions/upload-release-asset@v1.0.1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCOUNT_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./app-release.apk
