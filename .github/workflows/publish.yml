@@ -1,17 +1,18 @@
 name: Publish Package
 
+# 监听版本号变化
 on:
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
+  # 推送操作
   publishing:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@main # required!
-
       - name: '>> Dart package <<'
         uses: k-paxian/dart-package-publisher@master
         with:
@@ -19,13 +20,14 @@ jobs:
           refreshToken: ${{secrets.REFRESH_TOKEN }}
           skipTests: true
           force: true
+  # Release 操作
   release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       discussions: write
     steps:
-      # 下载编译
+      # 创建 Release
       - name: Create a Release
         uses: ncipollo/release-action@v1
         with:
@@ -33,7 +35,3 @@ jobs:
           allowUpdates: true
           artifactErrorsFailBuild: true
           generateReleaseNotes: true
-          artifacts: "*.apk,*.zip,*.tar.gz"
-#          bodyFile: "RELEASE.md"
-#          body: |
-#            **demo**
