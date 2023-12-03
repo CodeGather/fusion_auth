@@ -1,5 +1,5 @@
 # 工作流程的名字
-name: Test, Build and Release apk
+name: Build and Release apk
 
 # 工作流程触发的时机，这里是当一个版本标签推送到仓库时触发
 on:
@@ -33,11 +33,10 @@ jobs:
       # 执行测试
       - run: flutter test
       # 打包 APK
-      # - run: flutter build apk --release
-      # 发布到 Release
       - name: Release apk
         run: flutter build apk --release
         working-directory: example
+      # 发布到 Release
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
@@ -45,7 +44,7 @@ jobs:
           path: example/build/app/outputs/apk/release/app-release.apk
   apk:
     name: Generate APK
-    if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -72,7 +71,7 @@ jobs:
   release:
     name: Release APK
     needs: apk
-    if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
       - name: Download APK from build
