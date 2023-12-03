@@ -19,3 +19,21 @@ jobs:
           refreshToken: ${{secrets.REFRESH_TOKEN }}
           skipTests: true
           force: true
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: write
+    steps:
+      # 下载编译
+      - name: Create a Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.ACCOUNT_TOKEN }}
+          allowUpdates: true
+          artifactErrorsFailBuild: true
+          generateReleaseNotes: true
+          artifacts: example/build/app/outputs/apk/release/app-release.apk
+          body: |
+            **demo**
+          commit: master
