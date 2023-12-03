@@ -40,7 +40,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: apk
+          name: out apk
           path: example/build/app/outputs/apk/release/app-release.apk
       # 下载编译
       - name: Download APK from build
