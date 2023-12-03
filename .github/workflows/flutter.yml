@@ -49,9 +49,14 @@ jobs:
       - name: Create a Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release.tar.gz,foo/*.txt"
-          bodyFile: "README.md"
           token: ${{ secrets.ACCOUNT_TOKEN }}
+          allowUpdates: true
+          artifacts: example/build/app/outputs/apk/release/app-release.apk
+          artifactErrorsFailBuild: true
+          body: |
+            **demo**
+          commit: master
+          tag: ${{ github.ref_name }}
 #      - name: Build
 #        run: echo ${{ github.sha }} > Release.txt
 #        - name: Test
