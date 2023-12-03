@@ -1,4 +1,5 @@
 [![Pub](https://img.shields.io/pub/v/fusion_auth.svg)](https://pub.flutter-io.cn/packages/fusion_auth)
+![GitHub Workflow Status](https://github.com/CodeGather/fusion_auth/actions)
 
 
 [![GitHub license](https://img.shields.io/github/license/CodeGather/flutter_ali_auth?style=social)](https://github.com/CodeGather/flutter_ali_auth/blob/master/LICENSE)
