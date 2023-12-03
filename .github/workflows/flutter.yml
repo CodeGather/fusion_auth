@@ -22,10 +22,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: '8'
+          java-version: '11'
       # 建立 Flutter 环境
       - name: Flutter action
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@main
         with:
           channel: "stable"
       # 下载项目依赖
@@ -55,8 +55,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: '8'
-      - uses: subosito/flutter-action@v2.12.0
+          java-version: '11'
+      - uses: subosito/flutter-action@main
       - uses: finnp/create-file-action@master
         env:
           FILE_NAME: lib/common/config/ignoreConfig.dart
