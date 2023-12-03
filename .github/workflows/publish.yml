@@ -34,6 +34,6 @@ jobs:
           artifactErrorsFailBuild: true
           generateReleaseNotes: true
           artifacts: "*.apk,*.zip,*.tar.gz"
-          bodyFile: "RELEASE.md"
+#          bodyFile: "RELEASE.md"
 #          body: |
 #            **demo**
