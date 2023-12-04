@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="" />
+    <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +44,13 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/model" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ios/Frameworks" />
     </key>

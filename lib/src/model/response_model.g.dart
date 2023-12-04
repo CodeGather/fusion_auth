@@ -16,20 +16,12 @@ ResponseModel _$ResponseModelFromJson(Map<String, dynamic> json) =>
       innerCode: json['innerCode'] as String?,
     );
 
-Map<String, dynamic> _$ResponseModelToJson(ResponseModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('resultCode', instance.resultCode);
-  writeNotNull('msg', instance.msg);
-  writeNotNull('requestId', instance.requestId);
-  writeNotNull('token', instance.token);
-  writeNotNull('innerMsg', instance.innerMsg);
-  writeNotNull('innerCode', instance.innerCode);
-  return val;
-}
+Map<String, dynamic> _$ResponseModelToJson(ResponseModel instance) =>
+    <String, dynamic>{
+      'resultCode': instance.resultCode,
+      'msg': instance.msg,
+      'requestId': instance.requestId,
+      'token': instance.token,
+      'innerMsg': instance.innerMsg,
+      'innerCode': instance.innerCode,
+    };

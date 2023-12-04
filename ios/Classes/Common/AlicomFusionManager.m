@@ -435,8 +435,8 @@
                                    UIModel:(AlicomFusionNumberAuthModel *)model {
   NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
   
-  model.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
-  model.presentDirection = AlicomFusionPresentationDirectionLeft;
+  model.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
+  model.presentDirection = AlicomFusionPresentationDirectionBottom;
   model.navTitle = [[NSAttributedString alloc] initWithString:@"一键登录"];
   model.navColor = [UIColor getColor: [dict stringValueForKey: @"navColor" defaultValue: @"#EFF3F2"]];
   model.logoIsHidden = [dict boolValueForKey: @"logoIsHidden" defaultValue: YES];
@@ -685,8 +685,9 @@
   UIButton *verifyCodeSendBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
   verifyCodeSendBtn.backgroundColor = [UIColor getColor: @"#00ff00"];
   view.verifyCodeSendBtn = verifyCodeSendBtn;
-//  view.verifyCodeSendView.frame =CGRectMake(0, 0, 200, 56);
+//  view.verifyCodeSendView.frame =CGRectMake(0, 0, TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT);
   view.verifyCodeSendView.backgroundColor =[UIColor getColor: @"#00ff00"];
+  view.frame =CGRectMake(0, 0, TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT);
   self.verifyView = view;
 }
 
@@ -708,7 +709,8 @@
                                  templateId:(nonnull NSString *)templateId
                                      nodeId:(NSString *)nodeId
                                  navigation:(UINavigationController *)naviController {
-    
+  naviController.navigationBar.hidden = YES;
+  naviController.navigationBar.translucent = YES;
 }
 
 

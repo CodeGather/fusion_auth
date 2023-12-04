@@ -2,7 +2,7 @@ name: fusion_auth
 description: This is a plug-in for one click login in the alicloud fusion authentication service. Alibaba cloud is also used in the one click login function
 version: 1.0.1
 homepage: https://github.com/CodeGather/fusion_auth
-repository: https://github.com/CodeGather/fusion_auth/tree/master/example
+repository: https://github.com/CodeGather/fusion_auth
 issue_tracker: https://github.com/CodeGather/fusion_auth/issues
 topics: [aliyun, phone, sms, idcode, fusion]
 
@@ -13,13 +13,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   plugin_platform_interface: ^2.0.2
+  json_annotation: '>=4.8.1 <4.9.0'
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
   test: ^1.24.3
+  build_runner: ^2.4.5
+  build_test: ^2.2.0
+  json_serializable: ^6.7.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
