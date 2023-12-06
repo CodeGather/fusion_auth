@@ -31,6 +31,12 @@
     }
     return defaultValue;
 }
+- (NSNumber*)numberValueForKey:(NSString*)key defaultValue:(NSNumber*)defaultValue {
+    if ([self valueForKeyIsNumber:key]) {
+        return [[self valueForKey:key] pointerValue];
+    }
+    return defaultValue;
+}
 - (int)intValueForKey:(NSString *)key defaultValue:(int)defaultValue{
     if ([self valueForKeyIsNumber:key]) {
         return [[self valueForKey:key] intValue];

@@ -687,7 +687,7 @@
   view.verifyCodeSendBtn = verifyCodeSendBtn;
 //  view.verifyCodeSendView.frame =CGRectMake(0, 0, TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT);
   view.verifyCodeSendView.backgroundColor =[UIColor getColor: @"#00ff00"];
-  view.frame =CGRectMake(0, 0, TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT);
+//  view.frame =CGRectMake(0, 0, TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT);
   self.verifyView = view;
 }
 
@@ -709,8 +709,26 @@
                                  templateId:(nonnull NSString *)templateId
                                      nodeId:(NSString *)nodeId
                                  navigation:(UINavigationController *)naviController {
-  naviController.navigationBar.hidden = YES;
-  naviController.navigationBar.translucent = YES;
+  // 配置参数
+  NSDictionary *dict = [self->common.CONFIG dictValueForKey: @"navConfig" defaultValue: @{}];
+  // 判断是否有字段
+  if ([dict count] == 0) {
+    naviController.navigationBar.hidden = [dict boolValueForKey: @"isHidden" defaultValue: NO];
+    // 导航整体背景色
+    naviController.navigationBar.backgroundColor = [UIColor getColor: [dict stringValueForKey: @"backgroundColor" defaultValue: @"#ffff00"]];
+    // 文字的设置
+    naviController.navigationBar.titleTextAttributes = @{
+      // 文字大小
+      NSFontAttributeName: [UIFont systemFontOfSize: [dict intValueForKey: @"textFontSize" defaultValue: 12]],
+      // 文字颜色
+      NSForegroundColorAttributeName: [UIColor getColor: [dict stringValueForKey: @"textForegroundColor" defaultValue: @"#000000"]],
+      // 文字背景色
+      NSBackgroundColorAttributeName: [UIColor getColor: [dict stringValueForKey: @"textBackgroundColor" defaultValue: @"#ffffff"]],
+      // 文字间距
+      NSKernAttributeName: [dict numberValueForKey: @"textBackgroundColor" defaultValue: @0]
+    };
+  }
+  naviController.parentViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 }
 
 

@@ -11,6 +11,7 @@
 
 @interface NSDictionary (Utils)
 - (NSInteger)integerValueForKey:(NSString *)key defaultValue:(NSInteger)defaultValue;
+- (NSNumber*)numberValueForKey:(NSString *)key defaultValue:(NSNumber*)defaultValue;
 - (int)intValueForKey:(NSString *)key defaultValue:(int)defaultValue;
 - (long long)longlongValueForKey:(NSString *)key defaultValue:(long long)defaultValue;
 - (float)floatValueForKey:(NSString *)key defaultValue:(float)defaultValue;

@@ -124,6 +124,8 @@
           break;
       }
   }
+  /// 强制全屏
+  topViewController.modalPresentationStyle = UIModalPresentationFullScreen;
   return topViewController;
 }
 
