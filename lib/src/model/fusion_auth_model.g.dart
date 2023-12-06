@@ -17,7 +17,7 @@ FusionAuthModel _$FusionAuthModelFromJson(Map<String, dynamic> json) =>
       appServerHost: json['appServerHost'] as String?,
       authtokenApi: json['authtokenApi'] as String?,
       verifyApi: json['verifyApi'] as String?,
-      tokenExpirTime: json['tokenExpirTime'] as int? ?? 30,
+      tokenExpirTime: json['tokenExpirTime'] as int? ?? 20,
       navConfig: json['navConfig'] == null
           ? null
           : ViewNavModel.fromJson(json['navConfig'] as Map<String, dynamic>),

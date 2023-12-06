@@ -1,8 +1,6 @@
 import 'package:fusion_auth/src/model/view_nav_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import './fusion_auth_enum.dart';
-
 part 'fusion_auth_model.g.dart';
 
 ///一键登录onPhoneNumberVerifyUICustomDefined:templateId:nodeId:UIModel:
@@ -66,7 +64,7 @@ class FusionAuthModel {
   /// 换取手机号api
   final String? verifyApi;
 
-  /// 超时时间
+  /// 超时时间 默认20S
   final int? tokenExpirTime;
 
   /// 提供两种模式

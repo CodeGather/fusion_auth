@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Network/AlicomFusionNetAdapter.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Network/AlicomFusionNetAdapter.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view_phone_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view_phone_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view_phone_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view_phone_model.g.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +33,13 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/config" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/config" />
       <recent name="$PROJECT_DIR$/lib/src/model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ios/Frameworks" />

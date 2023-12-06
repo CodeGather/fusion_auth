@@ -8,18 +8,12 @@ part of 'view_phone_model.dart';
 
 ViewPhoneModel _$ViewPhoneModelFromJson(Map<String, dynamic> json) =>
     ViewPhoneModel(
-      token: json['token'] as String?,
-      schemeCode: json['schemeCode'] as String?,
-      templateId: json['templateId'] as String?,
-      logEnable: json['logEnable'] as bool?,
       checkBoxShakePath: json['checkBoxShakePath'] as String?,
       checkBoxMarginTop: json['checkBoxMarginTop'] as int?,
       navUseFont: json['navUseFont'] as bool?,
       numberUseFont: json['numberUseFont'] as bool?,
       swtichUseFont: json['swtichUseFont'] as bool?,
       webCacheMode: json['webCacheMode'] as int?,
-      debugMode: json['debugMode'] as bool? ?? true,
-      isDelay: json['isDelay'] as bool? ?? false,
       statusBarColor: json['statusBarColor'] as String?,
       bottomNavColor: json['bottomNavColor'] as String?,
       isLightColor: json['isLightColor'] as bool?,
@@ -206,12 +200,6 @@ ViewPhoneModel _$ViewPhoneModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ViewPhoneModelToJson(ViewPhoneModel instance) =>
     <String, dynamic>{
-      'token': instance.token,
-      'schemeCode': instance.schemeCode,
-      'templateId': instance.templateId,
-      'logEnable': instance.logEnable,
-      'isDelay': instance.isDelay,
-      'debugMode': instance.debugMode,
       'statusBarColor': instance.statusBarColor,
       'bottomNavColor': instance.bottomNavColor,
       'isLightColor': instance.isLightColor,

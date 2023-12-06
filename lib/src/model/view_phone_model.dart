@@ -13,18 +13,12 @@ part 'view_phone_model.g.dart';
 @JsonSerializable()
 class ViewPhoneModel {
   const ViewPhoneModel({
-    this.token,
-    this.schemeCode,
-    this.templateId,
-    this.logEnable,
     this.checkBoxShakePath,
     this.checkBoxMarginTop,
     this.navUseFont,
     this.numberUseFont,
     this.swtichUseFont,
     this.webCacheMode,
-    this.debugMode = true,
-    this.isDelay = false,
     this.statusBarColor,
     this.bottomNavColor,
     this.isLightColor,
@@ -69,17 +63,14 @@ class ViewPhoneModel {
     this.logBtnLayoutGravity,
     this.protocolOneName,
     this.protocolOneURL,
-
     /// 授权页协议1文本颜色。
     this.protocolOwnOneColor,
     this.protocolTwoName,
     this.protocolTwoURL,
-
     /// 授权页协议2文本颜色。
     this.protocolOwnTwoColor,
     this.protocolThreeName,
     this.protocolThreeURL,
-
     /// 授权页协议3文本颜色。
     this.protocolOwnThreeColor,
     this.protocolColor,
@@ -89,7 +80,6 @@ class ViewPhoneModel {
     this.protocolTwoColor,
     this.protocolShakePath,
     this.protocolThreeColor,
-
     /// 授权页运营商协议文本颜色。
     this.protocolOwnColor,
     this.loadingImgPath,
@@ -187,56 +177,19 @@ class ViewPhoneModel {
     this.privacyAlertCloseScaleType,
     this.privacyAlertCloseImgWidth,
     this.privacyAlertCloseImgHeight,
-
     /// 授权页协议1文本颜色。
     this.privacyAlertOwnOneColor,
-
     /// 授权页协议2文本颜色。
     this.privacyAlertOwnTwoColor,
-
     /// 授权页协议3文本颜色。
     this.privacyAlertOwnThreeColor,
-
     /// 授权页运营商协议文本颜色。
     this.privacyAlertOperatorColor,
     this.tapPrivacyAlertMaskCloseAlert = true,
-  })  : assert(debugMode == true && (token == null || token == "")),
-        assert(isDelay != null);
+  });
 
   factory ViewPhoneModel.fromJson(Map<String, dynamic> json) =>
       _$ViewPhoneModelFromJson(json);
-  /// 用于融合认证的鉴权
-  /// 简易模式下该参数必传
-  /// 可前往该地址获取: https://next.api.aliyun.com/api/Dypnsapi/2017-05-25/GetFusionAuthToken
-  final String? token;
-
-  /// 方案Code
-  /// 可前往该地址获取: https://dypns.console.aliyun.com/fusionSolution/All
-  final String? schemeCode;
-
-  /// /* 默认登录注册场景 */
-  /// "100001"
-  /// /* 默认更换手机号场景 */
-  /// "100002"
-  /// /* 默认重置密码场景 */
-  /// "100003"
-  /// /* 默认绑定新手机号场景 */
-  /// "100004"
-  /// /* 默认验证绑定手机号场景 */
-  /// "100005"
-  /// templateId 场景唯一标识 与控制台场景ID唯一对应
-  final String? templateId;
-
-  /// 是否打印log，默认开启
-  final bool? logEnable;
-
-  /// 是否初始化后立即执行登录的操作，默认false
-  final bool? isDelay;
-
-  /// 提供两种模式
-  /// 简易模式还是正常模式
-  /// 简易模式的情况下需要设置token为必须，默认true，正式环境简易关闭使用正常模式
-  final bool? debugMode;
 
   final String? statusBarColor;
 
