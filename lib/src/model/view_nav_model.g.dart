@@ -7,10 +7,20 @@ part of 'view_nav_model.dart';
 // **************************************************************************
 
 ViewNavModel _$ViewNavModelFromJson(Map<String, dynamic> json) => ViewNavModel(
-      token: json['token'] as String?,
+      isHidden: json['isHidden'] as bool?,
+      backgroundColor: json['backgroundColor'] as String?,
+      textFontSize: json['textFontSize'] as int?,
+      textForegroundColor: json['textForegroundColor'] as String?,
+      textBackgroundColor: json['textBackgroundColor'] as String?,
+      textKern: json['textKern'] as int?,
     );
 
 Map<String, dynamic> _$ViewNavModelToJson(ViewNavModel instance) =>
     <String, dynamic>{
-      'token': instance.token,
+      'isHidden': instance.isHidden,
+      'backgroundColor': instance.backgroundColor,
+      'textFontSize': instance.textFontSize,
+      'textForegroundColor': instance.textForegroundColor,
+      'textBackgroundColor': instance.textBackgroundColor,
+      'textKern': instance.textKern,
     };

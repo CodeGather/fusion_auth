@@ -45,7 +45,7 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
 
   @override
   void init(FusionAuthModel? config) {
-    config ??= const FusionAuthModel();
+    config ??= FusionAuthModel.fromJson({});
     methodChannel.invokeMethod("init", config.toJson());
   }
 

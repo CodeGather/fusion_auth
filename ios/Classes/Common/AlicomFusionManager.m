@@ -725,7 +725,7 @@
       // 文字背景色
       NSBackgroundColorAttributeName: [UIColor getColor: [dict stringValueForKey: @"textBackgroundColor" defaultValue: @"#ffffff"]],
       // 文字间距
-      NSKernAttributeName: [dict numberValueForKey: @"textBackgroundColor" defaultValue: @0]
+      NSKernAttributeName: [dict numberValueForKey: @"textKern" defaultValue: @0]
     };
   }
   naviController.parentViewController.modalPresentationStyle = UIModalPresentationFullScreen;
