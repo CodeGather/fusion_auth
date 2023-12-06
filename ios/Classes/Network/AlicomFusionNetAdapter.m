@@ -1,31 +1,31 @@
 
 #import "AlicomFusionNetAdapter.h"
 #import "AlicomFusionNetManager.h"
+#import "FusionAuthCommon.h"
+#import "NSDictionary+Utils.h"
 
 #define kTimeout 20.0
 
 
 @implementation AlicomFusionNetAdapter
 
-#if DEMO_DEBUG_MODE == 1
 + (void)getTokenRequestComplete:(AlicomFusionNetAdapterCompletion)complete {
-}
-+ (void)verifyTokenRequest:(NSString *)verifyToken
-                  complete:(AlicomFusionNetAdapterCompletion)complete {
-}
-#elif DEMO_DEBUG_MODE == 2
-+ (void)getTokenRequestComplete:(AlicomFusionNetAdapterCompletion)complete {
+  if ([FusionAuthCommon shareInstance].DEBUG_MODE) {
+    
+  } else {
     AlicomFusionNetGetTokenRequest *request = [[AlicomFusionNetGetTokenRequest alloc] init];
-    request.action = DEMO_AUTHTOKEN_API;
-    request.schemeCode = DEMO_SCHEME_CODE;
-    request.durationSeconds = @(DEMO_TOKEN_EXPIR_TIME);
+    NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
+    
+    request.action = [dict stringValueForKey: @"appServerHost" defaultValue: @""];
+    request.schemeCode = [dict stringValueForKey: @"schemeCode" defaultValue: @""];
+    request.durationSeconds = [dict numberValueForKey: @"tokenExpirTime" defaultValue: @kTimeout];
     
     NSString *paramterString = [request buildRequestString];
     
-    [AlicomFusionNetManager getWithBaseUrl:DEMO_APP_SERVER_HOST
-                           timeout:kTimeout
-                       requestBody:paramterString
-                          complete:^(NSDictionary * _Nonnull responseDict, NSError * _Nullable error) {
+    [AlicomFusionNetManager getWithBaseUrl: [dict stringValueForKey: @"appServerHost" defaultValue: @""]
+                           timeout: kTimeout
+                       requestBody: paramterString
+                          complete: ^(NSDictionary * _Nonnull responseDict, NSError * _Nullable error) {
         if (error&&complete){
             complete(nil,error);
             return;
@@ -38,19 +38,24 @@
             complete(nil,temError);
         }
     }];
+  }
 }
-
 + (void)verifyTokenRequest:(NSString *)verifyToken
                   complete:(AlicomFusionNetAdapterCompletion)complete {
+  if ([FusionAuthCommon shareInstance].DEBUG_MODE) {
+    
+  } else {
     AlicomFusionNetVerifyTokenRequest *request = [[AlicomFusionNetVerifyTokenRequest alloc] init];
+    NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
+    
     request.verifyToken = verifyToken;
-    request.action = DEMO_VERIFY_API;
-    request.schemeCode = DEMO_SCHEME_CODE;
+    request.action = [dict stringValueForKey: @"verifyApi" defaultValue: @""];;
+    request.schemeCode = [dict stringValueForKey: @"schemeCode" defaultValue: @""];;
     
     NSString *paramterString = [request buildRequestString];
     
-    [AlicomFusionNetManager postWithBaseUrl:DEMO_APP_SERVER_HOST
-                           timeout:kTimeout
+    [AlicomFusionNetManager postWithBaseUrl: [dict stringValueForKey: @"appServerHost" defaultValue: @""]
+                           timeout: kTimeout
                        requestBody:paramterString
                           complete:^(NSDictionary * _Nonnull responseDict, NSError * _Nullable error) {
         if (error&&complete){
@@ -67,7 +72,7 @@
             complete(nil,temError);
         }
     }];
+  }
 }
-#endif /* DEMO_DEBUG_MODE */
 
 @end

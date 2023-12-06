@@ -23,7 +23,7 @@ class FusionAuthModel {
     this.appServerHost,
     this.authtokenApi,
     this.verifyApi,
-    this.tokenExpirTime = 30,
+    this.tokenExpirTime = 20,
     this.navConfig,
   })  : assert(debugMode == true && (token == null || token == "")),
         assert(debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)),
