@@ -84,6 +84,9 @@ class LogoConfig {
   final double? logoFrameOffsetX;
   final double? logoFrameOffsetY;
 
+  factory LogoConfig.fromJson(Map<String, dynamic> json) =>
+      _$LogoConfigFromJson(json);
+
   Map<String, dynamic> toJson() => _$LogoConfigToJson(this);
 
   @override
@@ -111,6 +114,9 @@ class SloganConfig {
   final double? sloganFrameOffsetX;
   final double? sloganFrameOffsetY;
 
+  factory SloganConfig.fromJson(Map<String, dynamic> json) =>
+      _$SloganConfigFromJson(json);
+
   Map<String, dynamic> toJson() => _$SloganConfigToJson(this);
 
   @override
@@ -133,6 +139,9 @@ class PhoneNumberConfig {
   final int? numberFontSize;
   final double? numberFrameOffsetX;
   final double? numberFrameOffsetY;
+
+  factory PhoneNumberConfig.fromJson(Map<String, dynamic> json) =>
+      _$PhoneNumberConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhoneNumberConfigToJson(this);
 
@@ -179,6 +188,9 @@ class LoginButtonConfig {
   /// 默认高度50.0pt 小于20.0pt不生效
   final double? loginBtnHeight;
 
+  factory LoginButtonConfig.fromJson(Map<String, dynamic> json) =>
+      _$LoginButtonConfigFromJson(json);
+
   Map<String, dynamic> toJson() => _$LoginButtonConfigToJson(this);
 
   @override
@@ -206,6 +218,9 @@ class ChangeButtonConfig {
   final double? changeBtnFrameOffsetX;
   final double? changeBtnFrameOffsetY;
 
+  factory ChangeButtonConfig.fromJson(Map<String, dynamic> json) =>
+      _$ChangeButtonConfigFromJson(json);
+
   Map<String, dynamic> toJson() => _$ChangeButtonConfigToJson(this);
 
   @override
@@ -230,6 +245,9 @@ class CheckBoxConfig {
   final String? checkedImage;
   final String? uncheckImage;
   final double? checkBoxWH;
+
+  factory CheckBoxConfig.fromJson(Map<String, dynamic> json) =>
+      _$CheckBoxConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$CheckBoxConfigToJson(this);
 
@@ -288,6 +306,9 @@ class PrivacyConfig {
   /// 运营商协议指定显示顺序，默认0，即第1个协议显示，最大值可为3，即第4个协议显示
   final int? privacyOperatorIndex;
 
+  factory PrivacyConfig.fromJson(Map<String, dynamic> json) =>
+      _$PrivacyConfigFromJson(json);
+
   Map<String, dynamic> toJson() => _$PrivacyConfigToJson(this);
 
   @override
@@ -324,6 +345,9 @@ class CustomViewBlock {
   final double width;
   final double height;
   final bool enableTap;
+
+  factory CustomViewBlock.fromJson(Map<String, dynamic> json) =>
+      _$CustomViewBlockFromJson(json);
 
   Map<String, dynamic> toJson() => _$CustomViewBlockToJson(this);
 
