@@ -1,12 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'fusion_auth_config.dart';
 import 'part_ui_config.dart';
-import 'auth_ui_config.dart';
-
 part 'full_screen_ui_config.g.dart';
 
 @JsonSerializable()
-class FullScreenUIConfig extends AuthUIConfig {
+class FullScreenUIConfig extends FusionAuthConfig {
   const FullScreenUIConfig({
     this.navConfig,
     this.backgroundImage,

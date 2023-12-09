@@ -1,18 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import './fusion_auth_enum.dart';
+import '../fusion_auth_enum.dart';
 
-part 'view_phone_model.g.dart';
+part 'phone_view_model.g.dart';
 
 ///一键登录onPhoneNumberVerifyUICustomDefined:templateId:nodeId:UIModel:
 /// 短信验证码onSMSCodeVerifyUICustomDefined:templateId:nodeId:isAutoInput:view:
 /// 用户主动发短信onSMSSendVerifyUICustomDefined:templateId:nodeId:smsContent:receiveNum:view:
 /// 导航栏：onNavigationControllerCustomDefined:templateId:nodeId:navigation:
 
-/// 登录窗口配置
+/// 一键登录页面配置
 @JsonSerializable()
-class ViewPhoneModel {
-  const ViewPhoneModel({
+class PhoneViewModel {
+  const PhoneViewModel({
     this.checkBoxShakePath,
     this.checkBoxMarginTop,
     this.navUseFont,
@@ -188,8 +188,8 @@ class ViewPhoneModel {
     this.tapPrivacyAlertMaskCloseAlert = true,
   });
 
-  factory ViewPhoneModel.fromJson(Map<String, dynamic> json) =>
-      _$ViewPhoneModelFromJson(json);
+  factory PhoneViewModel.fromJson(Map<String, dynamic> json) =>
+      _$PhoneViewModelFromJson(json);
 
   final String? statusBarColor;
 
@@ -500,5 +500,5 @@ class ViewPhoneModel {
 
   final int? privacyAlertBtnVerticalMargin;
 
-  Map<String, dynamic> toJson() => _$ViewPhoneModelToJson(this);
+  Map<String, dynamic> toJson() => _$PhoneViewModelToJson(this);
 }

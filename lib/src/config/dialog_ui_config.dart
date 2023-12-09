@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'fusion_auth_config.dart';
 import 'part_ui_config.dart';
-import 'auth_ui_config.dart';
 
 part 'dialog_ui_config.g.dart';
 
 @JsonSerializable()
-class DialogUIConfig extends AuthUIConfig {
+class DialogUIConfig extends FusionAuthConfig {
   const DialogUIConfig({
     this.alertTitleBarConfig,
     this.alertContentViewColor,

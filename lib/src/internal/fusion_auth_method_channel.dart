@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import '../config/fusion_auth_config.dart';
 import './fusion_auth_platform_interface.dart';
-import '../model/fusion_auth_model.dart';
 import '../model/response_model.dart';
 
 /// An implementation of [FusionAuthPlatform] that uses method channels.
@@ -44,8 +44,8 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   }
 
   @override
-  void init(FusionAuthModel? config) {
-    config ??= FusionAuthModel.fromJson({});
+  void init(FusionAuthConfig? config) {
+    config ??= FusionAuthConfig.fromJson({});
     methodChannel.invokeMethod("init", config.toJson());
   }
 

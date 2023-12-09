@@ -1,7 +1,7 @@
 import 'package:flutter/src/foundation/basic_types.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fusion_auth/src/config/fusion_auth_config.dart';
 import 'package:fusion_auth/src/internal/fusion_auth_api.dart';
-import 'package:fusion_auth/src/model/fusion_auth_model.dart';
 import 'package:fusion_auth/src/internal/fusion_auth_platform_interface.dart';
 import 'package:fusion_auth/src/internal/fusion_auth_method_channel.dart';
 import 'package:fusion_auth/src/model/response_model.dart';
@@ -14,7 +14,7 @@ class MockFusionAuthPlatform
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  void init(FusionAuthModel? config) {
+  void init(FusionAuthConfig? config) {
     // TODO: implement init
   }
 

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fusion_auth_model.dart';
+part of 'part_abstract_config.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-FusionAuthModel _$FusionAuthModelFromJson(Map<String, dynamic> json) =>
-    FusionAuthModel(
+PartAbstractConfig _$PartAbstractConfigFromJson(Map<String, dynamic> json) =>
+    PartAbstractConfig(
       token: json['token'] as String?,
       schemeCode: json['schemeCode'] as String?,
       templateId: json['templateId'] as String?,
@@ -18,12 +18,9 @@ FusionAuthModel _$FusionAuthModelFromJson(Map<String, dynamic> json) =>
       authtokenApi: json['authtokenApi'] as String?,
       verifyApi: json['verifyApi'] as String?,
       tokenExpirTime: json['tokenExpirTime'] as int? ?? 20,
-      navConfig: json['navConfig'] == null
-          ? null
-          : ViewNavModel.fromJson(json['navConfig'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$FusionAuthModelToJson(FusionAuthModel instance) =>
+Map<String, dynamic> _$PartAbstractConfigToJson(PartAbstractConfig instance) =>
     <String, dynamic>{
       'token': instance.token,
       'schemeCode': instance.schemeCode,
@@ -35,5 +32,4 @@ Map<String, dynamic> _$FusionAuthModelToJson(FusionAuthModel instance) =>
       'verifyApi': instance.verifyApi,
       'tokenExpirTime': instance.tokenExpirTime,
       'debugMode': instance.debugMode,
-      'navConfig': instance.navConfig,
     };

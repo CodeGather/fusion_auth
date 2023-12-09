@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'view_sms_model.dart';
+part of 'sms_view_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ViewSmsModel _$ViewSmsModelFromJson(Map<String, dynamic> json) => ViewSmsModel(
+SmsViewModel _$SmsViewModelFromJson(Map<String, dynamic> json) => SmsViewModel(
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$ViewSmsModelToJson(ViewSmsModel instance) =>
+Map<String, dynamic> _$SmsViewModelToJson(SmsViewModel instance) =>
     <String, dynamic>{
       'token': instance.token,
     };

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'view_phone_model.dart';
+part of 'phone_view_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ViewPhoneModel _$ViewPhoneModelFromJson(Map<String, dynamic> json) =>
-    ViewPhoneModel(
+PhoneViewModel _$PhoneViewModelFromJson(Map<String, dynamic> json) =>
+    PhoneViewModel(
       checkBoxShakePath: json['checkBoxShakePath'] as String?,
       checkBoxMarginTop: json['checkBoxMarginTop'] as int?,
       navUseFont: json['navUseFont'] as bool?,
@@ -198,7 +198,7 @@ ViewPhoneModel _$ViewPhoneModelFromJson(Map<String, dynamic> json) =>
           json['tapPrivacyAlertMaskCloseAlert'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$ViewPhoneModelToJson(ViewPhoneModel instance) =>
+Map<String, dynamic> _$PhoneViewModelToJson(PhoneViewModel instance) =>
     <String, dynamic>{
       'statusBarColor': instance.statusBarColor,
       'bottomNavColor': instance.bottomNavColor,

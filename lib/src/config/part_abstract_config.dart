@@ -1,7 +1,6 @@
-import 'package:fusion_auth/src/model/view_nav_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'fusion_auth_model.g.dart';
+part 'part_abstract_config.g.dart';
 
 ///一键登录onPhoneNumberVerifyUICustomDefined:templateId:nodeId:UIModel:
 /// 短信验证码onSMSCodeVerifyUICustomDefined:templateId:nodeId:isAutoInput:view:
@@ -10,8 +9,8 @@ part 'fusion_auth_model.g.dart';
 
 /// 登录窗口配置
 @JsonSerializable()
-class FusionAuthModel {
-  const FusionAuthModel({
+class PartAbstractConfig {
+  const PartAbstractConfig({
     this.token,
     required this.schemeCode,
     this.templateId,
@@ -22,15 +21,14 @@ class FusionAuthModel {
     this.authtokenApi,
     this.verifyApi,
     this.tokenExpirTime = 20,
-    this.navConfig,
   })  : assert(debugMode == true && (token == null || token == "")),
         assert(debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)),
         assert(schemeCode == null),
         assert(templateId == null),
         assert(isDelay != null);
 
-  factory FusionAuthModel.fromJson(Map<String, dynamic> json) =>
-      _$FusionAuthModelFromJson(json);
+  factory PartAbstractConfig.fromJson(Map<String, dynamic> json) =>
+      _$PartAbstractConfigFromJson(json);
 
   /// 用于融合认证的鉴权
   /// 简易模式下该参数必传
@@ -72,7 +70,5 @@ class FusionAuthModel {
   /// 2、简易模式的情况下需要设置token为必须，默认true，正式环境简易关闭使用正常模式
   final bool? debugMode;
 
-  final ViewNavModel? navConfig;
-
-  Map<String, dynamic> toJson() => _$FusionAuthModelToJson(this);
+  Map<String, dynamic> toJson() => _$PartAbstractConfigToJson(this);
 }

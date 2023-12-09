@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'view_nav_model.g.dart';
+part 'nav_view_model.g.dart';
 
 /// 导航设置
 @JsonSerializable()
-class ViewNavModel {
-  const ViewNavModel({
+class NavViewModel {
+  const NavViewModel({
     this.isHidden,
     this.backgroundColor,
     this.textFontSize,
@@ -13,8 +13,8 @@ class ViewNavModel {
     this.textKern
   });
 
-  factory ViewNavModel.fromJson(Map<String, dynamic> json) =>
-      _$ViewNavModelFromJson(json);
+  factory NavViewModel.fromJson(Map<String, dynamic> json) =>
+      _$NavViewModelFromJson(json);
 
   /// 是否隐藏导航栏
   final bool? isHidden;
@@ -34,5 +34,5 @@ class ViewNavModel {
   /// 导航栏文字间距
   final int? textKern;
 
-  Map<String, dynamic> toJson() => _$ViewNavModelToJson(this);
+  Map<String, dynamic> toJson() => _$NavViewModelToJson(this);
 }

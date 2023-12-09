@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'view_nav_model.dart';
+part of 'nav_view_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ViewNavModel _$ViewNavModelFromJson(Map<String, dynamic> json) => ViewNavModel(
+NavViewModel _$NavViewModelFromJson(Map<String, dynamic> json) => NavViewModel(
       isHidden: json['isHidden'] as bool?,
       backgroundColor: json['backgroundColor'] as String?,
       textFontSize: json['textFontSize'] as int?,
@@ -15,7 +15,7 @@ ViewNavModel _$ViewNavModelFromJson(Map<String, dynamic> json) => ViewNavModel(
       textKern: json['textKern'] as int?,
     );
 
-Map<String, dynamic> _$ViewNavModelToJson(ViewNavModel instance) =>
+Map<String, dynamic> _$NavViewModelToJson(NavViewModel instance) =>
     <String, dynamic>{
       'isHidden': instance.isHidden,
       'backgroundColor': instance.backgroundColor,

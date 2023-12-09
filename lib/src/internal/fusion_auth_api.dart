@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../model/fusion_auth_model.dart';
+import '../config/fusion_auth_config.dart';
 import '../model/response_model.dart';
 import './fusion_auth_platform_interface.dart';
 
@@ -11,7 +11,7 @@ class FusionAuth {
   }
 
   /// 初始化SDK
-  static void initSdk(FusionAuthModel? config) {
+  static void initSdk(FusionAuthConfig? config) {
     FusionAuthPlatform.instance.init(config);
   }
 

@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import '../config/fusion_auth_config.dart';
 import './fusion_auth_method_channel.dart';
 import '../model/response_model.dart';
-import '../model/fusion_auth_model.dart';
 
 abstract class FusionAuthPlatform extends PlatformInterface {
   /// Constructs a FusionAuthPlatform.
@@ -30,7 +30,7 @@ abstract class FusionAuthPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  void init(FusionAuthModel? config) {
+  void init(FusionAuthConfig? config) {
     throw UnimplementedError('loginListen() has not been implemented.');
   }
 
