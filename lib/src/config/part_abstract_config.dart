@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../model/fusion_auth_enum.dart';
+
 part 'part_abstract_config.g.dart';
 
 ///一键登录onPhoneNumberVerifyUICustomDefined:templateId:nodeId:UIModel:
@@ -13,6 +15,7 @@ class PartAbstractConfig {
   const PartAbstractConfig({
     this.token,
     required this.schemeCode,
+    this.pageType,
     this.templateId,
     this.logEnable = true,
     this.debugMode = true,
@@ -38,6 +41,8 @@ class PartAbstractConfig {
   /// 方案Code
   /// 可前往该地址获取: https://dypns.console.aliyun.com/fusionSolution/All
   final String? schemeCode;
+
+  final PageType? pageType;
 
   /// 默认登录注册场景 "100001"
   /// 默认更换手机号场景 "100002"

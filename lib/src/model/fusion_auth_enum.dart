@@ -3,6 +3,9 @@ import 'dart:io';
 /// 本机号码校验,一键登录
 enum SdkType { auth, login }
 
+/// 模式选择
+enum DebugMode { simple, normal }
+
 /// ScaleType 可选类型
 enum ScaleType {
   matrix,

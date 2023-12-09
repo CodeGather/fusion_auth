@@ -25,6 +25,7 @@ class FusionAuthConfig extends PartAbstractConfig{
     this.customViewBlockList,
     super.token,
     super.schemeCode,
+    super.pageType,
     super.templateId,
     super.logEnable,
     super.debugMode,
