@@ -1,10 +1,11 @@
-import 'package:fusion_auth/src/config/part_ui_config.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../model/fusion_auth_enum.dart';
 import '../model/view/nav_view_model.dart';
 import '../model/view/sms_send_view_model.dart';
 import '../model/view/sms_view_model.dart';
 import 'part_abstract_config.dart';
+import 'part_ui_config.dart';
 
 part 'fusion_auth_config.g.dart';
 
@@ -60,6 +61,7 @@ class FusionAuthConfig extends PartAbstractConfig{
     return {
       'token': token,
       'schemeCode': schemeCode,
+      'pageType': pageType?.index ?? PageType.fullPort.index,
       'templateId': templateId,
       'logEnable': logEnable,
       'isDelay': isDelay,
