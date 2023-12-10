@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" afterDir="false" />
-    </list>
+    <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
