@@ -50,8 +50,10 @@
   }
   self->common.Result = result;
   
-  if ([@"getPlatformVersion" isEqualToString:call.method]) {
-    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  if ([@"getVersion" isEqualToString:call.method]) {
+    NSString *version = [[AlicomFusionManager shareInstance] getSDKVersion];
+    NSDictionary *dict = @{ @"code": @"500004", @"msg": version };
+    [self->common showResultMsg: dict msg: version];
   } else if ([@"init" isEqualToString:call.method]) {
     // 初始化设置公共参数
     self->common.CONFIG = call.arguments;

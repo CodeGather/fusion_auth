@@ -6,8 +6,8 @@ import './fusion_auth_platform_interface.dart';
 
 class FusionAuth {
   /// 获取版本号
-  Future<String?> getPlatformVersion() {
-    return FusionAuthPlatform.instance.getPlatformVersion();
+  Future<String?> getVersion() {
+    return FusionAuthPlatform.instance.getVersion();
   }
 
   /// 初始化SDK

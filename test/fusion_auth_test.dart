@@ -11,7 +11,7 @@ class MockFusionAuthPlatform
     with MockPlatformInterfaceMixin
     implements FusionAuthPlatform {
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<String?> getVersion() => Future.value('42');
 
   @override
   void init(FusionAuthConfig? config) {
@@ -46,6 +46,6 @@ void main() {
     MockFusionAuthPlatform fakePlatform = MockFusionAuthPlatform();
     FusionAuthPlatform.instance = fakePlatform;
 
-    expect(await fusionAuthPlugin.getPlatformVersion(), '42');
+    expect(await fusionAuthPlugin.getVersion(), '42');
   });
 }

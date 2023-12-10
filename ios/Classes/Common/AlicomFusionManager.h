@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isActive;
 @property(nonatomic, weak) id<AlicomFusionManagerDelegate>delegate;     
 
+- (NSString*)getSDKVersion;
 
 - (void)start;
 

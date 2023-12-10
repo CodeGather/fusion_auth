@@ -5,9 +5,9 @@
 @implementation FusionAuthCommon
 -(void) resultData:(NSDictionary *)dict{
   if (_methodChannel != nil) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      [self->_methodChannel invokeMethod:@"onEvent" arguments:dict];
-//    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self->_methodChannel invokeMethod:@"onEvent" arguments:dict];
+    });
   }
 }
 
@@ -25,7 +25,7 @@
 
 #pragma mark -  格式化数据utils返回数据
 - (void)showResultMsg:(id __nullable)showResult msg: (NSString*)msg {
-  NSString *resultMsg = [NSString stringWithFormat: [FusionAuthEnum initData][[showResult objectForKey:@"code"]], msg]?:@"";
+  NSString *resultMsg = [NSString stringWithFormat: [FusionAuthEnum initData][[showResult objectForKey:@"code"]?:@"-1"], msg]?:@"";
   NSDictionary *dict = @{
       @"code": [NSString stringWithFormat: @"%@", [showResult objectForKey:@"code"]],
       @"msg" : resultMsg,

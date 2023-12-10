@@ -14,6 +14,7 @@
 #import "FusionAuthCommon.h"
 #import "AlicomFusionAuthTokenManager.h"
 #import "AlicomFusionNetAdapter.h"
+#import "AlicomFusionWebViewController.h"
 
 #define TX_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define TX_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
@@ -90,6 +91,11 @@
 
 - (void)stopScene{
     [self.handler stopSceneWithTemplateId:self.currTemplateId];
+}
+
+#pragma mark - 获取SDK版本号
+- (NSString *)getSDKVersion{
+    return [AlicomFusionAuthHandler getSDKVersion];
 }
 
 - (void)initFusionAuth{
@@ -386,16 +392,17 @@
     [self.handler stopSceneWithTemplateId:self.currTemplateId];
 }
 
+#pragma mark - 协议点击回调操作
 - (void)onProtocolClick:(AlicomFusionAuthHandler *)handler protocolName:(NSString *)protocolName protocolUrl:(NSString *)protocolUrl event:(AlicomFusionEvent *)event
 {
     NSLog(@"%s，调用:{\n%@}",__func__,event.description);
-//    AlicomFusionWebViewController *controller = [[AlicomFusionWebViewController alloc] initWithUrl:protocolUrl andUrlName:protocolName];
-//    UINavigationController *navigationController = self.currVC.navigationController;
-//    if (self.currVC.presentedViewController) {
-//        //如果授权页成功拉起，这个时候则需要使用授权页的导航控制器进行跳转
-//        navigationController = (UINavigationController *)self.currVC.presentedViewController;
-//    }
-//    [navigationController pushViewController:controller animated:YES];
+    AlicomFusionWebViewController *controller = [[AlicomFusionWebViewController alloc] initWithUrl:protocolUrl andUrlName:protocolName];
+    UINavigationController *navigationController = self.currVC.navigationController;
+    if (self.currVC.presentedViewController) {
+        //如果授权页成功拉起，这个时候则需要使用授权页的导航控制器进行跳转
+        navigationController = (UINavigationController *)self.currVC.presentedViewController;
+    }
+    [navigationController pushViewController:controller animated:YES];
 }
 
 - (void)onVerifyInterrupt:(AlicomFusionAuthHandler *)handler event:(AlicomFusionEvent *)event {

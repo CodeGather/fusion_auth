@@ -14,9 +14,9 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   final methodChannel = const MethodChannel('fusion_auth');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version =
-        await methodChannel.invokeMethod<String>('getPlatformVersion');
+  Future<String?> getVersion() async {
+    final version = await methodChannel.invokeMethod<String>('getVersion');
+    print(version);
     return version;
   }
 
