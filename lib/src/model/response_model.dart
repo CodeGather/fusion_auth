@@ -8,22 +8,20 @@ part 'response_model.g.dart';
 class ResponseModel {
   const ResponseModel({
     this.resultCode,
-    this.msg,
     this.requestId,
+    this.msg,
     this.token,
-    this.innerMsg,
-    this.innerCode,
+    this.data,
   });
 
   factory ResponseModel.fromJson(Map<String, dynamic> json) =>
       _$ResponseModelFromJson(json);
 
   final String? resultCode;
-  final String? msg;
   final String? requestId;
+  final String? msg;
   final String? token;
-  final String? innerMsg;
-  final String? innerCode;
+  final String? data;
 
   Map<String, dynamic> toJson() => _$ResponseModelToJson(this);
 

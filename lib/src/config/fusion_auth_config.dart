@@ -11,7 +11,7 @@ part 'fusion_auth_config.g.dart';
 
 /// 全局配置
 @JsonSerializable()
-class FusionAuthConfig extends PartAbstractConfig{
+class FusionAuthConfig extends PartAbstractConfig {
   const FusionAuthConfig({
     this.navViewConfig,
     this.smsSendViewConfig,
@@ -57,7 +57,8 @@ class FusionAuthConfig extends PartAbstractConfig{
   Map<String, dynamic> toJson() {
     if (debugMode == true && (token ?? "").isEmpty) {
       assert(false, "DEBUG模式下：token参数为必传");
-    } else if (debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)) {
+    } else if (debugMode == false &&
+        (appServerHost == null || authtokenApi == null || verifyApi == null)) {
       assert(false, "正常模式下：appServerHost、authtokenApi、verifyApi参数为必传");
     }
     return {
@@ -82,7 +83,8 @@ class FusionAuthConfig extends PartAbstractConfig{
       'changeButtonConfig': changeButtonConfig?.toJson(),
       'checkBoxConfig': checkBoxConfig?.toJson(),
       'privacyConfig': privacyConfig?.toJson(),
-      'customViewBlockList': customViewBlockList?.map((e) => e.toJson()).toList(growable: false),
+      'customViewBlockList':
+          customViewBlockList?.map((e) => e.toJson()).toList(growable: false),
     }..removeWhere((key, value) => value == null);
   }
 }

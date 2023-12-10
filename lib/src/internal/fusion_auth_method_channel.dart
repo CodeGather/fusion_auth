@@ -53,4 +53,9 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   void login() {
     methodChannel.invokeMethod<String>('login');
   }
+
+  @override
+  void dispose() {
+    removeHandler();
+  }
 }

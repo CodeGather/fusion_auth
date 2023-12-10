@@ -5,9 +5,7 @@ part 'sms_view_model.g.dart';
 /// 获取验证吗页面配置
 @JsonSerializable()
 class SmsViewModel {
-  const SmsViewModel({
-    this.token
-  });
+  const SmsViewModel({this.token});
 
   factory SmsViewModel.fromJson(Map<String, dynamic> json) =>
       _$SmsViewModelFromJson(json);

@@ -9,19 +9,17 @@ part of 'response_model.dart';
 ResponseModel _$ResponseModelFromJson(Map<String, dynamic> json) =>
     ResponseModel(
       resultCode: json['resultCode'] as String?,
-      msg: json['msg'] as String?,
       requestId: json['requestId'] as String?,
+      msg: json['msg'] as String?,
       token: json['token'] as String?,
-      innerMsg: json['innerMsg'] as String?,
-      innerCode: json['innerCode'] as String?,
+      data: json['data'] as String?,
     );
 
 Map<String, dynamic> _$ResponseModelToJson(ResponseModel instance) =>
     <String, dynamic>{
       'resultCode': instance.resultCode,
-      'msg': instance.msg,
       'requestId': instance.requestId,
+      'msg': instance.msg,
       'token': instance.token,
-      'innerMsg': instance.innerMsg,
-      'innerCode': instance.innerCode,
+      'data': instance.data,
     };

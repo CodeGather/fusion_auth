@@ -63,14 +63,17 @@ class PhoneViewModel {
     this.logBtnLayoutGravity,
     this.protocolOneName,
     this.protocolOneURL,
+
     /// 授权页协议1文本颜色。
     this.protocolOwnOneColor,
     this.protocolTwoName,
     this.protocolTwoURL,
+
     /// 授权页协议2文本颜色。
     this.protocolOwnTwoColor,
     this.protocolThreeName,
     this.protocolThreeURL,
+
     /// 授权页协议3文本颜色。
     this.protocolOwnThreeColor,
     this.protocolColor,
@@ -80,6 +83,7 @@ class PhoneViewModel {
     this.protocolTwoColor,
     this.protocolShakePath,
     this.protocolThreeColor,
+
     /// 授权页运营商协议文本颜色。
     this.protocolOwnColor,
     this.loadingImgPath,
@@ -177,12 +181,16 @@ class PhoneViewModel {
     this.privacyAlertCloseScaleType,
     this.privacyAlertCloseImgWidth,
     this.privacyAlertCloseImgHeight,
+
     /// 授权页协议1文本颜色。
     this.privacyAlertOwnOneColor,
+
     /// 授权页协议2文本颜色。
     this.privacyAlertOwnTwoColor,
+
     /// 授权页协议3文本颜色。
     this.privacyAlertOwnThreeColor,
+
     /// 授权页运营商协议文本颜色。
     this.privacyAlertOperatorColor,
     this.tapPrivacyAlertMaskCloseAlert = true,

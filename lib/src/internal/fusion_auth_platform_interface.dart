@@ -47,4 +47,8 @@ abstract class FusionAuthPlatform extends PlatformInterface {
   void removeHandler() {
     throw UnimplementedError('loginListen() has not been implemented.');
   }
+
+  void dispose() {
+    throw UnimplementedError('loginListen() has not been implemented.');
+  }
 }

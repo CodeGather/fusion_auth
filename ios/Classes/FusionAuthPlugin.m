@@ -52,7 +52,7 @@
   
   if ([@"getVersion" isEqualToString:call.method]) {
     NSString *version = [[AlicomFusionManager shareInstance] getSDKVersion];
-    NSDictionary *dict = @{ @"code": @"500004", @"msg": version };
+    NSDictionary *dict = @{ @"resultCode": @"500004", @"msg": version };
     [self->common showResultMsg: dict msg: version];
   } else if ([@"init" isEqualToString:call.method]) {
     // 初始化设置公共参数

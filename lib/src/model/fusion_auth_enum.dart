@@ -277,7 +277,7 @@ enum AuthResultCode {
 
   factory AuthResultCode.fromCode(String resultCode) {
     return values.firstWhere(
-          (element) => element.code == resultCode,
+      (element) => element.code == resultCode,
       orElse: () => AuthResultCode.unknownError,
     );
   }

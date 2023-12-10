@@ -5,9 +5,7 @@ part 'sms_send_view_model.g.dart';
 /// 发送验证码页面配置
 @JsonSerializable()
 class SmsSendViewModel {
-  const SmsSendViewModel({
-    this.token
-  });
+  const SmsSendViewModel({this.token});
 
   factory SmsSendViewModel.fromJson(Map<String, dynamic> json) =>
       _$SmsSendViewModelFromJson(json);
