@@ -78,4 +78,4 @@ Fusion_auth是基于阿里云号码认证服务中融合认证SDK的Flutter插�
 ## 打赏-技术支持
 | Wechat                                                                                        | Alipay                                                                                        |
 |-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_wechat.jpg "Wechat") | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_alipay.jpg "Alipay") |
+| ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_wechat.png "Wechat") | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_alipay.png "Alipay") |
