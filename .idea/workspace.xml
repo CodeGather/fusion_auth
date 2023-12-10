@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/integration_test/plugin_integration_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/integration_test/plugin_integration_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthEnum.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthEnum.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fusion_auth_method_channel_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_method_channel_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fusion_auth_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
