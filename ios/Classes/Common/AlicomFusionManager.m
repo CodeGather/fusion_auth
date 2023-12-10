@@ -221,7 +221,7 @@
                viewController:[AlicomFusionUtil findCurrentViewController]
     ];
   });
-  NSDictionary *dict = @{ @"code": @"500003", @"msg": @"token鉴权成功" };
+  NSDictionary *dict = @{ @"resultCode": @"500003", @"resultMsg": @"token鉴权成功" };
   [self->common showResultMsg: dict msg:@""];
 }
 
@@ -280,6 +280,7 @@
         [self dealWithPhone:@"18888888888"];
         [AlicomFusionToastTool showToastMsg:@"已获取到最终认证token,快速访问模式下，请到阿里云官网openapi调试 校验结果，Demo默认校验已成功，流程结束，展示为默认手机号码" time:5];
     });
+    [self->common showResultMsg: event msg:@""];
   } else {
     // 2. 正常访问模式
     // 换手机号
@@ -314,9 +315,10 @@
                     }
                 }
             }else{
-                //结束认证
-                [self.handler stopSceneWithTemplateId:self.currTemplateId];
-                [AlicomFusionToastTool showToastMsg:error.userInfo[NSLocalizedDescriptionKey] ?:@"操作失败" time:2];
+              // [self->common showResultMsg: error msg:@""];
+              //结束认证
+              [self.handler stopSceneWithTemplateId:self.currTemplateId];
+              [AlicomFusionToastTool showToastMsg:error.userInfo[NSLocalizedDescriptionKey] ?:@"操作失败" time:2];
             }
         });
     }];
@@ -334,6 +336,7 @@
         [self dealWithPhone:@"18888888888"];
         [AlicomFusionToastTool showToastMsg:@"已获取到最终认证token,快速访问模式下，请到阿里云官网openapi调试 校验结果，Demo默认校验已成功，展示为默认手机号码" time:5];
     });
+    [self->common showResultMsg: event msg:@""];
   } else {
     // 2. 正常访问模式
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -366,26 +369,27 @@
 }
 
 - (void)onVerifyFailed:(AlicomFusionAuthHandler *)handler nodeName:(nonnull NSString *)nodeName error:(nonnull AlicomFusionEvent *)error {
-    NSLog(@"%s，nodeName=%@,调用:{\n%@}",__func__,nodeName,error.description);
-    if ([nodeName isEqualToString:AlicomFusionNodeNameVerifyCodeAuth]) {
-        if ([error.resultCode isEqualToString:AlicomFusionVerifyCodeFrequency] || [error.resultCode isEqualToString:AlicomFusionVerifyCodeRisk]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
-            });
-            [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
-        } else if ([AlicomFusionVerifyCodeAutoNumberShowFail isEqualToString:error.resultCode]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
-            });
-            [self.handler stopSceneWithTemplateId:self.currTemplateId];
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
-            });
-        }
-    } else {
-        [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
-    }
+  [self->common showResultMsg: error msg:@""];
+  NSLog(@"%s，nodeName=%@,调用:{\n%@}",__func__,nodeName,error.description);
+  if ([nodeName isEqualToString:AlicomFusionNodeNameVerifyCodeAuth]) {
+      if ([error.resultCode isEqualToString:AlicomFusionVerifyCodeFrequency] || [error.resultCode isEqualToString:AlicomFusionVerifyCodeRisk]) {
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
+          });
+          [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
+      } else if ([AlicomFusionVerifyCodeAutoNumberShowFail isEqualToString:error.resultCode]) {
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
+          });
+          [self.handler stopSceneWithTemplateId:self.currTemplateId];
+      } else {
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [AlicomFusionToastTool showToastMsg:error.resultMsg time:2];
+          });
+      }
+  } else {
+      [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
+  }
 }
 
 /**
