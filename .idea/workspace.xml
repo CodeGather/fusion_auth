@@ -7,9 +7,8 @@
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/play_al.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/play_alipay.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/play_qq.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/play_wx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/play_wechat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/play_alipay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/play_wechat.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

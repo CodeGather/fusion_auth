@@ -45,6 +45,6 @@
  - ## 注意：iOS只需要输入绑定`Bundle name`即可，Android则需要包名和和签名。[如何获取App的签名](https://help.aliyun.com/document_detail/87870.html) ##
 
 ## 打赏-技术支持
-| Wechat | Alipay |
-| --- | --- | --- |
+| Wechat                                                                                        | Alipay                                                                                        |
+|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_wechat.jpg "Wechat") | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_alipay.jpg "Alipay") |
