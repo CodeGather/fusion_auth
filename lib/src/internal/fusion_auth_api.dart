@@ -22,7 +22,7 @@ class FusionAuth {
 
   /// 初始化SDK
   static void initSdk(FusionAuthConfig? config) {
-    FusionAuthPlatform.instance.init(config);
+    FusionAuthPlatform.instance.initSdk(config);
   }
 
   /// 直接登录

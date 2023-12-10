@@ -44,9 +44,9 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   }
 
   @override
-  void init(FusionAuthConfig? config) {
+  void initSdk(FusionAuthConfig? config) {
     config ??= FusionAuthConfig.fromJson({});
-    methodChannel.invokeMethod("init", config.toJson());
+    methodChannel.invokeMethod("initSdk", config.toJson());
   }
 
   @override
@@ -57,5 +57,6 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   @override
   void dispose() {
     removeHandler();
+    methodChannel.invokeMethod<String>('dispose');
   }
 }

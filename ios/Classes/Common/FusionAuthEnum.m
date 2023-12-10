@@ -12,7 +12,6 @@ static NSDictionary * StatusAll = nil;
 + (NSDictionary *)initData {
   if (StatusAll == nil) {
     StatusAll = @{
-        @"-1": @"获取参数值失败",
         @"500000": @"参数获取异常！",
         @"500001": @"密钥不能为空, 请先检查密钥是否设置！",
         @"500002": @"校验成功，可进行一键登录！",

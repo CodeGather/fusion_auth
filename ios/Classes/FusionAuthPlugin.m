@@ -27,7 +27,7 @@
 
 
 #pragma mark - 测试联网阿里授权必须
-+(void)httpAuthority{
+-(void)httpAuthority{
   NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/"];//此处修改为自己公司的服务器地址
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   NSURLSession *session = [NSURLSession sharedSession];
@@ -52,9 +52,15 @@
   
   if ([@"getVersion" isEqualToString:call.method]) {
     NSString *version = [[AlicomFusionManager shareInstance] getSDKVersion];
-    NSDictionary *dict = @{ @"resultCode": @"500004", @"msg": version };
-    [self->common showResultMsg: dict msg: version];
-  } else if ([@"init" isEqualToString:call.method]) {
+    NSDictionary *dict = @{ 
+      @"resultCode": @"500004",
+      @"resultMsg": [
+        NSString
+        stringWithFormat: @"插件启动成功, 原生SDK版本: %@", version
+      ]
+     };
+    [self->common showResultMsg: dict msg: @""];
+  } else if ([@"initSdk" isEqualToString:call.method]) {
     // 初始化设置公共参数
     self->common.CONFIG = call.arguments;
     // 是否是快速模式
@@ -76,7 +82,11 @@
     self->common.DEBUG_MODE = true;
     // 开始登录
     [self startLogin];
-  } else {
+  } else if ([@"updateToken" isEqualToString:call.method]) {
+    [[AlicomFusionManager shareInstance] updateToken: [call.arguments stringValueForKey: @"token" defaultValue: @""]];
+  } else if ([@"dispose" isEqualToString:call.method]) {
+    [[AlicomFusionManager shareInstance] destory];
+  } else  {
     result(FlutterMethodNotImplemented);
   }
 }

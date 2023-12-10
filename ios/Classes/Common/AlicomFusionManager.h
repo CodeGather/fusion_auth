@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startSceneWithTemplateId:(NSString *)templateId viewController:(UIViewController *)controller;
 
+- (void)updateToken: (NSString *)tokenStr;
+
 - (void)continueScane;
 
 - (void)stopScene;

@@ -48,7 +48,7 @@
 }
 
 - (void)destory {
-//    [self.handler destroy];
+    [self.handler destroy];
     self.handler = nil;
     self.isActive = NO;
 }
@@ -79,18 +79,30 @@
   }
 }
 
+#pragma mark - 开始场景
 - (void)startSceneWithTemplateId:(NSString *)templateId viewController:(UIViewController *)controller{
     self.currTemplateId = templateId;
     self.currVC = controller;
     [self.handler startSceneUIWithTemplateId:self.currTemplateId viewController:controller delegate:self];
 }
 
+#pragma mark - 继续场景
 - (void)continueScane{
   [self.handler continueSceneWithTemplateId:self.currTemplateId isSuccess:NO];
 }
 
+#pragma mark - 结束场景
 - (void)stopScene{
     [self.handler stopSceneWithTemplateId:self.currTemplateId];
+}
+
+#pragma mark - 主动更新Token
+/**
+ * 此方法为用户主动更新Token，Token相关鉴权及更新逻辑参考initWithToken中的Token逻辑。
+ */
+- (void)updateToken: (NSString *)tokenStr{
+  AlicomFusionAuthToken *token = [[AlicomFusionAuthToken alloc] initWithTokenStr:tokenStr];
+  [self.handler updateToken:token];
 }
 
 #pragma mark - 获取SDK版本号
@@ -191,9 +203,7 @@
  */
 - (void)onAuthEvent:(AlicomFusionAuthHandler *)handler
           eventData:(AlicomFusionEvent *)event {
-    NSLog(@"%s，调用:{\n%@}",__func__,event.description);
-    NSDictionary *dict = @{ @"code": @"500004", @"msg": event.description };
-    [self->common showResultMsg: dict msg:@""];
+    [self->common showResultMsg: event msg:@""];
 }
 
 /**
@@ -229,9 +239,7 @@
     NSLog(@"%s，调用:{\n%@}",__func__,error.description);
   if (self->common.DEBUG_MODE) {
     // 1. 快速访问模式
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [AlicomFusionToastTool showToastMsg:@"鉴权失败，您填入的快速鉴权token有误，请重新获取" time:10];
-    });
+    [self->common showResultMsg: error msg:@""];
   } else {
     // 2. 正常访问模式
     self.isActive = NO;
@@ -242,7 +250,7 @@
         self.reGetTime --;
     } else {
         self.reGetTime = 3;
-//        [self.handler destroy];
+        [self.handler destroy];
         self.handler = nil;
         [AlicomFusionAuthTokenManager shareInstance].authTokenStr = nil;
         return;

@@ -16,14 +16,19 @@
 
 #pragma mark -  格式化数据utils返回数据
 - (void)showResultMsg:(id __nullable)showResult msg: (NSString*)msg {
-  NSString *resultMsg = [NSString stringWithFormat: [FusionAuthEnum initData][[showResult objectForKey:@"resultCode"]?:@"-1"], msg]?:@"";
-  NSDictionary *dict = @{
-      @"resultCode": [NSString stringWithFormat: @"%@", [showResult objectForKey:@"resultCode"]],
-      @"msg" : resultMsg,
-      @"data" : [showResult objectForKey: @"token"]?:@""
-  };
-
-  [self resultData: dict];
+  NSString *resultCode = [showResult objectForKey:@"resultCode"];
+  if (resultCode != nil) {
+    NSString *resultMsg = [FusionAuthEnum initData][resultCode?:@""];
+//    if (resultMsg != nil) {
+//      NSString *resultNewMsg = [
+//        NSString
+//        stringWithFormat: resultMsg, msg
+//      ]?:@"";
+//      [showResult setValue: resultNewMsg forKey: @"resultMsg"];
+//    }
+  }
+  
+  [self resultData: showResult];
   [self showResultLog: showResult];
 }
 
