@@ -32,6 +32,11 @@ class MockFusionAuthPlatform
   void handleEvent({required AsyncValueSetter<ResponseModel> onEvent}) {
     // TODO: implement handleEvent
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+  }
 }
 
 void main() {
