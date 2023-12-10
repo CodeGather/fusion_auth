@@ -9,23 +9,14 @@
 [![GitHub size](https://img.shields.io/github/repo-size/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth)
 [![GitHub release](https://img.shields.io/github/v/release/CodeGather/fusion_auth?style=social)](https://github.com/CodeGather/fusion_auth/releases)
 
-## 名称 Fusion_auth
-
-基于阿里云号码认证服务中融合认证SDK的Flutter插件 **请注意如遇问题请先下载源码跑DEMO，如果还是有问题，请提issues**, 
-
-## 插件
-
-|    platform  | support  |                                          version                                          |
-| :------:|:----:|:-----------------------------------------------------------------------------------------:|
-| Android  | YES | [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-android-client-access-3) |
-| Ios      | YES |   [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-ios-client-access-3)   |
-
 ## 目录
-* [效果图](#效果图-)
+* [插件名称](#插件名称)
+* [插件版本](#插件版本)
+* [效果图](#效果图)
     * [IOS](#IOS)
     * [Android](#Android)
-* [准备工作](#准备工作-)
-* [原生SDK代码调用顺序](##先了解原生sdk代码调用顺序-)
+* [准备工作](#准备工作)
+* [原生SDK代码调用顺序](##先了解原生sdk代码调用顺序)
 * [插件使用](#插件使用)
     * [添加监听](#1-添加监听)
     * [初始化SDK配置密钥与UI](#2初始化sdk-initsdk)
@@ -35,14 +26,43 @@
 * [注意事项](#注意事项)
 * [打赏-技术支持](#打赏-技术支持)
 
+
+## 插件名称
+
+Fusion_auth是基于阿里云号码认证服务中融合认证SDK的Flutter插件 **请注意如遇问题请先下载源码跑DEMO，如果还是有问题，请提issues**,
+
+## 插件版本
+
+| platform | support |                                          version                                          |
+|:--------:|:-------:|:-----------------------------------------------------------------------------------------:|
+| Android  |   YES   | [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-android-client-access-3) |
+|   Ios    |   YES   |   [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-ios-client-access-3)   |
+
+## 效果图
+
+### IOS
+
+| 全屏                      | 底部弹窗               | 中间弹窗                   |
+|-------------------------|--------------------|------------------------|
+| ![]( "full_screen_ios") | ![]( "dialog_ios") | ![]( "bottomShot_ios") |
+
+### Android
+
+| 全屏                          | 底部弹窗                   | 中间弹窗                       |
+|-----------------------------|------------------------|----------------------------|
+| ![]( "full_screen_android") | ![]( "dialog_android") | ![]( "bottomShot_android") |
+
+
 ## 准备工作
 
  - 请登录阿里云控制台 [号码认证服务->融合认证](https://dypns.console.aliyun.com/fusionSolution/All)
  - 开通融合认证服务
  - 创建认证方案 分别添IOS和Android的认证方案，分别获取到方案Code。
- - 添加短信模版、签名
-
- - ## 注意：iOS只需要输入绑定`Bundle name`即可，Android则需要包名和和签名。[如何获取App的签名](https://help.aliyun.com/document_detail/87870.html) ##
+   - IOS只需要输入绑定`Bundle name`即可，
+   - Android则需要包名和和签名。[如何获取App的签名](https://help.aliyun.com/document_detail/87870.html) 
+ - 添加短信模版、签名 (** 注意如果认证策略没有添加短信可以不添加 **)
+   - [添加短信签名](https://dysms.console.aliyun.com/domestic/text/sign/add) 
+   - [添加短信模版](https://dysms.console.aliyun.com/domestic/text/template/add) 
 
 ## 打赏-技术支持
 | Wechat                                                                                        | Alipay                                                                                        |
