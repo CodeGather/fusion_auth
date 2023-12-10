@@ -418,7 +418,7 @@
  */
 - (NSString *)onGetPhoneNumberForVerification:(AlicomFusionAuthHandler *)handler
                                         event:(nonnull AlicomFusionEvent *)event {
-  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+//  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   NSString *phoneNum = @"";//[ud objectForKey:kDEMO_UD_PHONE_NUM];
   return phoneNum;
 }

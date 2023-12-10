@@ -51,8 +51,9 @@ FusionAuthConfig _$FusionAuthConfigFromJson(Map<String, dynamic> json) =>
           .toList(),
       token: json['token'] as String?,
       schemeCode: json['schemeCode'] as String?,
+      pageType: $enumDecodeNullable(_$PageTypeEnumMap, json['pageType']),
       templateId: json['templateId'] as String?,
-      logEnable: json['logEnable'] as bool? ?? true,
+      logEnable: json['logEnable'] as bool? ?? false,
       debugMode: json['debugMode'] as bool? ?? true,
       isDelay: json['isDelay'] as bool? ?? false,
       appServerHost: json['appServerHost'] as String?,
@@ -65,6 +66,7 @@ Map<String, dynamic> _$FusionAuthConfigToJson(FusionAuthConfig instance) =>
     <String, dynamic>{
       'token': instance.token,
       'schemeCode': instance.schemeCode,
+      'pageType': _$PageTypeEnumMap[instance.pageType],
       'templateId': instance.templateId,
       'logEnable': instance.logEnable,
       'isDelay': instance.isDelay,
@@ -85,3 +87,16 @@ Map<String, dynamic> _$FusionAuthConfigToJson(FusionAuthConfig instance) =>
       'privacyConfig': instance.privacyConfig,
       'customViewBlockList': instance.customViewBlockList,
     };
+
+const _$PageTypeEnumMap = {
+  PageType.fullPort: 'fullPort',
+  PageType.fullLand: 'fullLand',
+  PageType.dialogPort: 'dialogPort',
+  PageType.dialogLand: 'dialogLand',
+  PageType.dialogBottom: 'dialogBottom',
+  PageType.customView: 'customView',
+  PageType.customXml: 'customXml',
+  PageType.customGif: 'customGif',
+  PageType.customMOV: 'customMOV',
+  PageType.customPIC: 'customPIC',
+};

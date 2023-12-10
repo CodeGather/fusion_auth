@@ -35,11 +35,8 @@ class FusionAuthConfig extends PartAbstractConfig{
     super.authtokenApi,
     super.verifyApi,
     super.tokenExpirTime,
-  })  : assert(debugMode == true && (token == null || token == "")),
-        assert(debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)),
-        assert(schemeCode == null),
-        assert(templateId == null),
-        assert(isDelay != null);
+  })  : assert(schemeCode != null, "方案号不能为空"),
+        assert(templateId != null, "场景ID不能为空");
 
   factory FusionAuthConfig.fromJson(Map<String, dynamic> json) =>
       _$FusionAuthConfigFromJson(json);
@@ -58,6 +55,11 @@ class FusionAuthConfig extends PartAbstractConfig{
 
   @override
   Map<String, dynamic> toJson() {
+    if (debugMode == true && (token ?? "").isEmpty) {
+      assert(false, "DEBUG模式下：token参数为必传");
+    } else if (debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)) {
+      assert(false, "正常模式下：appServerHost、authtokenApi、verifyApi参数为必传");
+    }
     return {
       'token': token,
       'schemeCode': schemeCode,

@@ -15,20 +15,17 @@ class PartAbstractConfig {
   const PartAbstractConfig({
     this.token,
     required this.schemeCode,
-    this.pageType,
-    this.templateId,
-    this.logEnable = true,
+    required this.pageType,
+    required this.templateId,
+    this.logEnable = false,
     this.debugMode = true,
     this.isDelay = false,
     this.appServerHost,
     this.authtokenApi,
     this.verifyApi,
     this.tokenExpirTime = 20,
-  })  : assert(debugMode == true && (token == null || token == "")),
-        assert(debugMode == false && (appServerHost == null || authtokenApi == null || verifyApi == null)),
-        assert(schemeCode == null),
-        assert(templateId == null),
-        assert(isDelay != null);
+  })  : assert(schemeCode != "", "方案号不能为空"),
+        assert(templateId != "", "场景ID不能为空");
 
   factory PartAbstractConfig.fromJson(Map<String, dynamic> json) =>
       _$PartAbstractConfigFromJson(json);
