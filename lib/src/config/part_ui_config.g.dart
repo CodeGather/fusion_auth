@@ -213,6 +213,7 @@ Map<String, dynamic> _$ChangeButtonConfigToJson(ChangeButtonConfig instance) =>
 
 CheckBoxConfig _$CheckBoxConfigFromJson(Map<String, dynamic> json) =>
     CheckBoxConfig(
+      checkBoxVerticalCenter: json['checkBoxVerticalCenter'] as bool?,
       checkBoxIsChecked: json['checkBoxIsChecked'] as bool?,
       checkBoxIsHidden: json['checkBoxIsHidden'] as bool?,
       checkedImage: json['checkedImage'] as String?,
@@ -222,6 +223,7 @@ CheckBoxConfig _$CheckBoxConfigFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$CheckBoxConfigToJson(CheckBoxConfig instance) =>
     <String, dynamic>{
+      'checkBoxVerticalCenter': instance.checkBoxVerticalCenter,
       'checkBoxIsChecked': instance.checkBoxIsChecked,
       'checkBoxIsHidden': instance.checkBoxIsHidden,
       'checkedImage': instance.checkedImage,

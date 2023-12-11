@@ -284,6 +284,7 @@ class ChangeButtonConfig {
 @JsonSerializable()
 class CheckBoxConfig {
   const CheckBoxConfig({
+    this.checkBoxVerticalCenter,
     this.checkBoxIsChecked,
     this.checkBoxIsHidden,
     this.checkedImage,
@@ -294,7 +295,13 @@ class CheckBoxConfig {
   factory CheckBoxConfig.fromJson(Map<String, dynamic> json) =>
       _$CheckBoxConfigFromJson(json);
 
+  /// checkBox是否和协议内容垂直居中，默认NO，即顶部对齐
+  final bool? checkBoxVerticalCenter;
+
+  /// checkBox是否勾选，默认NO
   final bool? checkBoxIsChecked;
+
+  /// checkBox是否隐藏，默认NO
   final bool? checkBoxIsHidden;
   final String? checkedImage;
   final String? uncheckImage;

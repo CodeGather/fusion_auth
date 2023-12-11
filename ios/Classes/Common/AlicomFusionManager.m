@@ -573,32 +573,47 @@
         return rect;
     };
   }
+  #pragma mark- 选中框
+  NSDictionary *checkBox = [dict dictValueForKey: @"checkBoxConfig" defaultValue: nil];
+  if (checkBox != nil) {
+    model.checkBoxIsHidden = [checkBox boolValueForKey: @"checkboxHidden" defaultValue: NO];
+    model.checkBoxIsChecked = [checkBox boolValueForKey: @"checkBoxIsChecked" defaultValue: NO];
+    model.checkBoxWH = [checkBox intValueForKey: @"checkBoxWidth" defaultValue: 21];
+    model.checkBoxVerticalCenter = [checkBox boolValueForKey: @"checkBoxVerticalCenter" defaultValue: NO];
+    UIImage * uncheckImage = [AlicomFusionUtil changeUriPathToImage: [checkBox stringValueForKey: @"uncheckImage" defaultValue: nil]];
+    UIImage * checkedImage = [AlicomFusionUtil changeUriPathToImage: [checkBox stringValueForKey: @"checkedImage" defaultValue: nil]];
+    if (uncheckImage != nil && checkedImage != nil) {
+      model.checkBoxImages = @[uncheckImage, checkedImage];
+    }
+  }
   
   #pragma mark- 协议
   NSDictionary *privacy = [dict dictValueForKey: @"privacyConfig" defaultValue: nil];
   if (privacy != nil) {
-    model.checkBoxIsHidden = [dict boolValueForKey: @"checkboxHidden" defaultValue: NO];
-    model.checkBoxIsChecked = [dict boolValueForKey: @"checkBoxIsChecked" defaultValue: NO];
-    model.checkBoxWH = [dict intValueForKey: @"checkBoxWidth" defaultValue: 21];
-    
     model.privacyOperatorIndex = [privacy intValueForKey: @"privacyOperatorIndex" defaultValue: 2];
     model.privacyOne = @[
-      [privacy stringValueForKey: @"protocolOneName" defaultValue: @"用户协议"],
-      [privacy stringValueForKey: @"protocolOneURL" defaultValue: @""]
+      [privacy stringValueForKey: @"privacyOneName" defaultValue: @"用户协议"],
+      [privacy stringValueForKey: @"privacyOneUrl" defaultValue: @""]
     ];
     model.privacyTwo = @[
-      [privacy stringValueForKey: @"protocolTwoName" defaultValue: @"个人信息保护政策"],
-      [privacy stringValueForKey: @"protocolTwoURL" defaultValue: @""]
+      [privacy stringValueForKey: @"privacyTwoName" defaultValue: @"个人信息保护政策"],
+      [privacy stringValueForKey: @"privacyTwoUrl" defaultValue: @""]
     ];
+    model.privacyThree = @[
+      [privacy stringValueForKey: @"privacyThreeName" defaultValue: @""],
+      [privacy stringValueForKey: @"privacyThreeUrl" defaultValue: @""]
+    ];
+    
     model.privacyConectTexts = @[@"、",@" 和 "];
     // 前置文案
-    model.privacyPreText = [privacy stringValueForKey: @"privacyBefore" defaultValue: @"我已阅读并同意 "];
+    model.privacyPreText = [privacy stringValueForKey: @"privacyPreText" defaultValue: @""];
     // 后置文案
-    model.privacySufText = [privacy stringValueForKey: @"privacyEnd" defaultValue: @""];
+    model.privacySufText = [privacy stringValueForKey: @"privacySufText" defaultValue: @""];
     // 设置运营商协议前缀符号，只能设置一个字符<、(、《、【、『、[、（中的一个
-    model.privacyOperatorPreText = [privacy stringValueForKey: @"vendorPrivacyPrefix" defaultValue: @""];
+    model.privacyOperatorPreText = [privacy stringValueForKey: @"privacyOperatorPreText" defaultValue: @""];
     // 设置运营商协议后缀符号，只能设置一个字符>、)、》、】、』、]、）中的一个
-    model.privacyOperatorSufText = [privacy stringValueForKey: @"vendorPrivacySuffix" defaultValue: @""];
+    model.privacyOperatorSufText = [privacy stringValueForKey: @"privacyOperatorSufText" defaultValue: @""];
+    
     model.privacyColors = @[
       [UIColor getColor:@"#262626"],
       [UIColor getColor:@"#262626"]
