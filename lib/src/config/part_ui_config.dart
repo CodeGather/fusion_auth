@@ -14,6 +14,9 @@ class BackgroundConfig {
     this.backgroundImageContentMode,
   });
 
+  factory BackgroundConfig.fromJson(Map<String, dynamic> json) =>
+      _$BackgroundConfigFromJson(json);
+
   /// 授权页背景色
   final String? backgroundColor;
   /// 授权页背景图片
@@ -30,6 +33,9 @@ class NavStatusBarConfig {
     this.prefersStatusBarHidden,
     this.preferredStatusBarStyle,
   });
+
+  factory NavStatusBarConfig.fromJson(Map<String, dynamic> json) =>
+      _$NavStatusBarConfigFromJson(json);
 
   /// 状态栏是否隐藏，默认NO
   final bool? prefersStatusBarHidden;
@@ -54,6 +60,9 @@ class NavConfig {
     this.navBackButtonOffsetX,
     this.navBackButtonOffsetY,
   });
+
+  factory NavConfig.fromJson(Map<String, dynamic> json) =>
+      _$NavConfigFromJson(json);
 
   final bool? navIsHidden;
   final String? navTitle;
@@ -85,6 +94,9 @@ class AlertTitleBarConfig {
     this.alertCloseImageOffsetX,
   });
 
+  factory AlertTitleBarConfig.fromJson(Map<String, dynamic> json) =>
+      _$AlertTitleBarConfigFromJson(json);
+
   final bool? alertBarIsHidden;
   final bool? alertCloseItemIsHidden;
   final String? alertTitleBarColor;
@@ -112,6 +124,9 @@ class LogoConfig {
     this.logoFrameOffsetY,
   });
 
+  factory LogoConfig.fromJson(Map<String, dynamic> json) =>
+      _$LogoConfigFromJson(json);
+
   ///  logo是否隐藏，默认NO
   final bool logoIsHidden;
   /// logo图片路径
@@ -120,9 +135,6 @@ class LogoConfig {
   final double? logoHeight;
   final double? logoFrameOffsetX;
   final double? logoFrameOffsetY;
-
-  factory LogoConfig.fromJson(Map<String, dynamic> json) =>
-      _$LogoConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$LogoConfigToJson(this);
 
@@ -144,6 +156,9 @@ class SloganConfig {
     this.sloganFrameOffsetY,
   });
 
+  factory SloganConfig.fromJson(Map<String, dynamic> json) =>
+      _$SloganConfigFromJson(json);
+
   /// slogan是否隐藏，默认NO
   final bool? sloganIsHidden;
   final String? sloganText;
@@ -151,9 +166,6 @@ class SloganConfig {
   final int? sloganTextSize;
   final double? sloganFrameOffsetX;
   final double? sloganFrameOffsetY;
-
-  factory SloganConfig.fromJson(Map<String, dynamic> json) =>
-      _$SloganConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$SloganConfigToJson(this);
 
@@ -173,14 +185,14 @@ class PhoneNumberConfig {
     this.numberFrameOffsetY,
   });
 
+  factory PhoneNumberConfig.fromJson(Map<String, dynamic> json) =>
+      _$PhoneNumberConfigFromJson(json);
+
   /// 号码颜色设置
   final String? numberColor;
   final int? numberFontSize;
   final double? numberFrameOffsetX;
   final double? numberFrameOffsetY;
-
-  factory PhoneNumberConfig.fromJson(Map<String, dynamic> json) =>
-      _$PhoneNumberConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$PhoneNumberConfigToJson(this);
 
@@ -206,6 +218,9 @@ class LoginButtonConfig {
     this.loginBtnHeight,
   });
 
+  factory LoginButtonConfig.fromJson(Map<String, dynamic> json) =>
+      _$LoginButtonConfigFromJson(json);
+
   final String? loginBtnText;
   final String? loginBtnTextColor;
   final int? loginBtnTextSize;
@@ -227,9 +242,6 @@ class LoginButtonConfig {
   /// 默认高度50.0pt 小于20.0pt不生效
   final double? loginBtnHeight;
 
-  factory LoginButtonConfig.fromJson(Map<String, dynamic> json) =>
-      _$LoginButtonConfigFromJson(json);
-
   Map<String, dynamic> toJson() => _$LoginButtonConfigToJson(this);
 
   @override
@@ -250,15 +262,15 @@ class ChangeButtonConfig {
     this.changeBtnFrameOffsetY,
   });
 
+  factory ChangeButtonConfig.fromJson(Map<String, dynamic> json) =>
+      _$ChangeButtonConfigFromJson(json);
+
   final bool? changeBtnIsHidden;
   final String? changeBtnTitle;
   final String? changeBtnTextColor;
   final int? changeBtnTextSize;
   final double? changeBtnFrameOffsetX;
   final double? changeBtnFrameOffsetY;
-
-  factory ChangeButtonConfig.fromJson(Map<String, dynamic> json) =>
-      _$ChangeButtonConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$ChangeButtonConfigToJson(this);
 
@@ -279,14 +291,14 @@ class CheckBoxConfig {
     this.checkBoxWH,
   });
 
+  factory CheckBoxConfig.fromJson(Map<String, dynamic> json) =>
+      _$CheckBoxConfigFromJson(json);
+
   final bool? checkBoxIsChecked;
   final bool? checkBoxIsHidden;
   final String? checkedImage;
   final String? uncheckImage;
   final double? checkBoxWH;
-
-  factory CheckBoxConfig.fromJson(Map<String, dynamic> json) =>
-      _$CheckBoxConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$CheckBoxConfigToJson(this);
 
@@ -317,6 +329,9 @@ class PrivacyConfig {
     this.privacyTwoUrl,
   });
 
+  factory PrivacyConfig.fromJson(Map<String, dynamic> json) =>
+      _$PrivacyConfigFromJson(json);
+
   final String? privacyOneName;
   final String? privacyOneUrl;
   final String? privacyTwoName;
@@ -345,9 +360,6 @@ class PrivacyConfig {
   /// 运营商协议指定显示顺序，默认0，即第1个协议显示，最大值可为3，即第4个协议显示
   final int? privacyOperatorIndex;
 
-  factory PrivacyConfig.fromJson(Map<String, dynamic> json) =>
-      _$PrivacyConfigFromJson(json);
-
   Map<String, dynamic> toJson() => _$PrivacyConfigToJson(this);
 
   @override
@@ -372,6 +384,9 @@ class CustomViewBlock {
     this.image,
   });
 
+  factory CustomViewBlock.fromJson(Map<String, dynamic> json) =>
+      _$CustomViewBlockFromJson(json);
+
   /// 用于回调时候判断返回的 id 判断
   final int viewId;
   final String? text;
@@ -384,9 +399,6 @@ class CustomViewBlock {
   final double width;
   final double height;
   final bool enableTap;
-
-  factory CustomViewBlock.fromJson(Map<String, dynamic> json) =>
-      _$CustomViewBlockFromJson(json);
 
   Map<String, dynamic> toJson() => _$CustomViewBlockToJson(this);
 
