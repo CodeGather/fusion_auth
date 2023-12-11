@@ -24,10 +24,24 @@ public class FusionAuthPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals("getPlatformVersion")) {
-      result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
-      result.notImplemented();
+    switch (call.method){
+      case "getVersion":
+        result.success("Android " + android.os.Build.VERSION.RELEASE);
+        break;
+      case "initSdk":
+        result.success("Android1 " + android.os.Build.VERSION.RELEASE);
+        break;
+      case "login":
+        result.success("Android2 " + android.os.Build.VERSION.RELEASE);
+        break;
+      case "updateToken":
+        result.success("Android3 " + android.os.Build.VERSION.RELEASE);
+        break;
+      case "dispose":
+        result.success("Android4 " + android.os.Build.VERSION.RELEASE);
+        break;
+      default:
+        result.notImplemented();
     }
   }
 
