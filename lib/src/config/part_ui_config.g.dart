@@ -6,6 +6,50 @@ part of 'part_ui_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+BackgroundConfig _$BackgroundConfigFromJson(Map<String, dynamic> json) =>
+    BackgroundConfig(
+      backgroundColor: json['backgroundColor'] as String?,
+      backgroundImage: json['backgroundImage'] as String?,
+      backgroundImageContentMode: $enumDecodeNullable(
+          _$ImageContentModeEnumMap, json['backgroundImageContentMode']),
+    );
+
+Map<String, dynamic> _$BackgroundConfigToJson(BackgroundConfig instance) =>
+    <String, dynamic>{
+      'backgroundColor': instance.backgroundColor,
+      'backgroundImage': instance.backgroundImage,
+      'backgroundImageContentMode':
+          _$ImageContentModeEnumMap[instance.backgroundImageContentMode],
+    };
+
+const _$ImageContentModeEnumMap = {
+  ImageContentMode.scaleToFill: 'scaleToFill',
+  ImageContentMode.scaleAspectFit: 'scaleAspectFit',
+  ImageContentMode.scaleAspectFill: 'scaleAspectFill',
+  ImageContentMode.redraw: 'redraw',
+  ImageContentMode.center: 'center',
+  ImageContentMode.top: 'top',
+  ImageContentMode.bottom: 'bottom',
+  ImageContentMode.left: 'left',
+  ImageContentMode.right: 'right',
+  ImageContentMode.topLeft: 'topLeft',
+  ImageContentMode.topRight: 'topRight',
+  ImageContentMode.bottomLeft: 'bottomLeft',
+  ImageContentMode.bottomRight: 'bottomRight',
+};
+
+NavStatusBarConfig _$NavStatusBarConfigFromJson(Map<String, dynamic> json) =>
+    NavStatusBarConfig(
+      prefersStatusBarHidden: json['prefersStatusBarHidden'] as bool?,
+      preferredStatusBarStyle: json['preferredStatusBarStyle'] as String?,
+    );
+
+Map<String, dynamic> _$NavStatusBarConfigToJson(NavStatusBarConfig instance) =>
+    <String, dynamic>{
+      'prefersStatusBarHidden': instance.prefersStatusBarHidden,
+      'preferredStatusBarStyle': instance.preferredStatusBarStyle,
+    };
+
 NavConfig _$NavConfigFromJson(Map<String, dynamic> json) => NavConfig(
       navIsHidden: json['navIsHidden'] as bool?,
       navTitle: json['navTitle'] as String?,

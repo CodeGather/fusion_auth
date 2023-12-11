@@ -6,6 +6,7 @@ import '../model/view/sms_send_view_model.dart';
 import '../model/view/sms_view_model.dart';
 import 'part_abstract_config.dart';
 import 'part_ui_config.dart';
+import 'privacy_alert_ui_config.dart';
 
 part 'fusion_auth_config.g.dart';
 
@@ -13,6 +14,8 @@ part 'fusion_auth_config.g.dart';
 @JsonSerializable()
 class FusionAuthConfig extends PartAbstractConfig {
   const FusionAuthConfig({
+    this.navStatusBarConfig,
+    this.backgroundConfig,
     this.navViewConfig,
     this.smsSendViewConfig,
     this.smsViewConfig,
@@ -23,6 +26,7 @@ class FusionAuthConfig extends PartAbstractConfig {
     this.changeButtonConfig,
     this.checkBoxConfig,
     this.privacyConfig,
+    this.privacyAlertConfig,
     this.customViewBlockList,
     super.token,
     super.schemeCode,
@@ -41,6 +45,8 @@ class FusionAuthConfig extends PartAbstractConfig {
   factory FusionAuthConfig.fromJson(Map<String, dynamic> json) =>
       _$FusionAuthConfigFromJson(json);
 
+  final NavStatusBarConfig? navStatusBarConfig;
+  final BackgroundConfig? backgroundConfig;
   final NavViewModel? navViewConfig;
   final SmsSendViewModel? smsSendViewConfig;
   final SmsViewModel? smsViewConfig;
@@ -51,6 +57,8 @@ class FusionAuthConfig extends PartAbstractConfig {
   final ChangeButtonConfig? changeButtonConfig;
   final CheckBoxConfig? checkBoxConfig;
   final PrivacyConfig? privacyConfig;
+  /// 二次隐私协议弹窗设置
+  final PrivacyAlertConfig? privacyAlertConfig;
   final List<CustomViewBlock>? customViewBlockList;
 
   @override

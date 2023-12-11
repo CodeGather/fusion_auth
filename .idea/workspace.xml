@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/flutter.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/flutter.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthCommon.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthCommon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAutnCommon.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fusion_auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fusion_auth.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/part_ui_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/part_ui_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/part_ui_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/part_ui_config.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view/sms_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view/sms_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release.md" beforeDir="false" afterPath="$PROJECT_DIR$/release.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +60,15 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/screenshots" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/config" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/config" />
       <recent name="$PROJECT_DIR$/screenshots" />
       <recent name="$PROJECT_DIR$/ios/Classes/Common" />
-      <recent name="$PROJECT_DIR$/lib/src/config" />
       <recent name="$PROJECT_DIR$/lib/src/model" />
       <recent name="$PROJECT_DIR$" />
     </key>

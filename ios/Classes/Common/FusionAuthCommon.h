@@ -12,7 +12,7 @@
 
 + (instancetype _Nullable )shareInstance;
 
-- (void) resultData:(NSDictionary *_Nullable)dict;
+- (void)resultData:(NSDictionary *_Nullable)dict;
 - (void)showResultLog:(id __nullable)showResult;
 - (void)showResultMsg:(id __nullable)showResult msg: (NSString*_Nullable)msg;
 

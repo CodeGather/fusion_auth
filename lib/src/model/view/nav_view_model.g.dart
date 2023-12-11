@@ -7,6 +7,7 @@ part of 'nav_view_model.dart';
 // **************************************************************************
 
 NavViewModel _$NavViewModelFromJson(Map<String, dynamic> json) => NavViewModel(
+      title: json['title'] as String?,
       isHidden: json['isHidden'] as bool?,
       backgroundColor: json['backgroundColor'] as String?,
       textFontSize: json['textFontSize'] as int?,
@@ -17,6 +18,7 @@ NavViewModel _$NavViewModelFromJson(Map<String, dynamic> json) => NavViewModel(
 
 Map<String, dynamic> _$NavViewModelToJson(NavViewModel instance) =>
     <String, dynamic>{
+      'title': instance.title,
       'isHidden': instance.isHidden,
       'backgroundColor': instance.backgroundColor,
       'textFontSize': instance.textFontSize,

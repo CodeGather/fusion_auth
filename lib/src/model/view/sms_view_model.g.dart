@@ -7,10 +7,10 @@ part of 'sms_view_model.dart';
 // **************************************************************************
 
 SmsViewModel _$SmsViewModelFromJson(Map<String, dynamic> json) => SmsViewModel(
-      token: json['token'] as String?,
+      backgroundColor: json['backgroundColor'] as String?,
     );
 
 Map<String, dynamic> _$SmsViewModelToJson(SmsViewModel instance) =>
     <String, dynamic>{
-      'token': instance.token,
+      'backgroundColor': instance.backgroundColor,
     };

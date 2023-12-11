@@ -20,6 +20,27 @@ enum ScaleType {
 
 enum Gravity { centerHorizntal, left, right }
 
+enum ImageContentMode {
+  scaleToFill,
+  scaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
+  scaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+  redraw,              // redraw on bounds change (calls -setNeedsDisplay)
+  center,              // contents remain same size. positioned adjusted.
+  top,
+  bottom,
+  left,
+  right,
+  topLeft,
+  topRight,
+  bottomLeft,
+  bottomRight,
+}
+
+enum DialogAlignment { center, bottom }
+
+/// 文字对齐方式
+enum TextAlignment { left, center, right }
+
 enum UIFAG {
   systemUiFalgLowProfile,
   systemUiFalgHideNavigation,

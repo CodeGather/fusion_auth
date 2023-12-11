@@ -8,6 +8,14 @@ part of 'fusion_auth_config.dart';
 
 FusionAuthConfig _$FusionAuthConfigFromJson(Map<String, dynamic> json) =>
     FusionAuthConfig(
+      navStatusBarConfig: json['navStatusBarConfig'] == null
+          ? null
+          : NavStatusBarConfig.fromJson(
+              json['navStatusBarConfig'] as Map<String, dynamic>),
+      backgroundConfig: json['backgroundConfig'] == null
+          ? null
+          : BackgroundConfig.fromJson(
+              json['backgroundConfig'] as Map<String, dynamic>),
       navViewConfig: json['navViewConfig'] == null
           ? null
           : NavViewModel.fromJson(
@@ -46,6 +54,10 @@ FusionAuthConfig _$FusionAuthConfigFromJson(Map<String, dynamic> json) =>
           ? null
           : PrivacyConfig.fromJson(
               json['privacyConfig'] as Map<String, dynamic>),
+      privacyAlertConfig: json['privacyAlertConfig'] == null
+          ? null
+          : PrivacyAlertConfig.fromJson(
+              json['privacyAlertConfig'] as Map<String, dynamic>),
       customViewBlockList: (json['customViewBlockList'] as List<dynamic>?)
           ?.map((e) => CustomViewBlock.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -75,6 +87,8 @@ Map<String, dynamic> _$FusionAuthConfigToJson(FusionAuthConfig instance) =>
       'verifyApi': instance.verifyApi,
       'tokenExpirTime': instance.tokenExpirTime,
       'debugMode': instance.debugMode,
+      'navStatusBarConfig': instance.navStatusBarConfig,
+      'backgroundConfig': instance.backgroundConfig,
       'navViewConfig': instance.navViewConfig,
       'smsSendViewConfig': instance.smsSendViewConfig,
       'smsViewConfig': instance.smsViewConfig,
@@ -85,6 +99,7 @@ Map<String, dynamic> _$FusionAuthConfigToJson(FusionAuthConfig instance) =>
       'changeButtonConfig': instance.changeButtonConfig,
       'checkBoxConfig': instance.checkBoxConfig,
       'privacyConfig': instance.privacyConfig,
+      'privacyAlertConfig': instance.privacyAlertConfig,
       'customViewBlockList': instance.customViewBlockList,
     };
 

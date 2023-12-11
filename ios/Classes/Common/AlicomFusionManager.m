@@ -203,7 +203,8 @@
  */
 - (void)onAuthEvent:(AlicomFusionAuthHandler *)handler
           eventData:(AlicomFusionEvent *)event {
-    [self->common showResultMsg: event msg:@""];
+  NSLog(@"%s，调用:{\n%@}", __func__, event.description);
+  [self->common showResultMsg: event.mj_keyValues msg:@""];
 }
 
 /**
@@ -212,17 +213,17 @@
  *  @param handler handler
  */
 - (void)onSDKTokenAuthSuccess:(AlicomFusionAuthHandler *)handler {
-    NSLog(@"%s，调用",__func__);
-    self.isActive = YES;
-    self.reGetTime = 3;
+  NSLog(@"%s，调用",__func__);
+  self.isActive = YES;
+  self.reGetTime = 3;
   dispatch_async(dispatch_get_main_queue(), ^{
     [[AlicomFusionManager shareInstance]
      startSceneWithTemplateId:[FusionAuthCommon shareInstance].TEMLATEID
                viewController:[AlicomFusionUtil findCurrentViewController]
     ];
   });
-  NSDictionary *dict = @{ @"resultCode": @"500003", @"resultMsg": @"token鉴权成功" };
-  [self->common showResultMsg: dict msg:@""];
+  NSDictionary *dict = @{ @"resultCode": @"300002", @"resultMsg": @"Token鉴权合法" };
+  [self->common showResultMsg: dict.mj_keyValues msg:@""];
 }
 
 /**
@@ -236,10 +237,10 @@
 - (void)onSDKTokenAuthFailure:(AlicomFusionAuthHandler *)handler
                     failToken:(AlicomFusionAuthToken *)failToken
                         error:(AlicomFusionEvent *)error {
-    NSLog(@"%s，调用:{\n%@}",__func__,error.description);
+  NSLog(@"%s，调用:{\n%@}",__func__,error.description);
   if (self->common.DEBUG_MODE) {
     // 1. 快速访问模式
-    [self->common showResultMsg: error msg:@""];
+    [self->common showResultMsg: error.mj_keyValues msg:@""];
   } else {
     // 2. 正常访问模式
     self.isActive = NO;
@@ -249,11 +250,10 @@
         [handler updateToken:token];
         self.reGetTime --;
     } else {
-        self.reGetTime = 3;
-        [self.handler destroy];
-        self.handler = nil;
-        [AlicomFusionAuthTokenManager shareInstance].authTokenStr = nil;
-        return;
+      self.reGetTime = 3;
+      [self destory];
+      [AlicomFusionAuthTokenManager shareInstance].authTokenStr = nil;
+      return;
     }
   }
 }
@@ -280,7 +280,7 @@
         [self dealWithPhone:@"18888888888"];
         [AlicomFusionToastTool showToastMsg:@"已获取到最终认证token,快速访问模式下，请到阿里云官网openapi调试 校验结果，Demo默认校验已成功，流程结束，展示为默认手机号码" time:5];
     });
-    [self->common showResultMsg: event msg:@""];
+    [self->common showResultMsg: event.mj_keyValues msg:@""];
   } else {
     // 2. 正常访问模式
     // 换手机号
@@ -327,7 +327,7 @@
 
 - (void)onHalfwayVerifySuccess:(AlicomFusionAuthHandler *)handler nodeName:(NSString *)nodeName maskToken:(NSString *)maskToken event:(nonnull AlicomFusionEvent *)event resultBlock:(void (^)(BOOL))resultBlock {
     
-    NSLog(@"%s，调用.nodeName=%@",__func__,nodeName);
+  NSLog(@"%s，调用.nodeName=%@",__func__,nodeName);
   if (self->common.DEBUG_MODE) {
     // 1. 快速访问模式
     NSLog(@"获取到认证token:%@, 请到https://next.api.aliyun.com/api/Dypnsapi/2017-05-25/VerifyWithFusionAuthToken 校验结果，Demo默认校验已成功，展示默认手机号码18888888888", maskToken);
@@ -336,7 +336,7 @@
         [self dealWithPhone:@"18888888888"];
         [AlicomFusionToastTool showToastMsg:@"已获取到最终认证token,快速访问模式下，请到阿里云官网openapi调试 校验结果，Demo默认校验已成功，展示为默认手机号码" time:5];
     });
-    [self->common showResultMsg: event msg:@""];
+    [self->common showResultMsg: event.mj_keyValues msg:@""];
   } else {
     // 2. 正常访问模式
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -369,7 +369,7 @@
 }
 
 - (void)onVerifyFailed:(AlicomFusionAuthHandler *)handler nodeName:(nonnull NSString *)nodeName error:(nonnull AlicomFusionEvent *)error {
-  [self->common showResultMsg: error msg:@""];
+  [self->common showResultMsg: error.mj_keyValues msg:@""];
   NSLog(@"%s，nodeName=%@,调用:{\n%@}",__func__,nodeName,error.description);
   if ([nodeName isEqualToString:AlicomFusionNodeNameVerifyCodeAuth]) {
       if ([error.resultCode isEqualToString:AlicomFusionVerifyCodeFrequency] || [error.resultCode isEqualToString:AlicomFusionVerifyCodeRisk]) {
@@ -399,22 +399,24 @@
  *  @param event 结束事件
  */
 - (void)onTemplateFinish:(AlicomFusionAuthHandler *)handler event:(AlicomFusionEvent *)event {
-    NSLog(@"%s，调用:{\n%@}",__func__,event.description);
+  NSLog(@"%s，调用:{\n%@}",__func__,event.description);
     //结束认证
-    [self.handler stopSceneWithTemplateId:self.currTemplateId];
+  [self->common showResultMsg: event.mj_keyValues msg:@""];
+  [self.handler stopSceneWithTemplateId:self.currTemplateId];
 }
 
 #pragma mark - 协议点击回调操作
 - (void)onProtocolClick:(AlicomFusionAuthHandler *)handler protocolName:(NSString *)protocolName protocolUrl:(NSString *)protocolUrl event:(AlicomFusionEvent *)event
 {
-    NSLog(@"%s，调用:{\n%@}",__func__,event.description);
-    AlicomFusionWebViewController *controller = [[AlicomFusionWebViewController alloc] initWithUrl:protocolUrl andUrlName:protocolName];
-    UINavigationController *navigationController = self.currVC.navigationController;
-    if (self.currVC.presentedViewController) {
-        //如果授权页成功拉起，这个时候则需要使用授权页的导航控制器进行跳转
-        navigationController = (UINavigationController *)self.currVC.presentedViewController;
-    }
-    [navigationController pushViewController:controller animated:YES];
+  NSLog(@"%s，调用:{\n%@}",__func__,event.description);
+  [self->common showResultMsg: event.mj_keyValues msg:@""];
+  AlicomFusionWebViewController *controller = [[AlicomFusionWebViewController alloc] initWithUrl:protocolUrl andUrlName:protocolName];
+  UINavigationController *navigationController = self.currVC.navigationController;
+  if (self.currVC.presentedViewController) {
+      //如果授权页成功拉起，这个时候则需要使用授权页的导航控制器进行跳转
+      navigationController = (UINavigationController *)self.currVC.presentedViewController;
+  }
+  [navigationController pushViewController:controller animated:YES];
 }
 
 - (void)onVerifyInterrupt:(AlicomFusionAuthHandler *)handler event:(AlicomFusionEvent *)event {
@@ -452,95 +454,172 @@
                                 templateId:(nonnull NSString *)templateId
                                     nodeId:(NSString *)nodeId
                                    UIModel:(AlicomFusionNumberAuthModel *)model {
-  NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
-  
   model.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
   model.presentDirection = AlicomFusionPresentationDirectionBottom;
-  model.navTitle = [[NSAttributedString alloc] initWithString:@"一键登录"];
-  model.navColor = [UIColor getColor: [dict stringValueForKey: @"navColor" defaultValue: @"#EFF3F2"]];
-  model.logoIsHidden = [dict boolValueForKey: @"logoIsHidden" defaultValue: YES];
-  model.numberColor = [UIColor getColor: [dict stringValueForKey: @"numberColor" defaultValue: @"#262626"]];
-  model.numberFont = [UIFont systemFontOfSize:[dict intValueForKey: @"numberSize" defaultValue: 24]];
   
-  // 登录按钮
-  NSMutableAttributedString *loginAttr = [
-    [NSMutableAttributedString alloc] 
-    initWithString:[dict stringValueForKey: @"logBtnText" defaultValue: @"一键登录"]
-    attributes:@{
-      NSFontAttributeName: [UIFont systemFontOfSize:[dict intValueForKey: @"logBtnTextSize" defaultValue: 16]],
-      NSForegroundColorAttributeName: [UIColor getColor: [dict stringValueForKey: @"logBtnTextColor" defaultValue: @"#555555"]],
+  NSDictionary *dict = [FusionAuthCommon shareInstance].CONFIG;
+  
+  #pragma mark- 状态栏
+  NSDictionary *navStatusBar = [dict dictValueForKey: @"navStatusBarConfig" defaultValue: nil];
+  if (navStatusBar != nil) {
+    model.prefersStatusBarHidden = YES;
+    model.preferredStatusBarStyle =UIStatusBarStyleDefault;
+  }
+  
+  #pragma mark- 导航栏
+  NSDictionary *nav = [dict dictValueForKey: @"navViewConfig" defaultValue: nil];
+  if (nav != nil) {
+    model.navTitle = [[NSAttributedString alloc] initWithString: [nav stringValueForKey: @"title" defaultValue: @"一键登录"]];
+    model.navColor = [UIColor getColor: [nav stringValueForKey: @"backgroundColor" defaultValue: @"#EFF3F2"]];
+  }
+  
+  #pragma mark- 背景
+  NSDictionary *background = [dict dictValueForKey: @"backgroundConfig" defaultValue: nil];
+  if (background != nil) {
+    model.backgroundColor = [UIColor getColor: [background stringValueForKey: @"backgroundColor" defaultValue: @""]];
+    UIImage * backgroundImage = [AlicomFusionUtil changeUriPathToImage: [background stringValueForKey: @"backgroundImage" defaultValue: nil]];
+    if (backgroundImage != nil) {
+      model.backgroundImage = backgroundImage;
     }
-  ];
-  model.loginBtnText = loginAttr;
-  
-  UIImage *unSelectImage = [AlicomFusionUtil
-      imageWithColor: [UIColor getColor:@"#0064C8"]
-                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-     isRoundedCorner: NO
-              radius: 0.0
-  ];
-  UIImage *selectImage = [AlicomFusionUtil
-      imageWithColor: [UIColor getColor:@"#0064C8"]
-                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-     isRoundedCorner: NO
-              radius: 0.0
-  ];
-  UIImage *heighLightImage = [AlicomFusionUtil
-      imageWithColor: [UIColor getColor:@"#0064C8"]
-                size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-     isRoundedCorner: NO
-              radius: 0.0
-  ];
-  model.loginBtnBgImgs = @[unSelectImage, selectImage, heighLightImage];
-  
-  // slogan 设置
-  NSMutableAttributedString *sloganAttr = [
-    [NSMutableAttributedString alloc]
-    initWithString: [dict stringValueForKey: @"sloganText" defaultValue: @"阿里云为您提供认证服务"]
-    attributes: @{
-      NSFontAttributeName: [UIFont systemFontOfSize:[dict intValueForKey: @"sloganTextSize" defaultValue: 15]],
-      NSForegroundColorAttributeName: [UIColor getColor: [dict stringValueForKey: @"sloganTextColor" defaultValue: @"#555555"]],
+    model.backgroundImageContentMode = [background integerValueForKey: @"backgroundImageContentMode" defaultValue: UIViewContentModeScaleAspectFill];
+  }
+
+  #pragma mark- logo图片
+  NSDictionary *logo = [dict dictValueForKey: @"logoConfig" defaultValue: nil];
+  if (logo != nil) {
+    model.logoIsHidden = [logo boolValueForKey: @"logoIsHidden" defaultValue: NO];
+    UIImage * logoImage = [AlicomFusionUtil changeUriPathToImage: [logo stringValueForKey: @"logoImage" defaultValue: nil]];
+    if (logoImage != nil) {
+      model.logoImage = logoImage;
     }
-  ];
-  model.sloganText = sloganAttr;
+    model.logoFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+      CGFloat y = 318;
+      CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
+      return rect;
+    };
+  }
+
+  #pragma mark- slogan
+  NSDictionary *slogan = [dict dictValueForKey: @"sloganConfig" defaultValue: nil];
+  if (slogan != nil) {
+    model.sloganIsHidden = [slogan boolValueForKey: @"sloganIsHidden" defaultValue: NO];
+    // slogan 设置
+    NSMutableAttributedString *sloganAttr = [
+      [NSMutableAttributedString alloc]
+      initWithString: [slogan stringValueForKey: @"sloganText" defaultValue: @"阿里云为您提供认证服务"]
+      attributes: @{
+        NSFontAttributeName: [UIFont systemFontOfSize:[slogan intValueForKey: @"sloganTextSize" defaultValue: 15]],
+        NSForegroundColorAttributeName: [UIColor getColor: [slogan stringValueForKey: @"sloganTextColor" defaultValue: @"#555555"]],
+      }
+    ];
+    model.sloganText = sloganAttr;
+    model.sloganFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGFloat y = 252;
+        CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
+        return rect;
+    };
+  }
+
+  #pragma mark- 号码
+  NSDictionary *phone = [dict dictValueForKey: @"phoneNumberConfig" defaultValue: nil];
+  if (phone != nil) {
+    model.numberColor = [UIColor getColor: [phone stringValueForKey: @"numberColor" defaultValue: @"#262626"]];
+    model.numberFont = [UIFont systemFontOfSize:[phone intValueForKey: @"numberSize" defaultValue: 16]];
+    model.numberFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGFloat x = (screenSize.width - frame.size.width) * 0.5;
+        CGFloat y = 214;
+        CGRect rect = CGRectMake(x, y, frame.size.width, frame.size.height);
+        return rect;
+    };
+  }
+
+  #pragma mark- 登录
+  NSDictionary *loginButton = [dict dictValueForKey: @"loginButtonConfig" defaultValue: nil];
+  if (loginButton != nil) {
+    // 登录按钮
+    NSMutableAttributedString *loginAttr = [
+      [NSMutableAttributedString alloc]
+      initWithString:[loginButton stringValueForKey: @"logBtnText" defaultValue: @"一键登录"]
+      attributes:@{
+        NSFontAttributeName: [UIFont systemFontOfSize:[loginButton intValueForKey: @"logBtnTextSize" defaultValue: 16]],
+        NSForegroundColorAttributeName: [UIColor getColor: [loginButton stringValueForKey: @"logBtnTextColor" defaultValue: @"#555555"]],
+      }
+    ];
+    model.loginBtnText = loginAttr;
+    
+    UIImage *unSelectImage = [AlicomFusionUtil
+        imageWithColor: [UIColor getColor:@"#0064C8"]
+                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+       isRoundedCorner: NO
+                radius: 0.0
+    ];
+    UIImage *selectImage = [AlicomFusionUtil
+        imageWithColor: [UIColor getColor:@"#0064C8"]
+                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+       isRoundedCorner: NO
+                radius: 0.0
+    ];
+    UIImage *heighLightImage = [AlicomFusionUtil
+        imageWithColor: [UIColor getColor:@"#0064C8"]
+                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+       isRoundedCorner: NO
+                radius: 0.0
+    ];
+    model.loginBtnBgImgs = @[unSelectImage, selectImage, heighLightImage];
+    
+    model.loginBtnFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGFloat y = 318;
+        CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
+        return rect;
+    };
+  }
   
-  model.privacyOperatorIndex = [dict intValueForKey: @"privacyOperatorIndex" defaultValue: 2];
-  model.privacyOne = @[
-    [dict stringValueForKey: @"protocolOneName" defaultValue: @"用户协议"],
-    [dict stringValueForKey: @"protocolOneURL" defaultValue: @""]
-  ];
-  model.privacyTwo = @[
-    [dict stringValueForKey: @"protocolTwoName" defaultValue: @"个人信息保护政策"],
-    [dict stringValueForKey: @"protocolTwoURL" defaultValue: @""]
-  ];
-  model.privacyConectTexts = @[@"、",@" 和 "];
-  // 前置文案
-  model.privacyPreText = [dict stringValueForKey: @"privacyBefore" defaultValue: @"我已阅读并同意 "];
-  // 后置文案
-  model.privacySufText = [dict stringValueForKey: @"privacyEnd" defaultValue: @""];
-  // 设置运营商协议前缀符号，只能设置一个字符<、(、《、【、『、[、（中的一个
-  model.privacyOperatorPreText = [dict stringValueForKey: @"vendorPrivacyPrefix" defaultValue: @""];
-  // 设置运营商协议后缀符号，只能设置一个字符>、)、》、】、』、]、）中的一个
-  model.privacyOperatorSufText = [dict stringValueForKey: @"vendorPrivacySuffix" defaultValue: @""];
-  model.privacyColors = @[
-    [UIColor getColor:@"#262626"],
-    [UIColor getColor:@"#262626"]
-  ];
-  // 设置隐私条款文字大小（单位：dp，字体大小不随系统变化）
-  model.privacyFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyTextSize" defaultValue: 14]];
-  // 运营商协议内容颜色
-  model.privacyOperatorColor = [UIColor getColor: [dict stringValueForKey: @"protocolColor" defaultValue: @""]];
-  // 协议1内容颜色
-  model.privacyOneColor = [UIColor getColor: [dict stringValueForKey: @"protocolOneColor" defaultValue: @""]];
-  // 协议2内容颜色
-  model.privacyTwoColor = [UIColor getColor: [dict stringValueForKey: @"protocolTwoColor" defaultValue: @""]];
-  // 协议3内容颜色
-  model.privacyThreeColor = [UIColor getColor: [dict stringValueForKey: @"protocolThreeColor" defaultValue: @""]];
+  #pragma mark- 协议
+  NSDictionary *privacy = [dict dictValueForKey: @"privacyConfig" defaultValue: nil];
+  if (privacy != nil) {
+    model.checkBoxIsHidden = [dict boolValueForKey: @"checkboxHidden" defaultValue: NO];
+    model.checkBoxIsChecked = [dict boolValueForKey: @"checkBoxIsChecked" defaultValue: NO];
+    model.checkBoxWH = [dict intValueForKey: @"checkBoxWidth" defaultValue: 21];
+    
+    model.privacyOperatorIndex = [privacy intValueForKey: @"privacyOperatorIndex" defaultValue: 2];
+    model.privacyOne = @[
+      [privacy stringValueForKey: @"protocolOneName" defaultValue: @"用户协议"],
+      [privacy stringValueForKey: @"protocolOneURL" defaultValue: @""]
+    ];
+    model.privacyTwo = @[
+      [privacy stringValueForKey: @"protocolTwoName" defaultValue: @"个人信息保护政策"],
+      [privacy stringValueForKey: @"protocolTwoURL" defaultValue: @""]
+    ];
+    model.privacyConectTexts = @[@"、",@" 和 "];
+    // 前置文案
+    model.privacyPreText = [privacy stringValueForKey: @"privacyBefore" defaultValue: @"我已阅读并同意 "];
+    // 后置文案
+    model.privacySufText = [privacy stringValueForKey: @"privacyEnd" defaultValue: @""];
+    // 设置运营商协议前缀符号，只能设置一个字符<、(、《、【、『、[、（中的一个
+    model.privacyOperatorPreText = [privacy stringValueForKey: @"vendorPrivacyPrefix" defaultValue: @""];
+    // 设置运营商协议后缀符号，只能设置一个字符>、)、》、】、』、]、）中的一个
+    model.privacyOperatorSufText = [privacy stringValueForKey: @"vendorPrivacySuffix" defaultValue: @""];
+    model.privacyColors = @[
+      [UIColor getColor:@"#262626"],
+      [UIColor getColor:@"#262626"]
+    ];
+    // 设置隐私条款文字大小（单位：dp，字体大小不随系统变化）
+    model.privacyFont = [UIFont systemFontOfSize:[privacy intValueForKey: @"privacyTextSize" defaultValue: 14]];
+    // 运营商协议内容颜色
+    model.privacyOperatorColor = [UIColor getColor: [privacy stringValueForKey: @"protocolColor" defaultValue: @""]];
+    // 协议1内容颜色
+    model.privacyOneColor = [UIColor getColor: [privacy stringValueForKey: @"protocolOneColor" defaultValue: @""]];
+    // 协议2内容颜色
+    model.privacyTwoColor = [UIColor getColor: [privacy stringValueForKey: @"protocolTwoColor" defaultValue: @""]];
+    // 协议3内容颜色
+    model.privacyThreeColor = [UIColor getColor: [privacy stringValueForKey: @"protocolThreeColor" defaultValue: @""]];
+    
+    model.privacyFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - frame.size.height - 34, frame.size.width, frame.size.height);
+        return rect;
+    };
+  }
   
-  model.checkBoxIsHidden = [dict boolValueForKey: @"checkboxHidden" defaultValue: NO];
-  model.checkBoxIsChecked = [dict boolValueForKey: @"checkBoxIsChecked" defaultValue: NO];
-  model.checkBoxWH = [dict intValueForKey: @"checkBoxWidth" defaultValue: 21];
-  model.backgroundColor = [UIColor getColor:@"#EFF3F2"];
   model.moreLoginActionBlock = ^{
       NSLog(@"其他登录方式");
   };
@@ -584,36 +663,11 @@
 //      return CGRectMake(alertX, alertY, screenSize.width, screenSize.height);
 //  };
   
-  
-  model.numberFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGFloat x = (screenSize.width - frame.size.width) * 0.5;
-      CGFloat y = 214;
-      CGRect rect = CGRectMake(x, y, frame.size.width, frame.size.height);
-      return rect;
-  };
-  
-  model.sloganFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGFloat y = 252;
-      CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
-      return rect;
-  };
-  
-  model.loginBtnFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGFloat y = 318;
-      CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
-      return rect;
-  };
-  
   model.nameLabelFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
       return frame;
   };
   model.otherLoginButtonFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
       return frame;
-  };
-    
-  model.privacyFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - frame.size.height - 34, frame.size.width, frame.size.height);
-      return rect;
   };
     
   model.customViewLayoutBlock = ^(
@@ -632,60 +686,63 @@
   ) {
       
   };
-
   model.customViewBlock = ^(UIView * _Nonnull superCustomView) {};
     
-  model.privacyAlertIsNeedShow = [dict boolValueForKey: @"privacyAlertIsNeedShow" defaultValue: YES];
-  model.privacyAlertIsNeedAutoLogin = [dict boolValueForKey: @"privacyAlertIsNeedAutoLogin" defaultValue: YES];
-  model.privacyAlertCornerRadiusArray = [dict arrayValueForKey: @"privacyAlertCornerRadiusArray" defaultValue: @[@4, @4, @4, @4]];
-  model.privacyAlertTitleFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyAlertTitleTextSize" defaultValue: 16]];
-  model.privacyAlertTitleColor = [UIColor getColor: [dict stringValueForKey: @"privacyAlertTitleColor" defaultValue: @"#262626"]];
-  model.privacyAlertContentFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyAlertContentTextSize" defaultValue: 16]];
-  model.privacyAlertContentAlignment = NSTextAlignmentCenter;
-  
-  model.privacyAlertButtonTextColors = @[
-    [UIColor getColor:@"#0064C8"],
-    [UIColor getColor:@"#0064C8"]
-  ];
-  
-  UIImage *imageUnselect = [AlicomFusionUtil
-      imageWithColor: [UIColor getColor:@"#FFFFFF"]
-                size:CGSizeMake(TX_SCREEN_WIDTH, 56)
-     isRoundedCorner: NO
-              radius: 0.0
-  ];
-  UIImage *imageSelect = [AlicomFusionUtil
-      imageWithColor: [UIColor getColor:@"#FFFFFF"]
-                size: CGSizeMake(TX_SCREEN_WIDTH, 56)
-     isRoundedCorner: NO
-              radius: 0.0
-  ];
-  model.privacyAlertBtnBackgroundImages = @[imageUnselect, imageSelect];
-  
-  model.privacyAlertButtonFont = [UIFont systemFontOfSize:[dict intValueForKey: @"privacyAlertBtnTextSize" defaultValue: 16]];
-  model.tapPrivacyAlertMaskCloseAlert = [dict boolValueForKey: @"tapPrivacyAlertMaskCloseAlert" defaultValue: NO];
-  model.privacyAlertMaskColor = [UIColor getColor: [dict stringValueForKey: @"switchAccTextColor" defaultValue: @"#262626"]];
-  model.privacyAlertMaskAlpha = [dict floatValueForKey: @"privacyAlertMaskAlpha" defaultValue: 0.88];
-  
-  model.privacyAlertFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGRect rect = CGRectMake(27, (superViewSize.height - 200)*0.382, superViewSize.width - 54, 200);
-      return rect;
-  };
-  
-  model.privacyAlertTitleFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGRect rect = CGRectMake(0, 32, frame.size.width, frame.size.height);
-      return rect;
-  };
-  
-  model.privacyAlertPrivacyContentFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGRect rect = CGRectMake(24, 70, superViewSize.width - 48, frame.size.height);
-      return rect;
-  };
-  
-  model.privacyAlertButtonFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      CGRect rect = CGRectMake(0, superViewSize.height - 56, superViewSize.width, 56);
-      return rect;
-  };
+  #pragma mark - 二次隐私协议弹窗设置
+  NSDictionary *privacyAlert = [dict dictValueForKey: @"privacyAlertConfig" defaultValue: nil];
+  if (privacyAlert != nil) {
+    model.privacyAlertIsNeedShow = [privacyAlert boolValueForKey: @"privacyAlertIsNeedShow" defaultValue: YES];
+    model.privacyAlertIsNeedAutoLogin = [privacyAlert boolValueForKey: @"privacyAlertIsNeedAutoLogin" defaultValue: YES];
+    model.privacyAlertCornerRadiusArray = [privacyAlert arrayValueForKey: @"privacyAlertCornerRadiusArray" defaultValue: @[@4, @4, @4, @4]];
+    model.privacyAlertTitleFont = [UIFont systemFontOfSize:[privacyAlert intValueForKey: @"privacyAlertTitleTextSize" defaultValue: 16]];
+    model.privacyAlertTitleColor = [UIColor getColor: [privacyAlert stringValueForKey: @"privacyAlertTitleColor" defaultValue: @"#262626"]];
+    model.privacyAlertContentFont = [UIFont systemFontOfSize:[privacyAlert intValueForKey: @"privacyAlertContentTextSize" defaultValue: 16]];
+    model.privacyAlertContentAlignment = NSTextAlignmentCenter;
+    
+    model.privacyAlertButtonTextColors = @[
+      [UIColor getColor:@"#0064C8"],
+      [UIColor getColor:@"#0064C8"]
+    ];
+    
+    UIImage *imageUnselect = [AlicomFusionUtil
+        imageWithColor: [UIColor getColor:@"#FFFFFF"]
+                  size:CGSizeMake(TX_SCREEN_WIDTH, 56)
+       isRoundedCorner: NO
+                radius: 0.0
+    ];
+    UIImage *imageSelect = [AlicomFusionUtil
+        imageWithColor: [UIColor getColor:@"#FFFFFF"]
+                  size: CGSizeMake(TX_SCREEN_WIDTH, 56)
+       isRoundedCorner: NO
+                radius: 0.0
+    ];
+    model.privacyAlertBtnBackgroundImages = @[imageUnselect, imageSelect];
+    
+    model.privacyAlertButtonFont = [UIFont systemFontOfSize:[privacyAlert intValueForKey: @"privacyAlertBtnTextSize" defaultValue: 16]];
+    model.tapPrivacyAlertMaskCloseAlert = [privacyAlert boolValueForKey: @"tapPrivacyAlertMaskCloseAlert" defaultValue: NO];
+    model.privacyAlertMaskColor = [UIColor getColor: [privacyAlert stringValueForKey: @"switchAccTextColor" defaultValue: @"#262626"]];
+    model.privacyAlertMaskAlpha = [privacyAlert floatValueForKey: @"privacyAlertMaskAlpha" defaultValue: 0.88];
+    
+    model.privacyAlertFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGRect rect = CGRectMake(27, (superViewSize.height - 200)*0.382, superViewSize.width - 54, 200);
+        return rect;
+    };
+    
+    model.privacyAlertTitleFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGRect rect = CGRectMake(0, 32, frame.size.width, frame.size.height);
+        return rect;
+    };
+    
+    model.privacyAlertPrivacyContentFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGRect rect = CGRectMake(24, 70, superViewSize.width - 48, frame.size.height);
+        return rect;
+    };
+    
+    model.privacyAlertButtonFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        CGRect rect = CGRectMake(0, superViewSize.height - 56, superViewSize.width, 56);
+        return rect;
+    };
+  }
 }
 
 // 短信验证码onSMSCodeVerifyUICustomDefined:templateId:nodeId:isAutoInput:view:
@@ -694,6 +751,7 @@
                                 nodeId:(NSString *)nodeId
                            isAutoInput:(BOOL)isAutoInput
                                   view:(AlicomFusionVerifyCodeView *)view {
+  NSDictionary *dict = [self->common.CONFIG dictValueForKey: @"smsViewConfig" defaultValue: @{}];
   UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
   label.text = @"登录";
 //  label.textColor = AlicomColorHex(0x262626);
@@ -717,10 +775,11 @@
                             smsContent:(nonnull NSString *)smsContent
                             receiveNum:(nonnull NSString *)receiveNum
                                   view:(AlicomFusionUpGoingView *)view {
-    self.upGoingView = view;
-    self.smsContent = smsContent;
-    self.receiveNum = receiveNum;
-    NSLog(@"smsContent-====%@,receiveNum=-------%@",smsContent,receiveNum);
+  NSDictionary *dict = [self->common.CONFIG dictValueForKey: @"smsSendViewConfig" defaultValue: @{}];
+  self.upGoingView = view;
+  self.smsContent = smsContent;
+  self.receiveNum = receiveNum;
+  NSLog(@"smsContent-====%@,receiveNum=-------%@",smsContent,receiveNum);
 }
 
 // 导航栏：onNavigationControllerCustomDefined:templateId:nodeId:navigation:

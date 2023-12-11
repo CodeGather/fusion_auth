@@ -53,7 +53,7 @@
   if ([@"getVersion" isEqualToString:call.method]) {
     NSString *version = [[AlicomFusionManager shareInstance] getSDKVersion];
     NSDictionary *dict = @{ 
-      @"resultCode": @"500004",
+      @"resultCode": @"999999",
       @"resultMsg": [
         NSString
         stringWithFormat: @"插件启动成功, 原生SDK版本: %@", version
@@ -100,7 +100,6 @@
     ];
   } else {
     [[AlicomFusionManager shareInstance] start];
-    [self->common.methodChannel invokeMethod:@"onEvent" arguments:@"2222"];
   }
 }
 @end

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIViewController *)findCurrentViewController;
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size isRoundedCorner:(BOOL )isRounded radius:(CGFloat)radius;
 + (CGFloat)getStatusBarHeight;
++ (UIImage *) changeUriPathToImage:key;
 @end
 
 NS_ASSUME_NONNULL_END

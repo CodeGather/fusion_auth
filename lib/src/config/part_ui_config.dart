@@ -1,8 +1,43 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../model/fusion_auth_enum.dart';
+
 part 'part_ui_config.g.dart';
 
 enum AuthUIStyle { fullScreen, bottomSheet, dialog }
+
+@JsonSerializable()
+class BackgroundConfig {
+  const BackgroundConfig({
+    this.backgroundColor,
+    this.backgroundImage,
+    this.backgroundImageContentMode,
+  });
+
+  /// 授权页背景色
+  final String? backgroundColor;
+  /// 授权页背景图片
+  final String? backgroundImage;
+  /// 授权页背景图片view的 content mode，默认为 scaleAspectFill
+  final ImageContentMode? backgroundImageContentMode;
+
+  Map<String, dynamic> toJson() => _$BackgroundConfigToJson(this);
+}
+
+@JsonSerializable()
+class NavStatusBarConfig {
+  const NavStatusBarConfig({
+    this.prefersStatusBarHidden,
+    this.preferredStatusBarStyle,
+  });
+
+  /// 状态栏是否隐藏，默认NO
+  final bool? prefersStatusBarHidden;
+  /// 状态栏主题风格，默认UIStatusBarStyleDefault
+  final String? preferredStatusBarStyle;
+
+  Map<String, dynamic> toJson() => _$NavStatusBarConfigToJson(this);
+}
 
 @JsonSerializable()
 class NavConfig {
@@ -77,7 +112,9 @@ class LogoConfig {
     this.logoFrameOffsetY,
   });
 
+  ///  logo是否隐藏，默认NO
   final bool logoIsHidden;
+  /// logo图片路径
   final String? logoImage;
   final double? logoWidth;
   final double? logoHeight;
@@ -107,6 +144,7 @@ class SloganConfig {
     this.sloganFrameOffsetY,
   });
 
+  /// slogan是否隐藏，默认NO
   final bool? sloganIsHidden;
   final String? sloganText;
   final String? sloganTextColor;
@@ -135,6 +173,7 @@ class PhoneNumberConfig {
     this.numberFrameOffsetY,
   });
 
+  /// 号码颜色设置
   final String? numberColor;
   final int? numberFontSize;
   final double? numberFrameOffsetX;
