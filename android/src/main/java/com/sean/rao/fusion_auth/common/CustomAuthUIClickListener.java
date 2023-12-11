@@ -25,13 +25,13 @@ import io.flutter.plugin.common.EventChannel;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-public class CustomAuthUIControlClickListener extends LoginParams implements AuthUIControlClickListener {
+public class CustomAuthUIClickListener extends LoginParams implements AuthUIControlClickListener {
   private final String TAG = "CustomAuth: ";
   public PhoneNumberAuthHelper mAuthHelper;
   public AuthUIConfig.Builder autoConfig;
   public EventChannel.EventSink eventSink;
 
-  public CustomAuthUIControlClickListener(EventChannel.EventSink _eventSink, AuthUIConfig.Builder _config, PhoneNumberAuthHelper _authHelper) {
+  public CustomAuthUIClickListener(EventChannel.EventSink _eventSink, AuthUIConfig.Builder _config, PhoneNumberAuthHelper _authHelper) {
     eventSink = _eventSink;
     autoConfig = _config;
     mAuthHelper = _authHelper;

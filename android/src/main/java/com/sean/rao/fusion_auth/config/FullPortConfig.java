@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.mobile.auth.gatewayauth.AuthRegisterViewConfig;
 import com.mobile.auth.gatewayauth.AuthUIConfig;
 import com.mobile.auth.gatewayauth.PhoneNumberAuthHelper;
-import com.sean.rao.fusion_auth.common.CustomAuthUIControlClickListener;
+import com.sean.rao.fusion_auth.common.CustomAuthUIClickListener;
 
 import io.flutter.plugin.common.EventChannel;
 
@@ -21,7 +21,7 @@ public class FullPortConfig extends BaseUIConfig {
 
     @Override
     public void configAuthPage() {
-        mAuthHelper.setUIClickListener(new CustomAuthUIControlClickListener(eventSink, autoConfig, mAuthHelper));
+        mAuthHelper.setUIClickListener(new CustomAuthUIClickListener(eventSink, autoConfig, mAuthHelper));
         //添加自定义切换其他登录方式
         mAuthHelper.addAuthRegistViewConfig("switch_msg", new AuthRegisterViewConfig.Builder()
                 .setView(initSwitchView(420))
