@@ -97,7 +97,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.circular(10)),
                   child: SelectableText(
                     _platformVersion,
-                    style: const TextStyle(fontSize: 22),
+                    style: const TextStyle(fontSize: 18),
                     onSelectionChanged: (selection, cause) {},
                   ),
                 ))

@@ -1,5 +1,5 @@
 # 工作流程的名字
-name: Build and Release apk
+name: Test And Build
 
 # 工作流程触发的时机，这里是当一个版本标签推送到仓库时触发
 on:
