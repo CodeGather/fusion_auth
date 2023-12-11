@@ -2,6 +2,8 @@ package com.sean.rao.fusion_auth;
 
 import androidx.annotation.NonNull;
 
+import com.sean.rao.fusion_auth.common.GlobalManager;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -20,6 +22,7 @@ public class FusionAuthPlugin implements FlutterPlugin, MethodCallHandler {
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "fusion_auth");
     channel.setMethodCallHandler(this);
+    GlobalManager.getInstance().setChannel(channel);
   }
 
   @Override

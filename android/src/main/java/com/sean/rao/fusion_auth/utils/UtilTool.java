@@ -149,7 +149,7 @@ public class UtilTool {
     JSONObject jsonObj = new JSONObject();
     jsonObj.put("code", code);
     jsonObj.put("data", jsonDataObj);
-    jsonObj.put("msg", msg != null && !msg.isEmpty() ? msg : StatusAll.getName(code));
+//    jsonObj.put("msg", msg != null && !msg.isEmpty() ? msg : StatusAll.getName(code));
     return jsonObj;
   }
 }
