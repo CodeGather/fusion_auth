@@ -318,10 +318,7 @@ class CheckBoxConfig {
 @JsonSerializable()
 class PrivacyConfig {
   const PrivacyConfig({
-    this.privacyOneName,
-    this.privacyOneUrl,
     this.privacyConnectTexts,
-    this.privacyFontColor,
     this.privacyFontSize,
     this.privacyFrameOffsetX,
     this.privacyFrameOffsetY,
@@ -330,10 +327,16 @@ class PrivacyConfig {
     this.privacyOperatorSufText,
     this.privacyPreText,
     this.privacySufText,
-    this.privacyThreeName,
-    this.privacyThreeUrl,
+    this.privacyOneName,
+    this.privacyOneUrl,
+    this.privacyFontColor,
     this.privacyTwoName,
     this.privacyTwoUrl,
+    this.privacyTwoColor,
+    this.privacyThreeName,
+    this.privacyThreeUrl,
+    this.privacyThreeColor,
+    this.privacyOperatorColor
   });
 
   factory PrivacyConfig.fromJson(Map<String, dynamic> json) =>
@@ -341,12 +344,15 @@ class PrivacyConfig {
 
   final String? privacyOneName;
   final String? privacyOneUrl;
+  final String? privacyFontColor;
   final String? privacyTwoName;
   final String? privacyTwoUrl;
+  final String? privacyTwoColor;
   final String? privacyThreeName;
   final String? privacyThreeUrl;
+  final String? privacyThreeColor;
+  final String? privacyOperatorColor;
   final int? privacyFontSize;
-  final String? privacyFontColor;
   final double? privacyFrameOffsetX;
   final double? privacyFrameOffsetY;
 

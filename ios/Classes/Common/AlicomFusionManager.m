@@ -604,6 +604,7 @@
       [privacy stringValueForKey: @"privacyThreeUrl" defaultValue: @""]
     ];
     
+    
     model.privacyConectTexts = @[@"、",@" 和 "];
     // 前置文案
     model.privacyPreText = [privacy stringValueForKey: @"privacyPreText" defaultValue: @""];
@@ -618,16 +619,17 @@
       [UIColor getColor:@"#262626"],
       [UIColor getColor:@"#262626"]
     ];
+    
     // 设置隐私条款文字大小（单位：dp，字体大小不随系统变化）
-    model.privacyFont = [UIFont systemFontOfSize:[privacy intValueForKey: @"privacyTextSize" defaultValue: 14]];
+    model.privacyFont = [UIFont systemFontOfSize:[privacy intValueForKey: @"privacyFontSize" defaultValue: 14]];
     // 运营商协议内容颜色
-    model.privacyOperatorColor = [UIColor getColor: [privacy stringValueForKey: @"protocolColor" defaultValue: @""]];
+    model.privacyOperatorColor = [UIColor getColor: [privacy stringValueForKey: @"privacyOperatorColor" defaultValue: @""]];
     // 协议1内容颜色
-    model.privacyOneColor = [UIColor getColor: [privacy stringValueForKey: @"protocolOneColor" defaultValue: @""]];
+    model.privacyOneColor = [UIColor getColor: [privacy stringValueForKey: @"privacyOneColor" defaultValue: @""]];
     // 协议2内容颜色
-    model.privacyTwoColor = [UIColor getColor: [privacy stringValueForKey: @"protocolTwoColor" defaultValue: @""]];
+    model.privacyTwoColor = [UIColor getColor: [privacy stringValueForKey: @"privacyTwoColor" defaultValue: @""]];
     // 协议3内容颜色
-    model.privacyThreeColor = [UIColor getColor: [privacy stringValueForKey: @"protocolThreeColor" defaultValue: @""]];
+    model.privacyThreeColor = [UIColor getColor: [privacy stringValueForKey: @"privacyThreeColor" defaultValue: @""]];
     
     model.privacyFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
         CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - frame.size.height - 34, frame.size.width, frame.size.height);

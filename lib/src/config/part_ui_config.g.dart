@@ -233,10 +233,7 @@ Map<String, dynamic> _$CheckBoxConfigToJson(CheckBoxConfig instance) =>
 
 PrivacyConfig _$PrivacyConfigFromJson(Map<String, dynamic> json) =>
     PrivacyConfig(
-      privacyOneName: json['privacyOneName'] as String?,
-      privacyOneUrl: json['privacyOneUrl'] as String?,
       privacyConnectTexts: json['privacyConnectTexts'] as String?,
-      privacyFontColor: json['privacyFontColor'] as String?,
       privacyFontSize: json['privacyFontSize'] as int?,
       privacyFrameOffsetX: (json['privacyFrameOffsetX'] as num?)?.toDouble(),
       privacyFrameOffsetY: (json['privacyFrameOffsetY'] as num?)?.toDouble(),
@@ -245,22 +242,31 @@ PrivacyConfig _$PrivacyConfigFromJson(Map<String, dynamic> json) =>
       privacyOperatorSufText: json['privacyOperatorSufText'] as String?,
       privacyPreText: json['privacyPreText'] as String?,
       privacySufText: json['privacySufText'] as String?,
-      privacyThreeName: json['privacyThreeName'] as String?,
-      privacyThreeUrl: json['privacyThreeUrl'] as String?,
+      privacyOneName: json['privacyOneName'] as String?,
+      privacyOneUrl: json['privacyOneUrl'] as String?,
+      privacyFontColor: json['privacyFontColor'] as String?,
       privacyTwoName: json['privacyTwoName'] as String?,
       privacyTwoUrl: json['privacyTwoUrl'] as String?,
+      privacyTwoColor: json['privacyTwoColor'] as String?,
+      privacyThreeName: json['privacyThreeName'] as String?,
+      privacyThreeUrl: json['privacyThreeUrl'] as String?,
+      privacyThreeColor: json['privacyThreeColor'] as String?,
+      privacyOperatorColor: json['privacyOperatorColor'] as String?,
     );
 
 Map<String, dynamic> _$PrivacyConfigToJson(PrivacyConfig instance) =>
     <String, dynamic>{
       'privacyOneName': instance.privacyOneName,
       'privacyOneUrl': instance.privacyOneUrl,
+      'privacyFontColor': instance.privacyFontColor,
       'privacyTwoName': instance.privacyTwoName,
       'privacyTwoUrl': instance.privacyTwoUrl,
+      'privacyTwoColor': instance.privacyTwoColor,
       'privacyThreeName': instance.privacyThreeName,
       'privacyThreeUrl': instance.privacyThreeUrl,
+      'privacyThreeColor': instance.privacyThreeColor,
+      'privacyOperatorColor': instance.privacyOperatorColor,
       'privacyFontSize': instance.privacyFontSize,
-      'privacyFontColor': instance.privacyFontColor,
       'privacyFrameOffsetX': instance.privacyFrameOffsetX,
       'privacyFrameOffsetY': instance.privacyFrameOffsetY,
       'privacyConnectTexts': instance.privacyConnectTexts,
