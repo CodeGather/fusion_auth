@@ -8,6 +8,7 @@
 @property(nonatomic, assign) FlutterResult _Nullable Result;
 @property(nonatomic, assign) FlutterMethodCall * _Nullable CallData;
 @property(nonatomic, strong) FlutterMethodChannel * _Nullable methodChannel;
+@property(nonatomic, strong) UIViewController * _Nullable viewController;
 @property(nonatomic, strong) NSMutableDictionary * _Nonnull CONFIG;
 
 + (instancetype _Nullable )shareInstance;

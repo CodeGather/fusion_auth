@@ -6,6 +6,7 @@
 //
 #import <Flutter/Flutter.h>
 #import "AlicomFusionUtil.h"
+#import "AlicomFusionSampleController.h"
 
 
 @implementation AlicomFusionUtil
@@ -124,11 +125,19 @@
           break;
       }
   }
+//  AlicomFusionSampleController *vc = [[AlicomFusionSampleController alloc] init];
+//  [topViewController presentViewController:vc animated:YES completion:nil];
+//  [window.rootViewController presentViewController:vc animated:YES completion:^{}];
   /// 强制全屏
   topViewController.modalPresentationStyle = UIModalPresentationFullScreen;
   return topViewController;
 }
 
+// 处理点击事件的方法
+- (void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+    // 在这里编写点击事件的处理逻辑
+    NSLog(@"点击事件被拦截");
+}
 
 #pragma mark  assets -> 自定义图片view
 + (UIImageView *)customView: (NSString *)path

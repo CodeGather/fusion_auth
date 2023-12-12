@@ -315,10 +315,11 @@
                     }
                 }
             }else{
-              // [self->common showResultMsg: error msg:@""];
               //结束认证
               [self.handler stopSceneWithTemplateId:self.currTemplateId];
               [AlicomFusionToastTool showToastMsg:error.userInfo[NSLocalizedDescriptionKey] ?:@"操作失败" time:2];
+//              [self->common showResultMsg: error.mj_keyValues msg:@""];
+              NSLog(@"%s，调用.nodeName=%@",__func__,error);
             }
         });
     }];
@@ -330,12 +331,6 @@
   NSLog(@"%s，调用.nodeName=%@",__func__,nodeName);
   if (self->common.DEBUG_MODE) {
     // 1. 快速访问模式
-    NSLog(@"获取到认证token:%@, 请到https://next.api.aliyun.com/api/Dypnsapi/2017-05-25/VerifyWithFusionAuthToken 校验结果，Demo默认校验已成功，展示默认手机号码18888888888", maskToken);
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self dealWithPhone:@"18888888888"];
-        [AlicomFusionToastTool showToastMsg:@"已获取到最终认证token,快速访问模式下，请到阿里云官网openapi调试 校验结果，Demo默认校验已成功，展示为默认手机号码" time:5];
-    });
     [self->common showResultMsg: event.mj_keyValues msg:@""];
   } else {
     // 2. 正常访问模式
@@ -419,14 +414,9 @@
   [navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark - 认证中断
 - (void)onVerifyInterrupt:(AlicomFusionAuthHandler *)handler event:(AlicomFusionEvent *)event {
-    if ([event.resultCode isEqualToString:AlicomFusionStartLoading]) {
-        [AlicomFusionToastTool showLoading];
-    } else if ([event.resultCode isEqualToString:AlicomFusionEndLoading]) {
-        [AlicomFusionToastTool hideLoading];
-    } else {
-        [AlicomFusionToastTool showToastMsg:[NSString stringWithFormat:@"%@,%@", event.resultCode, event.resultMsg] time:2];
-    }
+  [self->common showResultMsg: event.mj_keyValues msg:@""];
 }
 
 /**
@@ -439,6 +429,7 @@
  */
 - (NSString *)onGetPhoneNumberForVerification:(AlicomFusionAuthHandler *)handler
                                         event:(nonnull AlicomFusionEvent *)event {
+  [self->common showResultMsg: event.mj_keyValues msg:@""];
 //  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   NSString *phoneNum = @"";//[ud objectForKey:kDEMO_UD_PHONE_NUM];
   return phoneNum;

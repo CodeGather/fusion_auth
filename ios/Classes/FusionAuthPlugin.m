@@ -25,7 +25,6 @@
   [instance httpAuthority];
 }
 
-
 #pragma mark - 测试联网阿里授权必须
 -(void)httpAuthority{
   NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/"];//此处修改为自己公司的服务器地址
@@ -93,13 +92,11 @@
 
 #pragma mark - 公共的登录函数
 -(void) startLogin{
-  if ([AlicomFusionManager shareInstance].isActive){
-    [[AlicomFusionManager shareInstance]
-     startSceneWithTemplateId:[FusionAuthCommon shareInstance].TEMLATEID
-               viewController:[AlicomFusionUtil findCurrentViewController]
-    ];
-  } else {
-    [[AlicomFusionManager shareInstance] start];
-  }
+//  if ([AlicomFusionManager shareInstance].isActive){
+//    [[AlicomFusionManager shareInstance] continueScane];
+//  } else {
+//  }
+  [[AlicomFusionManager shareInstance] stopScene];
+  [[AlicomFusionManager shareInstance] start];
 }
 @end
