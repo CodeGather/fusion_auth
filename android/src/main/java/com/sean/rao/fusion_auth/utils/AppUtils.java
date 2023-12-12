@@ -1,6 +1,8 @@
 package com.sean.rao.fusion_auth.utils;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
@@ -41,5 +43,18 @@ public class AppUtils extends com.nirvana.tools.core.AppUtils {
         }
 
         return var2.heightPixels;
+    }
+
+    public static String getPackageName(Context mContext){
+        String packageName="";
+        try {
+            PackageManager packageManager = mContext.getPackageManager();
+            PackageInfo packageInfo = packageManager.getPackageInfo(
+                    mContext.getPackageName(), 0);
+            packageName = packageInfo.packageName;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return packageName;
     }
 }

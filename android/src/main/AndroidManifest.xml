@@ -25,5 +25,22 @@
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustResize"
             android:usesCleartextTraffic="true"/>
+
+        <activity android:exported="false" android:name="com.alicom.fusion.auth.numberauth.FusionNumberAuthActivity" android:screenOrientation="portrait" android:theme="@style/NumberAuthTheme"/>
+        <activity android:exported="false" android:name="com.alicom.fusion.auth.upsms.AlicomFusionUpSmsActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.alicom.fusion.auth.smsauth.FusionSmsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" android:screenOrientation="behind" android:theme="@style/authsdk_activity_dialog"/>
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.PrivacyDialogActivity" android:screenOrientation="behind" android:theme="@style/authsdk_activity_dialog"/>
+
+        <activity
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode|fontScale"
+            android:exported="false"
+            android:name="com.sean.rao.fusion_auth.view.CustomWebViewActivity"
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="com.sean.rao.fusion_auth"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
