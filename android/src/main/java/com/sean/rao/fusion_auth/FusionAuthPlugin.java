@@ -2,7 +2,10 @@ package com.sean.rao.fusion_auth;
 
 import androidx.annotation.NonNull;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.sean.rao.fusion_auth.common.GlobalManager;
+import com.sean.rao.fusion_auth.utils.FusionAuthUtils;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
@@ -22,16 +25,17 @@ public class FusionAuthPlugin implements FlutterPlugin, MethodCallHandler {
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "fusion_auth");
     channel.setMethodCallHandler(this);
-    GlobalManager.getInstance().setChannel(channel);
+    FusionAuthUtils.getInstance().setChannel(channel);
   }
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     switch (call.method){
       case "getVersion":
-        result.success("Android " + android.os.Build.VERSION.RELEASE);
+        FusionAuthUtils.getInstance().getVersion();
         break;
       case "initSdk":
+        FusionAuthUtils.getInstance().setCONFIG(JSON.to(JSONObject.class, call.arguments));
         result.success("Android1 " + android.os.Build.VERSION.RELEASE);
         break;
       case "login":

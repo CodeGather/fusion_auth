@@ -240,6 +240,5 @@ public abstract class BaseUIConfig extends LoginParams {
      *  Android8.0只能启动SCREEN_ORIENTATION_BEHIND模式的Activity
      */
     public void onResume() {
-
     }
 }
