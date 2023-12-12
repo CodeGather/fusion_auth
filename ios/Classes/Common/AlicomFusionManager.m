@@ -801,7 +801,7 @@
   if ([dict count] == 0) {
     naviController.navigationBar.hidden = [dict boolValueForKey: @"isHidden" defaultValue: NO];
     // 导航整体背景色
-    naviController.navigationBar.backgroundColor = [UIColor getColor: [dict stringValueForKey: @"backgroundColor" defaultValue: @"#ffff00"]];
+    naviController.navigationBar.backgroundColor = [UIColor getColor: [dict stringValueForKey: @"backgroundColor" defaultValue: @"#ffffff"]];
     // 文字的设置
     naviController.navigationBar.titleTextAttributes = @{
       // 文字大小

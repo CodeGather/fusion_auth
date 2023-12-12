@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     /// 初始化时添加监听以免接受不到某些回调数据
     _fusionAuthPlugin = FusionAuth(onEvent: (ResponseModel onEvent) async {
       if (kDebugMode) {
-        print("----------------> $onEvent <----------------");
+        print(">>>>>>>> $onEvent <<<<<<<<");
       }
       setState(() {
         // 唤起授权页面后需要处理点击穿透的问题

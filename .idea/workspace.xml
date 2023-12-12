@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/Classes/View/AlicomFusionSampleController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/View/AlicomFusionSampleController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionUtil.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthCommon.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/FusionAuthCommon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FusionAuthPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Common/AlicomFusionManager.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
