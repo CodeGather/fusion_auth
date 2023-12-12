@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/BaseUIConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/CustomAssetsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/CustomViewConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/CustomXmlConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/DialogBottomConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/DialogLandConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/DialogPortConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/FullLandConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/config/FullPortConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/AppUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/HttpRequestUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/layout/activity_custom_web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/layout/activity_custom_web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
