@@ -2,7 +2,7 @@ package com.sean.rao.fusion_auth.utils;
 
 import android.content.Context;
 
-import com.alibaba.fastjson2.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 import com.alicom.fusion.auth.AlicomFusionBusiness;
 
 import io.flutter.plugin.common.MethodChannel;
@@ -96,7 +96,7 @@ public class FusionAuthUtil {
 
     // 获取版本号
     public void getVersion(){
-        String version =  AlicomFusionBusiness.getSDKVersion();
+        String version = AlicomFusionBusiness.getSDKVersion();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("resultCode", "999999");
         jsonObject.put("resultMsg", String.format("插件启动成功, 原生SDK版本: %s", version));

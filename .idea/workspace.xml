@@ -6,23 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SECURITY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/libs/fusionauth-1.0.8-online-release.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/libs/umeng-asms-v1.8.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/libs/umeng-common-9.5.6.aar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/AliComFusionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/CacheManage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/Constant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/CustomAuthUIClickListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/GifAnimationDrawable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/GlobalManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/LoginParams.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/NativeBackgroundAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/common/OnListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/net/GetAuthTokenResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/net/HttpRequestUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/net/ResultUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/net/VerifyTokenModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/net/VerifyTokenResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/view/CustomWebViewActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/View/flutter_ios_present_sample/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
