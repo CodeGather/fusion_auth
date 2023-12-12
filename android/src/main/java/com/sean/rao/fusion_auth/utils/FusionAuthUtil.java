@@ -12,15 +12,15 @@ import io.flutter.plugin.common.MethodChannel;
  * @Description:
  * @CreateDate: 2023/2/15
  */
-public class FusionAuthUtils {
-    private FusionAuthUtils() {
+public class FusionAuthUtil {
+    private FusionAuthUtil() {
     }
 
     private static class Holder {
-        private static final FusionAuthUtils INSTANCE = new FusionAuthUtils();
+        private static final FusionAuthUtil INSTANCE = new FusionAuthUtil();
     }
 
-    public static FusionAuthUtils getInstance() {
+    public static FusionAuthUtil getInstance() {
         return Holder.INSTANCE;
     }
 
