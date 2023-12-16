@@ -144,6 +144,30 @@ class LogoConfig {
   }
 }
 
+/// name设置
+@JsonSerializable()
+class NameConfig {
+  const NameConfig({
+    this.text,
+    this.fontSize,
+    this.fontColor,
+  });
+
+  factory NameConfig.fromJson(Map<String, dynamic> json) =>
+      _$NameConfigFromJson(json);
+
+  final String? text;
+  final String? fontSize;
+  final String? fontColor;
+
+  Map<String, dynamic> toJson() => _$NameConfigToJson(this);
+
+  @override
+  String toString() {
+    return 'NameConfig{text: $text, fontSize: $fontSize, fontColor: $fontColor}';
+  }
+}
+
 /// slogan设置
 @JsonSerializable()
 class SloganConfig {

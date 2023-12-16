@@ -126,6 +126,19 @@ Map<String, dynamic> _$LogoConfigToJson(LogoConfig instance) =>
       'logoFrameOffsetY': instance.logoFrameOffsetY,
     };
 
+NameConfig _$NameConfigFromJson(Map<String, dynamic> json) => NameConfig(
+      text: json['text'] as String?,
+      fontSize: json['fontSize'] as String?,
+      fontColor: json['fontColor'] as String?,
+    );
+
+Map<String, dynamic> _$NameConfigToJson(NameConfig instance) =>
+    <String, dynamic>{
+      'text': instance.text,
+      'fontSize': instance.fontSize,
+      'fontColor': instance.fontColor,
+    };
+
 SloganConfig _$SloganConfigFromJson(Map<String, dynamic> json) => SloganConfig(
       sloganIsHidden: json['sloganIsHidden'] as bool?,
       sloganText: json['sloganText'] as String?,

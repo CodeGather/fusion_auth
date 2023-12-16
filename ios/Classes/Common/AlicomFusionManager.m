@@ -474,7 +474,18 @@
     }
     model.backgroundImageContentMode = [background integerValueForKey: @"backgroundImageContentMode" defaultValue: UIViewContentModeScaleAspectFill];
   }
-
+  
+  #pragma mark- 名称部分
+  NSDictionary *name = [dict dictValueForKey: @"nameConfig" defaultValue: nil];
+  if (name != nil) {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, TX_SCREEN_WIDTH, 100)];
+    label.text = [name stringValueForKey: @"text" defaultValue: @"登录"];
+    label.textColor = [UIColor getColor: [name stringValueForKey: @"fontColor" defaultValue: @"#262626"]];
+    label.font = [UIFont systemFontOfSize: [name integerValueForKey: @"fontSize" defaultValue: 24]];
+    [label sizeToFit];
+    model.nameLabel = label;
+  }
+  
   #pragma mark- logo图片
   NSDictionary *logo = [dict dictValueForKey: @"logoConfig" defaultValue: nil];
   if (logo != nil) {
@@ -564,6 +575,7 @@
         return rect;
     };
   }
+  
   #pragma mark- 选中框
   NSDictionary *checkBox = [dict dictValueForKey: @"checkBoxConfig" defaultValue: nil];
   if (checkBox != nil) {
@@ -576,6 +588,25 @@
     if (uncheckImage != nil && checkedImage != nil) {
       model.checkBoxImages = @[uncheckImage, checkedImage];
     }
+  }
+  
+  #pragma mark- 切换登录部分
+  NSDictionary *changeButton = [dict dictValueForKey: @"changeButtonConfig" defaultValue: nil];
+  if (changeButton != nil) {
+    UIButton *otherLogin = [UIButton buttonWithType:UIButtonTypeCustom];
+    [otherLogin setTitle:[dict stringValueForKey: @"changeBtnTitle" defaultValue: @"其他手机号登录"] forState:UIControlStateNormal];
+    [otherLogin setTitleColor:[UIColor getColor: [dict stringValueForKey: @"changeBtnTextColor" defaultValue: @"#262626"]] forState:UIControlStateNormal];
+    otherLogin.titleLabel.font = [UIFont systemFontOfSize:[dict intValueForKey: @"changeBtnTextSize" defaultValue: 16]];
+    [otherLogin addTarget:self action:@selector(otherPhoneLoginClick) forControlEvents:UIControlEventTouchUpInside];
+    model.otherLoginButton = otherLogin;
+    model.moreLoginActionBlock = ^{
+      NSLog(@"其他登录方式");
+      NSDictionary *result = @{
+        @"resultCode": @"888888",
+        @"resultMsg": @"其他登录方式"
+      };
+      [self->common showResultMsg: result.mj_keyValues msg:@""];
+    };
   }
   
   #pragma mark- 协议
@@ -626,28 +657,6 @@
         CGRect rect = CGRectMake(frame.origin.x, screenSize.height - 60 - frame.size.height - 34, frame.size.width, frame.size.height);
         return rect;
     };
-  }
-  
-  model.moreLoginActionBlock = ^{
-      NSLog(@"其他登录方式");
-  };
-    
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ALICOM_FUSION_DEMO_SCREEN_WIDTH, 100)];
-//    label.text = @"登录";
-//    label.textColor = AlicomColorHex(0x262626);
-//    label.font = [UIFont systemFontOfSize:24];
-//    [label sizeToFit];
-//    model.nameLabel = label;
-  
-  // 切换登录部分
-  if ([dict boolValueForKey: @"switchAccHidden" defaultValue: NO]) {
-    UIButton *otherLogin = [UIButton buttonWithType:UIButtonTypeCustom];
-    [otherLogin setTitle:[dict stringValueForKey: @"switchAccText" defaultValue: @"其他手机号登录"] forState:UIControlStateNormal];
-    otherLogin.backgroundColor = UIColor.whiteColor;
-    [otherLogin setTitleColor:[UIColor getColor: [dict stringValueForKey: @"switchAccTextColor" defaultValue: @"#262626"]] forState:UIControlStateNormal];
-    otherLogin.titleLabel.font = [UIFont systemFontOfSize:[dict intValueForKey: @"switchAccTextSize" defaultValue: 16]];
-    [otherLogin addTarget:self action:@selector(otherPhoneLoginClick) forControlEvents:UIControlEventTouchUpInside];
-    model.otherLoginButton = otherLogin;
   }
 
 //  CGFloat ratio = MAX(TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT) / 667.0;
