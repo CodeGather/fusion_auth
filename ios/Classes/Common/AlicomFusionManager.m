@@ -484,6 +484,10 @@
     label.font = [UIFont systemFontOfSize: [name integerValueForKey: @"fontSize" defaultValue: 24]];
     [label sizeToFit];
     model.nameLabel = label;
+    
+    model.nameLabelFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        return frame;
+    };
   }
   
   #pragma mark- logo图片
@@ -607,6 +611,10 @@
       };
       [self->common showResultMsg: result.mj_keyValues msg:@""];
     };
+    
+    model.otherLoginButtonFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
+        return frame;
+    };
   }
   
   #pragma mark- 协议
@@ -679,13 +687,6 @@
 ////      }
 //      return CGRectMake(alertX, alertY, screenSize.width, screenSize.height);
 //  };
-  
-  model.nameLabelFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      return frame;
-  };
-  model.otherLoginButtonFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-      return frame;
-  };
     
   model.customViewLayoutBlock = ^(
       CGSize screenSize,        /// 全屏参数

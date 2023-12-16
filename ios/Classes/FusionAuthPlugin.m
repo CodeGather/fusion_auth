@@ -92,11 +92,10 @@
 
 #pragma mark - 公共的登录函数
 -(void) startLogin{
-//  if ([AlicomFusionManager shareInstance].isActive){
+  if ([AlicomFusionManager shareInstance].isActive){
 //    [[AlicomFusionManager shareInstance] continueScane];
-//  } else {
-//  }
-  [[AlicomFusionManager shareInstance] stopScene];
+    [[AlicomFusionManager shareInstance] stopScene];
+  }
   [[AlicomFusionManager shareInstance] start];
 }
 @end
