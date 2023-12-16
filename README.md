@@ -34,10 +34,10 @@ Fusion_auth是基于阿里云号码认证服务中融合认证SDK的Flutter插�
 
 ## 插件版本
 
-| platform | support |                                          version                                          |      minSdkVersion      |
-|:--------:|:-------:|:-----------------------------------------------------------------------------------------:|:-----------------------:|
-| Android  |   YES   | [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-android-client-access-3) | > 26 :white_check_mark: |
-|   Ios    |   YES   |   [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-ios-client-access-3)   |            ~            |
+| platform | support |                                          version                                          |
+|:--------:|:-------:|:-----------------------------------------------------------------------------------------:|
+| Android  |   YES   | [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-android-client-access-3) |
+|   Ios    |   YES   |   [V1.0.8](https://help.aliyun.com/zh/pnvs/developer-reference/the-ios-client-access-3)   |
 
 ## 效果图
 
