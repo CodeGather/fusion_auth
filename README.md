@@ -26,6 +26,7 @@
     * [调起授权页面，获取Token](#5一键登录预取号-accelerateloginpage)
 * [注意事项](#注意事项)
 * [打赏-技术支持](#打赏-技术支持)
+* [成长历程](#成长历程)
 
 
 ## 插件名称
@@ -96,8 +97,10 @@ Fusion_auth是基于阿里云号码认证服务中融合认证SDK的Flutter插�
     )
     ``` 
 
-
 ## 打赏-技术支持
 | Wechat                                                                                        | Alipay                                                                                        |
 |-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_wechat.png "Wechat") | ![](https://github.com/CodeGather/fusion_auth/blob/main/screenshots/play_alipay.png "Alipay") |
+
+## 成长历程
+[![Stargazers over time](https://starchart.cc/CodeGather/fusion_auth.svg)](https://starchart.cc/CodeGather/fusion_auth)
