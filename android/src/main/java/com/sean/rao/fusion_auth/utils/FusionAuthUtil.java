@@ -2,7 +2,7 @@ package com.sean.rao.fusion_auth.utils;
 
 import android.content.Context;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.alicom.fusion.auth.AlicomFusionBusiness;
 
 import io.flutter.plugin.common.MethodChannel;

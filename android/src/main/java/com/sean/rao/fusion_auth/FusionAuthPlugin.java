@@ -2,6 +2,8 @@ package com.sean.rao.fusion_auth;
 
 import androidx.annotation.NonNull;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.sean.rao.fusion_auth.utils.FusionAuthUtil;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -32,6 +34,8 @@ public class FusionAuthPlugin implements FlutterPlugin, MethodCallHandler {
         FusionAuthUtil.getInstance().getVersion();
         break;
       case "initSdk":
+        // 设置参数
+        FusionAuthUtil.getInstance().setCONFIG(JSONObject.from(call.arguments));
         result.success("Android1 " + android.os.Build.VERSION.RELEASE);
         break;
       case "login":
