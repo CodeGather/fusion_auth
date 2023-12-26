@@ -553,25 +553,34 @@
     ];
     model.loginBtnText = loginAttr;
     
-    UIImage *unSelectImage = [AlicomFusionUtil
-        imageWithColor: [UIColor getColor:@"#0064C8"]
-                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-       isRoundedCorner: NO
-                radius: 0.0
-    ];
-    UIImage *selectImage = [AlicomFusionUtil
-        imageWithColor: [UIColor getColor:@"#0064C8"]
-                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-       isRoundedCorner: NO
-                radius: 0.0
-    ];
-    UIImage *heighLightImage = [AlicomFusionUtil
-        imageWithColor: [UIColor getColor:@"#0064C8"]
-                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
-       isRoundedCorner: NO
-                radius: 0.0
-    ];
-    model.loginBtnBgImgs = @[unSelectImage, selectImage, heighLightImage];
+    // login_btn_normal
+    UIImage * loginBtnNormal = [AlicomFusionUtil changeUriPathToImage: [loginButton stringValueForKey: @"loginBtnNormalImage" defaultValue: nil]];
+    // login_btn_unable
+    UIImage * loginBtnUnable = [AlicomFusionUtil changeUriPathToImage: [loginButton stringValueForKey: @"loginBtnUnableImage" defaultValue: nil]];
+    // login_btn_press
+    UIImage * loginBtnPress = [AlicomFusionUtil changeUriPathToImage: [loginButton stringValueForKey: @"loginBtnPressedImage" defaultValue: nil]];
+    
+//    UIImage *unSelectImage = [AlicomFusionUtil
+//        imageWithColor: [UIColor getColor:@"#0064C8"]
+//                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+//       isRoundedCorner: NO
+//                radius: 0.0
+//    ];
+//    UIImage *selectImage = [AlicomFusionUtil
+//        imageWithColor: [UIColor getColor:@"#0064C8"]
+//                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+//       isRoundedCorner: NO
+//                radius: 0.0
+//    ];
+//    UIImage *heighLightImage = [AlicomFusionUtil
+//        imageWithColor: [UIColor getColor:@"#0064C8"]
+//                  size: CGSizeMake(TX_SCREEN_WIDTH - 32, 44)
+//       isRoundedCorner: NO
+//                radius: 0.0
+//    ];
+    if (loginBtnNormal != nil && loginBtnUnable != nil && loginBtnPress != nil) {
+      model.loginBtnBgImgs = @[loginBtnUnable, loginBtnNormal, loginBtnPress];
+    }
     
     model.loginBtnFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
         CGFloat y = 318;
@@ -599,7 +608,10 @@
   if (changeButton != nil) {
     UIButton *otherLogin = [UIButton buttonWithType:UIButtonTypeCustom];
     [otherLogin setTitle:[dict stringValueForKey: @"changeBtnTitle" defaultValue: @"其他手机号登录"] forState:UIControlStateNormal];
-    [otherLogin setTitleColor:[UIColor getColor: [dict stringValueForKey: @"changeBtnTextColor" defaultValue: @"#262626"]] forState:UIControlStateNormal];
+    [otherLogin setTitleColor:[
+      UIColor getColor: [dict stringValueForKey: @"changeBtnTextColor" defaultValue: @"#262626"]] 
+              forState:UIControlStateNormal
+    ];
     otherLogin.titleLabel.font = [UIFont systemFontOfSize:[dict intValueForKey: @"changeBtnTextSize" defaultValue: 16]];
     [otherLogin addTarget:self action:@selector(otherPhoneLoginClick) forControlEvents:UIControlEventTouchUpInside];
     model.otherLoginButton = otherLogin;
