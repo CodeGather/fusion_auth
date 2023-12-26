@@ -545,10 +545,10 @@
     // 登录按钮
     NSMutableAttributedString *loginAttr = [
       [NSMutableAttributedString alloc]
-      initWithString:[loginButton stringValueForKey: @"logBtnText" defaultValue: @"一键登录"]
+      initWithString:[loginButton stringValueForKey: @"loginBtnText" defaultValue: @"一键登录"]
       attributes:@{
-        NSFontAttributeName: [UIFont systemFontOfSize:[loginButton intValueForKey: @"logBtnTextSize" defaultValue: 16]],
-        NSForegroundColorAttributeName: [UIColor getColor: [loginButton stringValueForKey: @"logBtnTextColor" defaultValue: @"#555555"]],
+        NSFontAttributeName: [UIFont systemFontOfSize:[loginButton intValueForKey: @"loginBtnTextSize" defaultValue: 16]],
+        NSForegroundColorAttributeName: [UIColor getColor: [loginButton stringValueForKey: @"loginBtnTextColor" defaultValue: @"#555555"]],
       }
     ];
     model.loginBtnText = loginAttr;
@@ -583,8 +583,13 @@
     }
     
     model.loginBtnFrameBlock = ^CGRect(CGSize screenSize, CGSize superViewSize, CGRect frame) {
-        CGFloat y = 318;
-        CGRect rect = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
+        CGRect rect = CGRectMake(
+               [loginButton integerValueForKey: @"loginBtnFrameOffsetX" defaultValue: frame.origin.x],
+               [loginButton integerValueForKey: @"loginBtnFrameOffsetY" defaultValue: 318],
+               [loginButton integerValueForKey: @"loginBtnWidth" defaultValue: frame.size.width],
+               [loginButton integerValueForKey: @"loginBtnHeight" defaultValue: frame.size.height]
+               
+        );
         return rect;
     };
   }
