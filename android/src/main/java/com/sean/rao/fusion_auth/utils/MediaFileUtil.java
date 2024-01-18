@@ -21,7 +21,6 @@ import java.util.Iterator;
  */
 public class MediaFileUtil {
   public static String sFileExtensions;
-
   // Audio
   public static final int FILE_TYPE_MP3     = 1;
   public static final int FILE_TYPE_M4A     = 2;
@@ -32,14 +31,12 @@ public class MediaFileUtil {
   public static final int FILE_TYPE_OGG     = 7;
   private static final int FIRST_AUDIO_FILE_TYPE = FILE_TYPE_MP3;
   private static final int LAST_AUDIO_FILE_TYPE = FILE_TYPE_OGG;
-
   // MIDI
   public static final int FILE_TYPE_MID     = 11;
   public static final int FILE_TYPE_SMF     = 12;
   public static final int FILE_TYPE_IMY     = 13;
   private static final int FIRST_MIDI_FILE_TYPE = FILE_TYPE_MID;
   private static final int LAST_MIDI_FILE_TYPE = FILE_TYPE_IMY;
-
   // Video
   public static final int FILE_TYPE_MP4     = 21;
   public static final int FILE_TYPE_M4V     = 22;
@@ -48,7 +45,6 @@ public class MediaFileUtil {
   public static final int FILE_TYPE_WMV     = 25;
   private static final int FIRST_VIDEO_FILE_TYPE = FILE_TYPE_MP4;
   private static final int LAST_VIDEO_FILE_TYPE = FILE_TYPE_WMV;
-
   // Image
   public static final int FILE_TYPE_JPEG    = 31;
   public static final int FILE_TYPE_GIF     = 32;
@@ -57,7 +53,6 @@ public class MediaFileUtil {
   public static final int FILE_TYPE_WBMP    = 35;
   private static final int FIRST_IMAGE_FILE_TYPE = FILE_TYPE_JPEG;
   private static final int LAST_IMAGE_FILE_TYPE = FILE_TYPE_WBMP;
-
   // Playlist
   public static final int FILE_TYPE_M3U     = 41;
   public static final int FILE_TYPE_PLS     = 42;
@@ -67,7 +62,6 @@ public class MediaFileUtil {
 
   //静态内部类
   public static class MediaFileType {
-
     int fileType;
     String mimeType;
 
@@ -77,10 +71,8 @@ public class MediaFileUtil {
     }
   }
 
-  private static HashMap<String, MediaFileType> sFileTypeMap
-          = new HashMap<String, MediaFileType>();
-  private static HashMap<String, Integer> sMimeTypeMap
-          = new HashMap<String, Integer>();
+  private static HashMap<String, MediaFileType> sFileTypeMap = new HashMap<String, MediaFileType>();
+  private static HashMap<String, Integer> sMimeTypeMap = new HashMap<String, Integer>();
   static void addFileType(String extension, int fileType, String mimeType) {
     sFileTypeMap.put(extension, new MediaFileType(fileType, mimeType));
     sMimeTypeMap.put(mimeType, new Integer(fileType));
@@ -93,13 +85,11 @@ public class MediaFileUtil {
     addFileType("AWB", FILE_TYPE_AWB, "audio/amr-wb");
     addFileType("WMA", FILE_TYPE_WMA, "audio/x-ms-wma");
     addFileType("OGG", FILE_TYPE_OGG, "application/ogg");
-
     addFileType("MID", FILE_TYPE_MID, "audio/midi");
     addFileType("XMF", FILE_TYPE_MID, "audio/midi");
     addFileType("RTTTL", FILE_TYPE_MID, "audio/midi");
     addFileType("SMF", FILE_TYPE_SMF, "audio/sp-midi");
     addFileType("IMY", FILE_TYPE_IMY, "audio/imelody");
-
     addFileType("MP4", FILE_TYPE_MP4, "video/mp4");
     addFileType("M4V", FILE_TYPE_M4V, "video/mp4");
     addFileType("3GP", FILE_TYPE_3GPP, "video/3gpp");
@@ -107,18 +97,15 @@ public class MediaFileUtil {
     addFileType("3G2", FILE_TYPE_3GPP2, "video/3gpp2");
     addFileType("3GPP2", FILE_TYPE_3GPP2, "video/3gpp2");
     addFileType("WMV", FILE_TYPE_WMV, "video/x-ms-wmv");
-
     addFileType("JPG", FILE_TYPE_JPEG, "image/jpeg");
     addFileType("JPEG", FILE_TYPE_JPEG, "image/jpeg");
     addFileType("GIF", FILE_TYPE_GIF, "image/gif");
     addFileType("PNG", FILE_TYPE_PNG, "image/png");
     addFileType("BMP", FILE_TYPE_BMP, "image/x-ms-bmp");
     addFileType("WBMP", FILE_TYPE_WBMP, "image/vnd.wap.wbmp");
-
     addFileType("M3U", FILE_TYPE_M3U, "audio/x-mpegurl");
     addFileType("PLS", FILE_TYPE_PLS, "audio/x-scpls");
     addFileType("WPL", FILE_TYPE_WPL, "application/vnd.ms-wpl");
-
     // compute file extensions list for native Media Scanner
     StringBuilder builder = new StringBuilder();
     Iterator<String> iterator = sFileTypeMap.keySet().iterator();

@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 group 'com.sean.rao.fusion_auth'
-version '1.0.2'
+version "${fusionPluginVersion}"
 
 buildscript {
     repositories {
@@ -25,7 +25,6 @@ rootProject.allprojects {
         maven { url 'https://download.flutter.io'}
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
-
         // 一键登录本地依赖
         flatDir {
             dirs project(':fusion_auth').file('libs')
@@ -43,11 +42,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    defaultConfig {
-        minSdkVersion 26
-        targetSdkVersion 33
     }
 
     dependencies {
@@ -73,17 +67,14 @@ android {
     }
 }
 
-
-
 dependencies {
     implementation "androidx.appcompat:appcompat:1.4.1"
 
     implementation "com.alibaba:fastjson:2.0.43"
-
     implementation(name: "fusionauth-${fusionAuthVersion}-online-release", ext:'aar')
     implementation(name: "umeng-asms-${asmsVersion}", ext:'aar')
     implementation(name: "umeng-common-${commonVersion}", ext:'aar')
 
     // 吐司框架：https://github.com/getActivity/Toaster
-    implementation 'com.github.getActivity:Toaster:12.2'
+    // implementation 'com.github.getActivity:Toaster:12.2'
 }

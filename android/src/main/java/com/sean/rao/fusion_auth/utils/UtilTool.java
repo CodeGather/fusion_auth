@@ -1,12 +1,16 @@
 package com.sean.rao.fusion_auth.utils;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -20,8 +24,6 @@ import java.util.List;
 import io.flutter.FlutterInjector;
 import io.flutter.embedding.engine.loader.FlutterLoader;
 import io.flutter.plugin.common.MethodCall;
-
-
 /**
  * @ProjectName: android
  * @Package: com.sean.rao.ali_auth.utils
@@ -59,6 +61,55 @@ public class UtilTool {
     }
   }
 
+  public static int dp2px(Context context, float dipValue) {
+    try {
+      final float scale = context.getResources().getDisplayMetrics().density;
+      return (int) (dipValue * scale + 0.5f);
+    } catch (Exception e) {
+      return (int) dipValue;
+    }
+  }
+
+  public static int px2dp(Context context, float px) {
+    try {
+      final float scale = context.getResources().getDisplayMetrics().density;
+      return (int) (px / scale + 0.5f);
+    } catch (Exception e) {
+      return (int) px;
+    }
+  }
+
+  public static int getPhoneWidthPixels(Context context) {
+    WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    DisplayMetrics var2 = new DisplayMetrics();
+    if (wm != null) {
+      wm.getDefaultDisplay().getMetrics(var2);
+    }
+
+    return var2.widthPixels;
+  }
+
+  public static int getPhoneHeightPixels(Context context) {
+    WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    DisplayMetrics var2 = new DisplayMetrics();
+    if (wm != null) {
+      wm.getDefaultDisplay().getMetrics(var2);
+    }
+
+    return var2.heightPixels;
+  }
+
+  public static String getPackageName(Context mContext){
+    String packageName="";
+    try {
+      PackageManager packageManager = mContext.getPackageManager();
+      PackageInfo packageInfo = packageManager.getPackageInfo(mContext.getPackageName(), 0);
+      packageName = packageInfo.packageName;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return packageName;
+  }
 
   /**
    * flutter 路径转换
@@ -152,4 +203,5 @@ public class UtilTool {
 //    jsonObj.put("msg", msg != null && !msg.isEmpty() ? msg : StatusAll.getName(code));
     return jsonObj;
   }
+
 }
