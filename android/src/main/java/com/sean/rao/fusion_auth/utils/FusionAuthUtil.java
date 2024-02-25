@@ -107,7 +107,7 @@ public class FusionAuthUtil {
     private volatile boolean verifySuccess=false;
     private AlicomFusionBusiness mAlicomFusionBusiness;
     private AlicomFusionAuthCallBack mAlicomFusionAuthCallBack;
-    private void initAlicomFusionSdk() {
+    public void initAlicomFusionSdk() {
         AlicomFusionBusiness.useSDKSupplyUMSDK(true,"ymeng");
         mAlicomFusionBusiness = new AlicomFusionBusiness();
         sum=0;
@@ -210,7 +210,6 @@ public class FusionAuthUtil {
             }
         };
         mAlicomFusionBusiness.setAlicomFusionAuthCallBack(mAlicomFusionAuthCallBack);
-
     }
 
     // 获取版本号
@@ -220,6 +219,9 @@ public class FusionAuthUtil {
         jsonObject.put("resultCode", "999999");
         jsonObject.put("resultMsg", String.format("插件启动成功, 原生SDK版本: %s", version));
         resultData(jsonObject);
+    }
+
+    public void login() {
     }
     /**
      * 共用返回事件

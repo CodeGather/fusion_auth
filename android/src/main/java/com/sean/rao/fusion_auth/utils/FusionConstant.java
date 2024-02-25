@@ -1,0 +1,12 @@
+package com.sean.rao.fusion_auth.utils;
+
+/**
+ * 常量
+ */
+public class FusionConstant {
+    public static final String VERSION = "getVersion";
+    public static final String INIT = "initSdk";
+    public static final String LOGIN= "login";
+    public static final String UPDATE_TOKEN = "updateToken";
+    public static final String DISPOSE = "dispose";
+}

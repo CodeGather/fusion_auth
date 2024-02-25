@@ -2,8 +2,8 @@ package com.sean.rao.fusion_auth;
 
 import androidx.annotation.NonNull;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.sean.rao.fusion_auth.utils.FusionConstant;
 import com.sean.rao.fusion_auth.utils.FusionAuthUtil;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -30,21 +30,21 @@ public class FusionAuthPlugin implements FlutterPlugin, MethodCallHandler {
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     switch (call.method){
-      case "getVersion":
+      case FusionConstant.VERSION:
         FusionAuthUtil.getInstance().getVersion();
         break;
-      case "initSdk":
+      case FusionConstant.INIT:
         // 设置参数
         FusionAuthUtil.getInstance().setCONFIG(JSONObject.from(call.arguments));
-        result.success("Android1 " + android.os.Build.VERSION.RELEASE);
+        FusionAuthUtil.getInstance().initAlicomFusionSdk();
         break;
-      case "login":
-        result.success("Android2 " + android.os.Build.VERSION.RELEASE);
+      case FusionConstant.LOGIN:
+        FusionAuthUtil.getInstance().login();
         break;
-      case "updateToken":
+      case FusionConstant.UPDATE_TOKEN:
         result.success("Android3 " + android.os.Build.VERSION.RELEASE);
         break;
-      case "dispose":
+      case FusionConstant.DISPOSE:
         result.success("Android4 " + android.os.Build.VERSION.RELEASE);
         break;
       default:

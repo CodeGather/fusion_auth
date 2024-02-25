@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.sean.rao.fusion_auth.utils.PackageUtil;
-import com.sean.rao.fusion_auth.utils.UtilTool;
+import com.sean.rao.fusion_auth.utils.FusionUtilTool;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,13 +21,13 @@ public class HttpRequestUtil {
 
     private static final String TAG = "HttpRequestUtil";
 
-    public static GetAuthTokenResult getAuthToken(Context context) {
+    public static AuthTokenResult getAuthToken(Context context) {
         StringBuilder builder=new StringBuilder();
         builder.append("Action=");
         // builder.append(Constant.GETAUTHREQUESTACTION);
         builder.append("&Platform=Android");
         builder.append("&PackageName=");
-        builder.append(UtilTool.getPackageName(context));
+        builder.append(FusionUtilTool.getPackageName(context));
         builder.append("&SchemeCode=");
         // builder.append(Constant.SCHEME_CODE);
         //token有效期 单位 s
@@ -37,7 +37,7 @@ public class HttpRequestUtil {
         builder.append(PackageUtil.getSign(context));
         String result = ""; // getHttp(Constant.NETURL, builder.toString());
         Log.d(TAG, "getAuthToken result is " + result);
-        GetAuthTokenResult authTokenResult = ResultUtils.getAuthTokenResult(result);
+        AuthTokenResult authTokenResult = HttpResultUtils.getAuthTokenResult(result);
         return authTokenResult;
     }
 
@@ -52,7 +52,7 @@ public class HttpRequestUtil {
         builder.append(token);
         String result = ""; // postHttp(Constant.NETURL, builder.toString());
         Log.d(TAG, "verifyToken result is " + result);
-        VerifyTokenResult verifyTokenResult = ResultUtils.getVerifyTokenResult(result);
+        VerifyTokenResult verifyTokenResult = HttpResultUtils.getVerifyTokenResult(result);
         return verifyTokenResult;
     }
 

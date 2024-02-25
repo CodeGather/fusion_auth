@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - fusion_auth (1.0.1):
+  - fusion_auth (1.0.3):
     - Flutter
     - MBProgressHUD
     - MJExtension
@@ -28,12 +28,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  fusion_auth: 152a97094d549e04f90dde5a20217b337168a702
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  fusion_auth: cde297aceface7c78923e59a6c6f4e568af0e2dd
   integration_test: 13825b8a9334a850581300559b8839134b124670
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
 
 PODFILE CHECKSUM: eacdfa6b9c186ca96c275ed573c8ca271e41af6e
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.0
