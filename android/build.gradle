@@ -56,7 +56,6 @@ android {
             proguardFile file('proguard-rules.pro')
             zipAlignEnabled false
             multiDexEnabled true
-
         }
 
         debug {
