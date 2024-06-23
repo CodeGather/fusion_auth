@@ -1,25 +1,21 @@
-# 工作流程的名字
-name: Test And Build
+name: Build Release
 
-# 工作流程触发的时机，这里是当一个版本标签推送到仓库时触发
 on:
   push:
-    branches: [ "main" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ master ]
 
-# 这个工作流程需要执行的任务
 jobs:
+  # Release 操作
   build:
-    name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: write
       discussions: write
-    # 这个任务的步骤
     steps:
       # 拉取项目代码
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # 建立 java 环境
       - name: Setup Java JDK
         uses: actions/setup-java@v3
@@ -36,6 +32,6 @@ jobs:
       # 执行测试
       - run: flutter test
       # 打包 APK
-      - name: Release apk
+      - name: Build Release apk
         run: flutter build apk --release
         working-directory: example

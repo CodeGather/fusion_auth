@@ -169,6 +169,30 @@ static NSString * const AlicomFusionStartLoading = @"900003";
 //结束加载
 static NSString * const AlicomFusionEndLoading = @"900004";
 
+#pragma mark - 图形认证
+//图形认证验证码初始化成功
+static NSString * const AlicomFusionGraphAuthInitSuccess = @"110001";
+//图形认证验证码初始化失败，callbackVerifyFailed
+static NSString * const AlicomFusionGraphAuthInitFail = @"110002";
+//图形认证页面弹起成功
+static NSString * const AlicomFusionGraphAuthShowSuccess = @"110003";
+//图形认证页面弹起失败，callbackVerifyFailed
+static NSString * const AlicomFusionGraphAuthShowFail = @"110004";
+//图形认证获取本地效验成功
+static NSString * const AlicomFusionGraphAuthLocalVerifySuccess = @"110005";
+//图形认证本地效验失败，自动刷新验证码
+static NSString * const AlicomFusionGraphAuthLocalVerifyFail = @"110006";
+//图形认证服务端二次效验成功
+static NSString * const AlicomFusionGraphAuthServerVerifySuccess = @"110007";
+//图形认证服务端二次效验失败，callbackVerifyFailed
+static NSString * const AlicomFusionGraphAuthServerVerifyFail = @"110008";
+//图形认证页面取消，如果是场景结束或者点击返回按钮则callbackTemplateFinish
+static NSString * const AlicomFusionGraphAuthDisMiss = @"110009";
+//图形认证返回按钮点击
+static NSString * const AlicomFusionGraphAuthBackClickEvent = @"110010";
+//图形认证被动返回(错误认证返回)
+static NSString * const AlicomFusionGraphAuthBackErrorEvent = @"110011";
+
 #pragma mark - 一键登录内部错误码，请注意1600011及1600012错误内均含有运营商返回码，具体错误在碰到之后查阅 https://help.aliyun.com/document_detail/85351.html?spm=a2c4g.11186623.6.561.32a7360cxvWk6H
 /// 接口成功
 static NSString * const AlicomFusionNumberAuthInnerCodeSuccess = @"1600000";
@@ -257,7 +281,9 @@ static NSString * const AlicomFusionNumberAuthCodeLoginPrivacyAlertViewPrivacyCo
 // 请求id
 @property (nonatomic, copy, readonly) NSString *requestId;
 
-// 拓展字段，其他一些参数，比如checkbox是否选中等
+/* 拓展字段，其他一些参数
+ * checkbox是否选中(key:isCheckBoxSelected value:0/1)
+ */
 @property (nonatomic, strong, readonly) NSDictionary *extendData;
 
 @end

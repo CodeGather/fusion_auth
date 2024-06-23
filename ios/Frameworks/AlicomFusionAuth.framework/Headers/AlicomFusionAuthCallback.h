@@ -23,7 +23,8 @@ static NSString * const AlicomFusionNodeNameNumberAuth = @"AlicomFusionNodeNameN
 static NSString * const AlicomFusionNodeNameVerifyCodeAuth = @"AlicomFusionNodeNameVerifyCodeAuth";
 //上行短信
 static NSString * const AlicomFusionNodeNameUpGoingAuth = @"AlicomFusionNodeNameUpGoingAuth";
-
+//图形验证
+static NSString * const AlicomFusionNodeNameGraphAuth = @"AlicomFusionNodeNameGraphAuth";
 
 /* SDK业务核心回调 */
 @protocol AlicomFusionAuthDelegate <NSObject>

@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/fusion_auth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fusion_auth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/libs/fusionauth-1.0.8-online-release.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/fusion_auth.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/fusion_auth.podspec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,64 +15,69 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/lib/src/model/response_model.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/src/config/part_ui_config.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.github/workflows/runable.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/android/gradle.properties" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/src/config/part_abstract_config.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../ali_auth/.github/workflows/release.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CHANGELOG.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CONTRIBUTING.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ios/Classes/View/AlicomFusionWebViewController.m" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/android/build.gradle" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/android/gradle.properties" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/android/local.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/android/settings.gradle" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/android/build.gradle" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/example/android/app/build.gradle" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/example/lib/main.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ios/Classes/View/AlicomFusionWebViewController.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.github/workflows/flutter.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.github/workflows/publish.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../ali_auth/.github/workflows/release.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/example/android/app/build.gradle" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ios/Classes/View/AlicomFusionWebViewController.m" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/fusion_auth.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/src/model/response_model.g.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/android/local.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/config/part_abstract_config.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/config/part_ui_config.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/test/fusion_auth_test.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/src/internal/fusion_auth_api.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/model/response_model.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/model/response_model.g.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/fusion_auth_test.dart" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2YnJ3kirz6h2SJ2JxiUcZrw3kMi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/libs" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/Yau/work/3.Github/flutter/fusion_auth/screenshots",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/screenshots" />
       <recent name="$PROJECT_DIR$/android/libs" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
       <recent name="$PROJECT_DIR$/lib/src/config" />
-      <recent name="$PROJECT_DIR$/screenshots" />
       <recent name="$PROJECT_DIR$/ios/Classes/Common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

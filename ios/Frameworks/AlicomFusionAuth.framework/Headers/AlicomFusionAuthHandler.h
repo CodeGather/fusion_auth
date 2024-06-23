@@ -117,6 +117,13 @@ static NSString * const AlicomFusionTemplateId_100005 = @"100005";
  */
 - (void)closeNumberAuthPrivactAlertView;
 
+/**
+ *  设置展示页面横竖屏
+ *  默认UIInterfaceOrientationMaskPortrait，当前仅支持固定竖屏和固定横屏，暂不支持动态旋转
+ *  请在startScene之前设置
+ */
+- (void)setInterfaceOrientation:(UIInterfaceOrientationMask)orientation;
+
 @end
 
 NS_ASSUME_NONNULL_END
