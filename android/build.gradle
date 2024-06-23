@@ -69,12 +69,8 @@ android {
 
 dependencies {
     implementation "androidx.appcompat:appcompat:1.4.1"
-
     implementation 'com.alibaba.fastjson2:fastjson2:2.0.51.android5'
     implementation(name: "fusionauth-${fusionAuthVersion}-online-release", ext:'aar')
     implementation(name: "umeng-asms-${asmsVersion}", ext:'aar')
     implementation(name: "umeng-common-${commonVersion}", ext:'aar')
-
-    // 吐司框架：https://github.com/getActivity/Toaster
-    // implementation 'com.github.getActivity:Toaster:12.2'
 }
