@@ -13,7 +13,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.sean.rao.fusion_auth.net.HttpRequestUtil;
 import com.sean.rao.fusion_auth.net.VerifyTokenModel;
 import com.sean.rao.fusion_auth.net.VerifyTokenResult;
