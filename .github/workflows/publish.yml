@@ -14,7 +14,7 @@ jobs:
       - name: '>> Dart package <<'
         uses: k-paxian/dart-package-publisher@master
         with:
-          accessToken: ${{secrets.ACCESS_TOKEN }}
+          accessToken: ${{secrets.ACCOUNT_TOKEN }}
           refreshToken: ${{secrets.REFRESH_TOKEN }}
           skipTests: true
           force: true
