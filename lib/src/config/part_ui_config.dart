@@ -19,8 +19,10 @@ class BackgroundConfig {
 
   /// 授权页背景色
   final String? backgroundColor;
+
   /// 授权页背景图片
   final String? backgroundImage;
+
   /// 授权页背景图片view的 content mode，默认为 scaleAspectFill
   final ImageContentMode? backgroundImageContentMode;
 
@@ -39,6 +41,7 @@ class NavStatusBarConfig {
 
   /// 状态栏是否隐藏，默认NO
   final bool? prefersStatusBarHidden;
+
   /// 状态栏主题风格，默认UIStatusBarStyleDefault
   final String? preferredStatusBarStyle;
 
@@ -129,6 +132,7 @@ class LogoConfig {
 
   ///  logo是否隐藏，默认NO
   final bool logoIsHidden;
+
   /// logo图片路径
   final String? logoImage;
   final double? logoWidth;
@@ -341,27 +345,26 @@ class CheckBoxConfig {
 
 @JsonSerializable()
 class PrivacyConfig {
-  const PrivacyConfig({
-    this.privacyConnectTexts,
-    this.privacyFontSize,
-    this.privacyFrameOffsetX,
-    this.privacyFrameOffsetY,
-    this.privacyOperatorIndex,
-    this.privacyOperatorPreText,
-    this.privacyOperatorSufText,
-    this.privacyPreText,
-    this.privacySufText,
-    this.privacyOneName,
-    this.privacyOneUrl,
-    this.privacyFontColor,
-    this.privacyTwoName,
-    this.privacyTwoUrl,
-    this.privacyTwoColor,
-    this.privacyThreeName,
-    this.privacyThreeUrl,
-    this.privacyThreeColor,
-    this.privacyOperatorColor
-  });
+  const PrivacyConfig(
+      {this.privacyConnectTexts,
+      this.privacyFontSize,
+      this.privacyFrameOffsetX,
+      this.privacyFrameOffsetY,
+      this.privacyOperatorIndex,
+      this.privacyOperatorPreText,
+      this.privacyOperatorSufText,
+      this.privacyPreText,
+      this.privacySufText,
+      this.privacyOneName,
+      this.privacyOneUrl,
+      this.privacyFontColor,
+      this.privacyTwoName,
+      this.privacyTwoUrl,
+      this.privacyTwoColor,
+      this.privacyThreeName,
+      this.privacyThreeUrl,
+      this.privacyThreeColor,
+      this.privacyOperatorColor});
 
   factory PrivacyConfig.fromJson(Map<String, dynamic> json) =>
       _$PrivacyConfigFromJson(json);

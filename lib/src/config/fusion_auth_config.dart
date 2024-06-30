@@ -57,6 +57,7 @@ class FusionAuthConfig extends PartAbstractConfig {
   final ChangeButtonConfig? changeButtonConfig;
   final CheckBoxConfig? checkBoxConfig;
   final PrivacyConfig? privacyConfig;
+
   /// 二次隐私协议弹窗设置
   final PrivacyAlertConfig? privacyAlertConfig;
   final List<CustomViewBlock>? customViewBlockList;

@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/part_ui_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/part_ui_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/privacy_alert_ui_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/privacy_alert_ui_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view/nav_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/view/sms_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/view/sms_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release.md" beforeDir="false" afterPath="$PROJECT_DIR$/release.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fusion_auth_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

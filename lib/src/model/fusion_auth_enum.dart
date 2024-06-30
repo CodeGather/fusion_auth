@@ -5,6 +5,7 @@ enum SdkType { auth, login }
 
 /// 模式选择
 enum DebugMode { simple, normal }
+
 /// ScaleType 可选类型
 enum ScaleType {
   matrix,
@@ -21,10 +22,10 @@ enum Gravity { centerHorizntal, left, right }
 
 enum ImageContentMode {
   scaleToFill,
-  scaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
-  scaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
-  redraw,              // redraw on bounds change (calls -setNeedsDisplay)
-  center,              // contents remain same size. positioned adjusted.
+  scaleAspectFit, // contents scaled to fit with fixed aspect. remainder is transparent
+  scaleAspectFill, // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+  redraw, // redraw on bounds change (calls -setNeedsDisplay)
+  center, // contents remain same size. positioned adjusted.
   top,
   bottom,
   left,
@@ -63,22 +64,31 @@ enum PNSPresentationDirection {
 enum PageType {
   ///全屏（竖屏）
   fullPort,
+
   ///全屏（横屏）
   fullLand,
+
   ///弹窗（竖屏）
   dialogPort,
+
   ///"弹窗（横屏）
   dialogLand,
+
   ///底部弹窗
   dialogBottom,
+
   ///自定义View
   customView,
+
   ///自定义View（Xml）
   customXml,
+
   /// 自定义背景GIF
   customGif,
+
   /// 自定义背景视频
   customMOV,
+
   /// 自定义背景图片
   customPIC,
 }
@@ -87,12 +97,16 @@ enum PageType {
 enum SceneType {
   /// 默认登录注册场景
   login,
+
   /// 默认更换手机号场景
   changeMobile,
+
   /// 默认重置密码场景
   resetPaW,
+
   /// 默认绑定新手机号场景
   bandMobile,
+
   /// 默认验证绑定手机号场景
   verifyMobile,
 }
