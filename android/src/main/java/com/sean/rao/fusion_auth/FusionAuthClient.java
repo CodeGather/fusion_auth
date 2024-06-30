@@ -36,7 +36,6 @@ import com.mobile.auth.gatewayauth.AuthRegisterViewConfig;
 import com.mobile.auth.gatewayauth.AuthRegisterXmlConfig;
 import com.mobile.auth.gatewayauth.CustomInterface;
 import com.sean.rao.fusion_auth.net.VerifyTokenResult;
-import com.sean.rao.fusion_auth.utils.FusionAuthUiUtil;
 import com.sean.rao.fusion_auth.utils.FusionConstant;
 import com.sean.rao.fusion_auth.utils.FusionUtilTool;
 import com.sean.rao.fusion_auth.utils.TokenActionFactory;
@@ -46,7 +45,6 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.CountDownLatch;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel;
 
 /**

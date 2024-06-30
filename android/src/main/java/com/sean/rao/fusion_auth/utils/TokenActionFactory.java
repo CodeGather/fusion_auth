@@ -11,21 +11,11 @@ import com.sean.rao.fusion_auth.net.VerifyTokenResult;
 import java.util.UUID;
 
 /**
- * @author: cmw01044812
+ * @author: 21克的爱情
  * @date: 8/28/23
  * @descript:
  */
 public class TokenActionFactory {
-
-   public static void getToken(Context mContext){
-       if(Constant.TOKEN_MODEL==1){
-           GlobalInfoManager.getInstance().setToken(Constant.LOCAL_TOKEN);
-       }else if(Constant.TOKEN_MODEL==2){
-           GetAuthTokenResult authToken = HttpRequestUtil.getAuthToken(GlobalInfoManager.getInstance().getContext());
-           GlobalInfoManager.getInstance().setToken(authToken==null?"":authToken.getModel());
-       }
-   }
-
     public static VerifyTokenResult verifyToken(Context mContext, String token, boolean tokenModel){
         VerifyTokenResult verifyTokenResult;
         if(tokenModel){

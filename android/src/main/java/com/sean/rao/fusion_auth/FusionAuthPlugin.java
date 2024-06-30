@@ -1,24 +1,19 @@
 package com.sean.rao.fusion_auth;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.sean.rao.fusion_auth.utils.FusionConstant;
-import com.sean.rao.fusion_auth.utils.FusionAuthUtil;
 
 import java.lang.ref.WeakReference;
 
-import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
-import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
