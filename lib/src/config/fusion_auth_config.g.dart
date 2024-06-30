@@ -64,7 +64,7 @@ FusionAuthConfig _$FusionAuthConfigFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String?,
       schemeCode: json['schemeCode'] as String?,
       pageType: $enumDecodeNullable(_$PageTypeEnumMap, json['pageType']),
-      templateId: json['templateId'] as String?,
+      templateId: $enumDecodeNullable(_$SceneTypeEnumMap, json['templateId']),
       logEnable: json['logEnable'] as bool? ?? false,
       debugMode: json['debugMode'] as bool? ?? true,
       isDelay: json['isDelay'] as bool? ?? false,
@@ -79,7 +79,7 @@ Map<String, dynamic> _$FusionAuthConfigToJson(FusionAuthConfig instance) =>
       'token': instance.token,
       'schemeCode': instance.schemeCode,
       'pageType': _$PageTypeEnumMap[instance.pageType],
-      'templateId': instance.templateId,
+      'templateId': _$SceneTypeEnumMap[instance.templateId],
       'logEnable': instance.logEnable,
       'isDelay': instance.isDelay,
       'appServerHost': instance.appServerHost,
@@ -114,4 +114,12 @@ const _$PageTypeEnumMap = {
   PageType.customGif: 'customGif',
   PageType.customMOV: 'customMOV',
   PageType.customPIC: 'customPIC',
+};
+
+const _$SceneTypeEnumMap = {
+  SceneType.login: 'login',
+  SceneType.changeMobile: 'changeMobile',
+  SceneType.resetPaW: 'resetPaW',
+  SceneType.bandMobile: 'bandMobile',
+  SceneType.verifyMobile: 'verifyMobile',
 };

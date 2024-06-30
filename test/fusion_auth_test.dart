@@ -14,12 +14,12 @@ class MockFusionAuthPlatform
   Future<String?> getVersion() => Future.value('42');
 
   @override
-  void initSdk(FusionAuthConfig? config) {
+  Future<void> initSdk(FusionAuthConfig? config) {
     // TODO: implement init
   }
 
   @override
-  void login() {
+  Future<void> login() {
     // TODO: implement login
   }
 

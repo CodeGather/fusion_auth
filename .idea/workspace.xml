@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d275cbc-7689-4c26-87c0-4aceea613e52" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionUtilTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionUtilTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/FusionAuthPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionAuthUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/sean/rao/fusion_auth/utils/FusionConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/fusion_auth_config.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/part_abstract_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/part_abstract_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/config/part_abstract_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/part_abstract_config.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_method_channel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/internal/fusion_auth_platform_interface.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/response_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fusion_auth_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/fusion_auth_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Dart Command Line App.fusion_auth_enum.dart.executor": "Debug",
     "Flutter.main.dart.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -68,6 +85,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/Yau/work/3.Github/flutter/fusion_auth/screenshots",
     "show.migrate.to.gradle.popup": "false"
@@ -89,11 +107,21 @@
       <recent name="$PROJECT_DIR$/lib/src/model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="fusion_auth_enum.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/src/model/fusion_auth_enum.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Command Line App.fusion_auth_enum.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

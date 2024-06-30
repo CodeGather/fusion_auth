@@ -30,11 +30,11 @@ abstract class FusionAuthPlatform extends PlatformInterface {
     throw UnimplementedError('version() has not been implemented.');
   }
 
-  void initSdk(FusionAuthConfig? config) {
+  Future<void> initSdk(FusionAuthConfig? config) {
     throw UnimplementedError('loginListen() has not been implemented.');
   }
 
-  void login() {
+  Future<void> login() {
     throw UnimplementedError('loginListen() has not been implemented.');
   }
 

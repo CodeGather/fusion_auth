@@ -73,7 +73,7 @@ class FusionAuthConfig extends PartAbstractConfig {
       'token': token,
       'schemeCode': schemeCode,
       'pageType': pageType?.index ?? PageType.fullPort.index,
-      'templateId': templateId,
+      'templateId': EnumUtils.formatSenceValue(templateId ?? SceneType.login),
       'logEnable': logEnable,
       'isDelay': isDelay,
       'appServerHost': appServerHost,

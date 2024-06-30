@@ -16,7 +16,7 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   @override
   Future<String?> getVersion() async {
     final version = await methodChannel.invokeMethod<String>('getVersion');
-    print(version);
+    debugPrint(version);
     return version;
   }
 
@@ -44,14 +44,14 @@ class MethodChannelFusionAuth extends FusionAuthPlatform {
   }
 
   @override
-  void initSdk(FusionAuthConfig? config) {
+  Future<void> initSdk(FusionAuthConfig? config) {
     config ??= FusionAuthConfig.fromJson({});
-    methodChannel.invokeMethod("initSdk", config.toJson());
+    return methodChannel.invokeMethod("initSdk", config.toJson());
   }
 
   @override
-  void login() {
-    methodChannel.invokeMethod<String>('login');
+  Future<void> login() {
+    return methodChannel.invokeMethod<String>('login');
   }
 
   @override

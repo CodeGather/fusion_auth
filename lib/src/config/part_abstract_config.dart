@@ -20,6 +20,7 @@ class PartAbstractConfig {
     this.logEnable = false,
     this.debugMode = true,
     this.isDelay = false,
+    this.yMengSdk = false,
     this.appServerHost,
     this.authtokenApi,
     this.verifyApi,
@@ -47,13 +48,16 @@ class PartAbstractConfig {
   /// 默认绑定新手机号场景 "100004"
   /// 默认验证绑定手机号场景 "100005"
   /// templateId 场景唯一标识 与控制台场景ID唯一对应
-  final String? templateId;
+  final SceneType? templateId;
 
   /// 是否打印log，默认开启
   final bool? logEnable;
 
   /// 是否初始化后立即执行登录的操作，默认false
   final bool? isDelay;
+
+  /// 友盟SDK初始化
+  final bool? yMengSdk;
 
   /// 服务端host地址
   final String? appServerHost;
