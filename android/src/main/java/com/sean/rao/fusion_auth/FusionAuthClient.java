@@ -105,19 +105,7 @@ public class FusionAuthClient {
             public AlicomFusionAuthToken onSDKTokenUpdate() {
                 Log.d(TAG, "AlicomFusionAuthCallBack---onSDKTokenUpdate");
                 AlicomFusionAuthToken token=new AlicomFusionAuthToken();
-                CountDownLatch latch=new CountDownLatch(1);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-//                        TokenActionFactory.getToken(mContext);
-//                        latch.countDown();
-                    }
-                }).start();
-                try {
-                    latch.await();
-                    token.setAuthToken(CONFIG.getString("token"));
-                } catch (InterruptedException e) {
-                }
+                token.setAuthToken(CONFIG.getString("token"));
                 return token;
             }
 
@@ -133,15 +121,7 @@ public class FusionAuthClient {
             @Override
             public void onSDKTokenAuthFailure(AlicomFusionAuthToken token, AlicomFusionEvent alicomFusionEvent) {
                 Log.d(TAG, "AlicomFusionAuthCallBack---onSDKTokenAuthFailure "+alicomFusionEvent.getErrorCode() +"  "+alicomFusionEvent.getErrorMsg());
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Looper.prepare();
-                        AlicomFusionAuthToken authToken=new AlicomFusionAuthToken();
-                        authToken.setAuthToken(CONFIG.getString("token"));
-                        mAlicomFusionBusiness.updateToken(authToken);
-                    }
-                }).start();
+                resultData(alicomFusionEvent);
             }
 
             @Override
@@ -150,13 +130,6 @@ public class FusionAuthClient {
                 JSONObject result = JSON.parseObject(JSON.toJSONString(alicomFusionEvent));
                 result.put("token", token);
                 resultData(result);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        VerifyTokenResult verifyTokenResult = TokenActionFactory.verifyToken(mActivity.get(), token, CONFIG.getBooleanValue("debugMode", false));
-                        Log.d(TAG, "AlicomFusionAuthCallBack---verifyTokenResult " +verifyTokenResult.toString());
-                    }
-                }).start();
             }
 
             /**
